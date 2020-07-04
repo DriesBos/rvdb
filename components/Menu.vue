@@ -1,8 +1,8 @@
 <template>
-  <div v-editable="blok" class="grid">
+  <div v-editable="blok" class="menu">
     <component
       :is="blok.component | dashify"
-      v-for="blok in blok.columns"
+      v-for="blok in blok.body"
       :key="blok._uid"
       :blok="blok"
     ></component>
@@ -13,6 +13,9 @@
 export default {
   props: {
     blok: Object
+  },
+  mounted() {
+    console.log("MENU", this.blok)
   }
 }
 </script>

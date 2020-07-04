@@ -1,13 +1,13 @@
-// @font-face
-//   font-family: ''
-//   src: url('~assets/fonts/') format('')
-//   font-weight: normal
-//   font-style: normal
+@font-face
+  font-family: 'Moderat'
+  src: url('~assets/fonts/moderat-regular-webfont.woff2') format('woff2')
+  font-weight: normal
+  font-style: normal
 
 body
   // https://css-tricks.com/snippets/css/fluid-typography/
-  font-size: 17px
-  font-size: calc(19px + (22 - 19) * ((100vw - 700px) / (1400 - 700)))
+  font-size: 16px
+  // font-size: calc(17px + (20 - 17) * ((100vw - 700px) / (1400 - 700)))
 
 h1, h2, h3, p, a
   word-wrap: break-word
@@ -22,17 +22,17 @@ h1, h2, h3, p, a
   hyphens: none
 
 li, h1, h2, h3, p, a, a:link, a:visited, a:hover, a:active, span, input, button
-  font-family: Helvetica, Arial, sans-serif
+  font-family: 'Moderat', Helvetica, Arial, sans-serif
   font-size: 1em
   line-height: 1.5
-  color: black
+  color: currentColor
   font-style: normal
   font-weight: normal
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
 a
-  color: black
+  color: currentColor
   text-decoration: underline
 
 strong
