@@ -1,5 +1,5 @@
 <template>
-  <main class="main">
+  <main class="main" :class="background">
     <section class="landing">
       <ul>
         <li class="menu-Item " @click="toggleAllSections">
@@ -59,7 +59,11 @@
 </template>
 
 <script>
+import gsap from "gsap"
+import { CSSRulePlugin } from "gsap/CSSRulePlugin"
 import storyblokLivePreview from "@/mixins/storyblokLivePreview"
+
+gsap.registerPlugin(CSSRulePlugin)
 
 export default {
   mixins: [storyblokLivePreview],
@@ -98,13 +102,27 @@ export default {
       aboutOpen: false,
       workOpen: false,
       newsOpen: false,
-      contactOpen: false
+      contactOpen: false,
+      background: "backgroundOne"
     }
   },
   mounted() {
+    this.backgroundColor()
+    this.setBackgroundColor()
     this.filterLoop(this.stories)
+    document.addEventListener("click", this.backgroundColor)
+    document
+      .querySelectorAll(".cursorInteract")
+      .forEach(item => item.addEventListener("mouseover", this.changeCursor))
+    document
+      .querySelectorAll(".cursorInteract")
+      .forEach(item =>
+        item.addEventListener("mouseleave", this.removeChangeCursor)
+      )
   },
   updated() {
+    this.backgroundColor()
+    this.setBackgroundColor()
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.addEventListener("mouseover", this.changeCursor))
@@ -115,6 +133,51 @@ export default {
       )
   },
   methods: {
+    backgroundColor() {
+      if (
+        this.aboutOpen ||
+        this.contactOpen ||
+        this.newsOpen ||
+        this.workOpen
+      ) {
+        this.background = 3
+      } else if (this.menuOpen) {
+        this.background = 2
+      } else {
+        this.background = 1
+      }
+    },
+    setBackgroundColor() {
+      // var el = document.getElementsByTagName("main")
+      if (this.background == 3) {
+        console.log("setBG 3", this.background)
+        gsap.to(CSSRulePlugin.getRule("main"), {
+          cssRule: {
+            backgroundImage:
+              "radial-gradient(48.25% 116.75% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)"
+          }
+        })
+      }
+      if (this.background == 2) {
+        console.log("setBG 2", this.background)
+        gsap.to(CSSRulePlugin.getRule("main"), {
+          cssRule: {
+            backgroundImage:
+              "radial-gradient(67.57% 163.51% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)"
+          },
+          onUpdateParams: ["main"]
+        })
+      }
+      if (this.background == 1) {
+        console.log("setBG 1", this.background)
+        gsap.to(CSSRulePlugin.getRule("main"), {
+          cssRule: {
+            backgroundImage:
+              "radial-gradient(90.61% 219.25% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)"
+          }
+        })
+      }
+    },
     toggleAllSections() {
       this.menuOpen = !this.menuOpen
       if (this.menuOpen === false) {
@@ -150,7 +213,6 @@ export default {
       this.aboutList = aboutFilterArray[0].content.body
       this.newsList = newsFilterArray[0].content.body
       this.contactList = contactFilterArray[0].content.body
-      // console.log("LOOP", this.newsList, this.homeList)
     }
   }
 }
