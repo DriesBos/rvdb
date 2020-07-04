@@ -9,7 +9,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: pkg.name, // Change in package.json files
+    title: "Rutger van den Berg",
     meta: [
       { charset: "utf-8" },
       {
@@ -19,7 +19,8 @@ module.exports = {
       {
         hid: "description",
         name: "description",
-        content: pkg.description // Change in package.json files
+        content:
+          "Onderzoeker/Adviseur/Auteur/Spreker gespecialiseerd in jongerencultuur"
       },
       {
         name: "mobile-web-app-capable",
