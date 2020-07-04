@@ -9,24 +9,10 @@
   border-radius: 50%
   z-index: 999
   pointer-events: none
-  transition: width .12s ease, height .12s ease
+  transition: width .18s ease, height .18s ease
   &.active, .active
-    width: 2rem
-    height: 2rem
-
-.cursorDelayed
-  position: fixed
-  width: 1rem
-  height: 1rem
-  transform: translate(-50%, -50%)
-  border: 1px solid $color
-  border-radius: 50%
-  z-index: 999
-  pointer-events: none
-  transition: width .12s ease, height .12s ease
-  &.active, .active
-    width: 2rem
-    height: 2rem
+    width: 3rem
+    height: 3rem
 
 main
   width: 100vw
@@ -53,8 +39,39 @@ main
     .menu-Item
       margin-bottom: .5rem
       h1, p
+        position: relative
         display: inline
-  // &.backgroundTwo
-  //   background: radial-gradient(67.57% 163.51% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)
-  // &.backgroundThree
-  //   background: radial-gradient(48.25% 116.75% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)
+        &::before
+          content: ''
+          position: absolute
+          left: 1px
+          display: inline-block
+          bottom: -5px
+          top: 0
+          width: 0
+          z-index: 0
+          border-bottom: 1px solid currentColor
+      &:hover
+        h1, p
+          &::before
+            animation: over .33s ease
+            animation-iteration-count: 1
+            animation-fill-mode: both
+      // &.out
+      //   h1, p
+      //     &::before
+      //       animation: out .33s ease
+      //       animation-iteration-count: 1
+      //       animation-fill-mode: both
+
+@keyframes over
+  0%
+    width: 0%
+  100%
+    width: calc(100% - 2px)
+
+// @keyframes out
+//   0%
+//     width: 100%
+//   100%
+//     width: 0%
