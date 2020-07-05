@@ -1,14 +1,18 @@
 <template>
   <main class="main" :class="background">
-    <section class="landing">
+    <section class="landing extendable" :class="{ extend: menuOpen }">
       <ul>
-        <li class="menu-Item " @click="toggleAllSections">
+        <li class="menu-Item" @click="toggleAllSections">
           <h1 class="cursorInteract">Rutger van den Berg</h1>
         </li>
       </ul>
     </section>
     <transition name="section">
-      <section v-show="menuOpen" class="menu">
+      <section
+        v-show="menuOpen"
+        class="menu extendable"
+        :class="{ extend: aboutOpen }"
+      >
         <ul class="content">
           <li class="menu-Item" @click="aboutOpen = !aboutOpen">
             <p class="cursorInteract">Over</p>
@@ -39,22 +43,37 @@
         ></component>
       </section>
     </transition>
+    <transition name="section">
+      <section v-if="workOpen" class="work">
+        <component
+          :is="blok.component | dashify"
+          v-for="blok in workList"
+          :key="blok._uid"
+          :blok="blok"
+          class="content"
+        ></component>
+      </section>
+    </transition>
     <!-- <section v-if="newsOpen" class="news">
       <component
         :is="blok.component | dashify"
         v-for="blok in newsList"
         :key="blok._uid"
         :blok="blok"
-      ></component>
-    </section>
-    <section v-if="contactOpen" class="contact">
-      <component
-        :is="blok.component | dashify"
-        v-for="blok in contactList"
-        :key="blok._uid"
-        :blok="blok"
+        class="content"
       ></component>
     </section> -->
+    <transition name="section">
+      <section v-if="contactOpen" class="contact">
+        <component
+          :is="blok.component | dashify"
+          v-for="blok in contactList"
+          :key="blok._uid"
+          :blok="blok"
+          class="content"
+        ></component>
+      </section>
+    </transition>
   </main>
 </template>
 
@@ -96,6 +115,7 @@ export default {
       stories: { content: {} },
       homeList: {},
       aboutList: {},
+      workList: {},
       newsList: {},
       contactList: {},
       menuOpen: false,
@@ -123,6 +143,7 @@ export default {
   updated() {
     this.backgroundColor()
     this.setBackgroundColor()
+    console.log(this.menuOpen)
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.addEventListener("mouseover", this.changeCursor))
@@ -194,13 +215,18 @@ export default {
           return true
         }
       })
-      let newsFilterArray = array.filter(function(el) {
-        if (el.name === "Nieuws") {
+      let aboutFilterArray = array.filter(function(el) {
+        if (el.name === "Over") {
           return true
         }
       })
-      let aboutFilterArray = array.filter(function(el) {
-        if (el.name === "Over") {
+      let workFilterArray = array.filter(function(el) {
+        if (el.name === "Werk") {
+          return true
+        }
+      })
+      let newsFilterArray = array.filter(function(el) {
+        if (el.name === "Nieuws") {
           return true
         }
       })
@@ -210,6 +236,7 @@ export default {
         }
       })
       this.homeList = homeFilterArray[0].content.body
+      this.workList = workFilterArray[0].content.body
       this.aboutList = aboutFilterArray[0].content.body
       this.newsList = newsFilterArray[0].content.body
       this.contactList = contactFilterArray[0].content.body

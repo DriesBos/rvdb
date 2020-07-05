@@ -11,8 +11,9 @@
   pointer-events: none
   transition: width .18s ease, height .18s ease
   &.active, .active
-    width: 3rem
-    height: 3rem
+    width: 1.5rem
+    height: 1.5rem
+    border: 1px solid black
 
 main
   width: 100vw
@@ -22,9 +23,9 @@ main
   cursor: none
   background-image: radial-gradient(90.61% 219.25% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)
   section
-    min-width: 20vw
+    // min-width: 20vw
     height: 100vh
-    border-right: 1px solid white
+    border-right: 2px solid white
     padding: 2rem
     padding-top: 2.5rem
     overflow-y: auto
@@ -36,27 +37,34 @@ main
     &:nth-child(n+3)
       z-index: 300
       flex-grow: 1
+    &.extendable
+      padding-right: 4rem
+      transition: padding-right .33s ease
+    &.extend
+      padding-right: 6rem !important
     .menu-Item
-      margin-bottom: .5rem
+      // margin-bottom: .5rem
       h1, p
         position: relative
         display: inline
-        &::before
-          content: ''
-          position: absolute
-          left: 1px
-          display: inline-block
-          bottom: -5px
-          top: 0
-          width: 0
-          z-index: 0
-          border-bottom: 1px solid currentColor
+        transition: color .16s ease
+        // &::before
+        //   content: ''
+        //   position: absolute
+        //   left: 1px
+        //   display: inline-block
+        //   bottom: -5px
+        //   top: 0
+        //   width: 0
+        //   z-index: 0
+        //   border-bottom: 1px solid currentColor
       &:hover
         h1, p
-          &::before
-            animation: over .33s ease
-            animation-iteration-count: 1
-            animation-fill-mode: both
+          color: $color-hover
+          // &::before
+          //   animation: over .33s ease
+          //   animation-iteration-count: 1
+          //   animation-fill-mode: both
       // &.out
       //   h1, p
       //     &::before

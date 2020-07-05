@@ -1,5 +1,9 @@
 <template>
   <div v-editable="blok" class="hyperlink">
+    <div
+      class="icon"
+      v-html="require('~/assets/images/icon-east.svg?include')"
+    />
     <markdown-item :input="blok.hyperlink" />
   </div>
 </template>
@@ -19,3 +23,15 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.hyperlink
+  display: flex
+  .icon
+    transition: color .16s ease
+    height: 100%
+    margin-right: .5rem
+  &:hover
+    .icon
+      color: black
+</style>

@@ -1,4 +1,3 @@
-const pkg = require("./package")
 const axios = require("axios")
 require("dotenv").config()
 
@@ -65,10 +64,6 @@ module.exports = {
   modules: [
     "@nuxtjs/axios",
     "vue-scrollto/nuxt",
-    [
-      "@bazzite/nuxt-optimized-images",
-      { optimizedImages: { optimizeImages: true, optimizeImagesInDev: true } } // Test compression by setting to true first
-    ],
     [
       "storyblok-nuxt",
       {
@@ -176,6 +171,14 @@ module.exports = {
       "@nuxtjs/google-analytics",
       {
         id: process.env.GA_ID
+      }
+    ],
+    [
+      "@aceforth/nuxt-optimized-images",
+      {
+        optimizedImages: {
+          optimizeImages: true
+        }
       }
     ]
   ]
