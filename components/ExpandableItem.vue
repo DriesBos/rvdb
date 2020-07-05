@@ -45,8 +45,6 @@ export default {
     transition: color .16s ease
     color: currentColor
     height: 1rem
-  h1
-    transition: color .16s ease
   &.active
     h1
       color: black
