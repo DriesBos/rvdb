@@ -2,8 +2,14 @@
   <main class="main" :class="background">
     <section class="landing extendable" :class="{ extend: menuOpen }">
       <ul>
-        <li class="menu-Item" @click="toggleAllSections">
-          <h1 class="cursorInteract">Rutger van den Berg</h1>
+        <li
+          class="menu-Item"
+          :class="{ active: menuOpen }"
+          @click="toggleAllSections"
+        >
+          <h1 class="cursorInteract">
+            Rutger van den Berg
+          </h1>
         </li>
       </ul>
     </section>
@@ -14,17 +20,30 @@
         :class="{ extend: aboutOpen }"
       >
         <ul class="content">
-          <li class="menu-Item" @click="aboutOpen = !aboutOpen">
-            <p class="cursorInteract">Over</p>
+          <li
+            class="menu-Item"
+            :class="{ active: aboutOpen }"
+            @click="aboutOpen = !aboutOpen"
+          >
+            <p class="cursorInteract">Profiel</p>
           </li>
-          <li class="menu-Item cursorInteract" @click="workOpen = !workOpen">
+          <li
+            class="menu-Item cursorInteract"
+            :class="{ active: workOpen }"
+            @click="workOpen = !workOpen"
+          >
             <p class="cursorInteract">Werk</p>
           </li>
-          <li class="menu-Item cursorInteract" @click="newsOpen = !newsOpen">
+          <li
+            class="menu-Item cursorInteract"
+            :class="{ active: newsOpen }"
+            @click="newsOpen = !newsOpen"
+          >
             <p class="cursorInteract">Nieuws</p>
           </li>
           <li
             class="menu-Item cursorInteract"
+            :class="{ active: contactOpen }"
             @click="contactOpen = !contactOpen"
           >
             <p class="cursorInteract">Contact</p>

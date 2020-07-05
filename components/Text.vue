@@ -1,5 +1,6 @@
 <template>
   <div v-editable="blok" class="text">
+    <h1>{{ blok.title }}</h1>
     <markdown-item :input="blok.text" />
   </div>
 </template>
@@ -19,3 +20,9 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.text
+  h1
+    color: black
+</style>

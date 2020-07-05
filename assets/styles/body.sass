@@ -25,7 +25,7 @@ main
   section
     // min-width: 20vw
     height: 100vh
-    border-right: 2px solid white
+    border-right: 1px solid white
     padding: 2rem
     padding-top: 2.5rem
     overflow-y: auto
@@ -58,6 +58,8 @@ main
         //   width: 0
         //   z-index: 0
         //   border-bottom: 1px solid currentColor
+      &.active
+        color: black
       &:hover
         h1, p
           color: $color-hover
@@ -71,6 +73,8 @@ main
       //       animation: out .33s ease
       //       animation-iteration-count: 1
       //       animation-fill-mode: both
+    .text
+      margin-bottom: 1.5rem
 
 @keyframes over
   0%
