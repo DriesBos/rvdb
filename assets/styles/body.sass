@@ -21,7 +21,7 @@ main
   color: $color
   display: flex
   cursor: none
-  background-image: radial-gradient(90.61% 219.25% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)
+  background-image: radial-gradient(48.25% 116.75% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)
   section
     // min-width: 20vw
     height: 100vh
@@ -44,47 +44,14 @@ main
     &.extend
       padding-right: 6rem !important
     .menu-Item
-      // margin-bottom: .5rem
       h1, p
         position: relative
         display: inline
         transition: color .16s ease
-        // &::before
-        //   content: ''
-        //   position: absolute
-        //   left: 1px
-        //   display: inline-block
-        //   bottom: -5px
-        //   top: 0
-        //   width: 0
-        //   z-index: 0
-        //   border-bottom: 1px solid currentColor
       &.active
         color: black
       &:hover
         h1, p
           color: $color-hover
-          // &::before
-          //   animation: over .33s ease
-          //   animation-iteration-count: 1
-          //   animation-fill-mode: both
-      // &.out
-      //   h1, p
-      //     &::before
-      //       animation: out .33s ease
-      //       animation-iteration-count: 1
-      //       animation-fill-mode: both
     .text
       margin-bottom: 1.5rem
-
-@keyframes over
-  0%
-    width: 0%
-  100%
-    width: calc(100% - 2px)
-
-// @keyframes out
-//   0%
-//     width: 100%
-//   100%
-//     width: 0%
