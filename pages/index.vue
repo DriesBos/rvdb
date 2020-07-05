@@ -194,7 +194,7 @@ export default {
         gsap.to(CSSRulePlugin.getRule("main"), {
           cssRule: {
             backgroundImage:
-              "radial-gradient(48.25% 116.75% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)"
+              "radial-gradient(90.61% 219.25% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)"
           }
         })
       }
@@ -213,7 +213,7 @@ export default {
         gsap.to(CSSRulePlugin.getRule("main"), {
           cssRule: {
             backgroundImage:
-              "radial-gradient(90.61% 219.25% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)"
+              "radial-gradient(48.25% 116.75% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)"
           }
         })
       }
