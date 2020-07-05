@@ -5,12 +5,13 @@
     :class="{ active: isOpen }"
     @click="isOpen = !isOpen"
   >
-    <div>
+    <div class="expandable-Item_Title">
       <h1>{{ blok.title }}</h1>
+      <h4>{{ blok.publicatievorm }}</h4>
     </div>
-    <div v-show="isOpen">
+    <div v-show="isOpen" class="expandable-Item_Content">
       <markdown-item :input="blok.text" />
-      <p v-if="blok.mention">{{ blok.mention }}</p>
+      <h4 v-if="blok.mention">Ism {{ blok.mention }}</h4>
     </div>
   </div>
 </template>
@@ -38,7 +39,7 @@ export default {
 
 <style lang="sass">
 .expandable-Item
-  .markdown, .markdown p, .markdown a, p, a, .icon
+  .markdown, .markdown p, .markdown a, p, a, .icon, h4, h1, h2, h3
     display: inline
   .icon
     transition: color .16s ease
@@ -46,10 +47,15 @@ export default {
     height: 1rem
   h1
     transition: color .16s ease
+  h4
+    vertical-align: text-top
+    margin-left: .1rem
   &.active
     h1
       color: black
   &:hover
     h1
       color: black
+  &_Content
+    margin-left: 2rem
 </style>

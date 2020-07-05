@@ -19,3 +19,8 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.expandable-List
+  margin-bottom: 1.5rem
+</style>
