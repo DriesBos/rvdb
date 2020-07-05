@@ -47,9 +47,6 @@ export default {
     height: 1rem
   h1
     transition: color .16s ease
-  h4
-    vertical-align: text-top
-    margin-left: .1rem
   &.active
     h1
       color: black
@@ -57,5 +54,6 @@ export default {
     h1
       color: black
   &_Content
-    margin-left: 2rem
+    margin-left: 1rem
+    margin-bottom: .5rem
 </style>
