@@ -6,27 +6,27 @@
 //   opacity: 0
 
 .section-leave-active
-  transition: transform .33s ease .33s
+  // transition: transform .33s ease .33s
   .content
     transition: opacity .33s ease
 
 .section-enter-active
-  transition: transform .33s ease
+  // transition: transform .33s ease
   .content
-    transition: opacity .33s ease .33s
+    transition: opacity .33s ease
 
 .section-enter, .section-leave-to
-  transform: translateX(-100%)
+  // transform: translateX(-100%)
   .content
     opacity: 0
 
 section:nth-child(n+3)
   &.section-leave-active
-    transition: transform .66s ease .33s
+    // transition: transform .66s ease .33s
     .content
       transition: opacity .33s ease
 
   &.section-enter-active
-    transition: transform .66s ease
+    // transition: transform .66s ease
     .content
-      transition: opacity .33s ease .66s
+      transition: opacity .33s ease
