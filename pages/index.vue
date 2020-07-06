@@ -5,7 +5,7 @@
         <li
           class="menu-Item"
           :class="{ active: menuOpen }"
-          @click="toggleAllSections"
+          @click="toggleLandingSection"
         >
           <h1 class="cursorInteract">
             Rutger van den Berg
@@ -23,28 +23,28 @@
           <li
             class="menu-Item"
             :class="{ active: aboutOpen }"
-            @click="aboutOpen = !aboutOpen"
+            @click="toggleAboutSection"
           >
             <p class="cursorInteract">Profiel</p>
           </li>
           <li
             class="menu-Item cursorInteract"
             :class="{ active: workOpen }"
-            @click="workOpen = !workOpen"
+            @click="toggleWorkSection"
           >
             <p class="cursorInteract">Werk</p>
           </li>
           <li
             class="menu-Item cursorInteract"
             :class="{ active: newsOpen }"
-            @click="newsOpen = !newsOpen"
+            @click="toggleNewsSection"
           >
             <p class="cursorInteract">Nieuws</p>
           </li>
           <li
             class="menu-Item cursorInteract"
             :class="{ active: contactOpen }"
-            @click="contactOpen = !contactOpen"
+            @click="toggleContactSection"
           >
             <p class="cursorInteract">Contact</p>
           </li>
@@ -73,7 +73,7 @@
         ></component>
       </section>
     </transition>
-    <!-- <section v-if="newsOpen" class="news">
+    <section v-if="newsOpen" class="news">
       <component
         :is="blok.component | dashify"
         v-for="blok in newsList"
@@ -81,7 +81,7 @@
         :blok="blok"
         class="content"
       ></component>
-    </section> -->
+    </section>
     <transition name="section">
       <section v-if="contactOpen" class="contact">
         <component
@@ -146,7 +146,7 @@ export default {
     }
   },
   mounted() {
-    this.backgroundColor()
+    this.setBackground()
     this.setBackgroundColor()
     this.filterLoop(this.stories)
     document.addEventListener("click", this.backgroundColor)
@@ -160,7 +160,7 @@ export default {
       )
   },
   updated() {
-    this.backgroundColor()
+    this.setBackground()
     this.setBackgroundColor()
     console.log(this.menuOpen)
     document
@@ -173,59 +173,42 @@ export default {
       )
   },
   methods: {
-    backgroundColor() {
-      if (
-        this.aboutOpen ||
-        this.contactOpen ||
-        this.newsOpen ||
-        this.workOpen
-      ) {
-        this.background = 3
-      } else if (this.menuOpen) {
-        this.background = 2
-      } else {
-        this.background = 1
-      }
-    },
-    setBackgroundColor() {
-      // var el = document.getElementsByTagName("main")
-      if (this.background == 3) {
-        console.log("setBG 3", this.background)
-        gsap.to(CSSRulePlugin.getRule("main"), {
-          cssRule: {
-            backgroundImage:
-              "radial-gradient(90.61% 219.25% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)"
-          }
-        })
-      }
-      if (this.background == 2) {
-        console.log("setBG 2", this.background)
-        gsap.to(CSSRulePlugin.getRule("main"), {
-          cssRule: {
-            backgroundImage:
-              "radial-gradient(67.57% 163.51% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)"
-          },
-          onUpdateParams: ["main"]
-        })
-      }
-      if (this.background == 1) {
-        console.log("setBG 1", this.background)
-        gsap.to(CSSRulePlugin.getRule("main"), {
-          cssRule: {
-            backgroundImage:
-              "radial-gradient(48.25% 116.75% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)"
-          }
-        })
-      }
-    },
-    toggleAllSections() {
-      this.menuOpen = !this.menuOpen
+    toggleLandingSection() {
       if (this.menuOpen === false) {
-        this.aboutOpen = false
-        this.workOpen = false
-        this.newsOpen = false
-        this.contactOpen = false
+        this.menuOpen = true
+      } else {
+        this.closeAllSections()
       }
+    },
+    toggleAboutSection() {
+      this.closeAllSectionsButMenu()
+      this.aboutOpen = true
+    },
+    toggleWorkSection() {
+      this.closeAllSectionsButMenu()
+      this.workOpen = true
+    },
+    toggleNewsSection() {
+      this.closeAllSectionsButMenu()
+      this.newsOpen = true
+    },
+    toggleContactSection() {
+      this.closeAllSectionsButMenu()
+      this.contactOpen = true
+    },
+
+    closeAllSections() {
+      this.aboutOpen = false
+      this.workOpen = false
+      this.newsOpen = false
+      this.contactOpen = false
+      this.menuOpen = false
+    },
+    closeAllSectionsButMenu() {
+      this.aboutOpen = false
+      this.workOpen = false
+      this.newsOpen = false
+      this.contactOpen = false
     },
     filterLoop(array) {
       console.log("ARRAY", array)
@@ -259,6 +242,50 @@ export default {
       this.aboutList = aboutFilterArray[0].content.body
       this.newsList = newsFilterArray[0].content.body
       this.contactList = contactFilterArray[0].content.body
+    },
+    setBackground() {
+      if (
+        this.aboutOpen ||
+        this.contactOpen ||
+        this.newsOpen ||
+        this.workOpen
+      ) {
+        this.background = 3
+      } else if (this.menuOpen) {
+        this.background = 2
+      } else {
+        this.background = 1
+      }
+    },
+    setBackgroundColor() {
+      if (this.background == 3) {
+        console.log("setBG 3", this.background)
+        gsap.to(CSSRulePlugin.getRule("main"), {
+          cssRule: {
+            backgroundImage:
+              "radial-gradient(90.61% 219.25% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)"
+          }
+        })
+      }
+      if (this.background == 2) {
+        console.log("setBG 2", this.background)
+        gsap.to(CSSRulePlugin.getRule("main"), {
+          cssRule: {
+            backgroundImage:
+              "radial-gradient(67.57% 163.51% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)"
+          },
+          onUpdateParams: ["main"]
+        })
+      }
+      if (this.background == 1) {
+        console.log("setBG 1", this.background)
+        gsap.to(CSSRulePlugin.getRule("main"), {
+          cssRule: {
+            backgroundImage:
+              "radial-gradient(48.25% 116.75% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)"
+          }
+        })
+      }
     }
   }
 }
