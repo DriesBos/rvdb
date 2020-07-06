@@ -10,6 +10,7 @@
         <h1>{{ blok.title }}</h1>
         <h4>{{ blok.medium }}</h4>
       </div>
+      <div class="news-Item_TitleLine"></div>
       <div>
         <p>01-01-2020</p>
       </div>
@@ -46,11 +47,13 @@ export default {
 @import '~/assets/styles/variables.sass'
 
 .news-Item
-  border-bottom: 1px solid $color
   margin-bottom: .5rem
   &_Title
     display: flex
-    justify-content: space-between
+    // justify-content: space-between
+  &_TitleLine
+    flex-grow: 1
+    border-bottom: 1px dotted white
   .markdown, .markdown p, .markdown a, p, a, .icon, h4, h1, h2, h3
     display: inline
   .icon
@@ -63,4 +66,6 @@ export default {
   &:hover
     h1
       color: black
+  &_Content
+    margin-bottom: .5rem
 </style>
