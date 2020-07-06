@@ -1,7 +1,7 @@
 <template>
   <div class="expandable-Item-Talks">
     <h1>{{ blok.title }}</h1>
-    <h4>{{ blok.medium }}</h4>
+    <h4 v-if="blok.medium">{{ blok.medium }}</h4>
   </div>
 </template>
 
