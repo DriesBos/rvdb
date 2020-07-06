@@ -7,7 +7,7 @@
   >
     <div class="expandable-Item_Title">
       <h1>{{ blok.title }}</h1>
-      <h4>{{ blok.publicatievorm }}</h4>
+      <h4>{{ blok.medium }}</h4>
     </div>
     <div v-show="isOpen" class="expandable-Item_Content">
       <markdown-item :input="blok.text" />
