@@ -1,5 +1,15 @@
 @import '~/assets/styles/variables.sass'
 
+.icon
+  transition: color $hover-nav, opacity $hover-nav
+  svg
+    transition: transform $transition-icon
+  &-Drop
+    // background: red
+    margin-right: 1rem
+    svg
+      height: .9rem !important
+
 .cursor
   position: fixed
   width: 1rem
@@ -25,7 +35,7 @@
     border: 1px solid purple
   &-Item
     a
-      opacity: .33
+      opacity: $opacity-links
       transition: opacity $hover-nav
     &:hover
       a
@@ -53,17 +63,19 @@ main
     position: relative
     flex-grow: 1
     z-index: 999
-    &-Profiel
+    &-Profiel, &-Werk
       display: flex
       > div
         flex-basis: 50%
         padding-left: 2rem
         padding-right: 2rem
         scrollbar-width: none
-        -ms-overflow-style: none
-        -webkit-overflow-scrolling: touch
   section
     height: 100vh
     .blok
       padding-top: 3rem
       padding-bottom: 3rem
+      &-Title
+        margin-bottom: 1.5rem
+      &-Text
+        margin-bottom: 1.5rem

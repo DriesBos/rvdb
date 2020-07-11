@@ -5,8 +5,10 @@
     :class="{ active: isOpen }"
     @click="isOpen = !isOpen"
   >
-    <div class="expandable-Item_Title">
-      <h1>{{ blok.title }}</h1>
+    <div class="expandable-Item_Title cursorInteract">
+      <!-- prettier-ignore -->
+      <div class="icon icon-Drop" v-html="require('~/assets/images/icon-drop.svg?include')" />
+      <h1 v-if="blok.title" class="cursorInteract">{{ blok.title }}</h1>
       <h4 v-if="blok.medium">{{ blok.medium }}</h4>
     </div>
     <div v-show="isOpen" class="expandable-Item_Content">
@@ -32,26 +34,32 @@ export default {
     }
   },
   mounted() {
-    // console.log("EXP ITEM", this.blok)
+    console.log("EXP ITEM", this.blok)
   }
 }
 </script>
 
 <style lang="sass">
+@import '~/assets/styles/variables.sass'
+
 .expandable-Item
   .markdown, .markdown p, .markdown a, p, a, .icon, h4, h1, h2, h3
     display: inline
-  .icon
-    transition: color .16s ease
-    color: currentColor
-    height: 1rem
+  .expandable-Item_Title
+    display: flex
+    opacity: $opacity-links
+    transition: opacity $hover-nav
   &.active
-    h1
-      color: black
+    .expandable-Item_Title
+      opacity: 1
+    .icon
+      svg
+        transform: rotate(45deg)
   &:hover
-    h1
-      color: black
+    .expandable-Item_Title
+      opacity: 1
+
   &_Content
-    margin-left: 1rem
+    margin-left: 2rem
     margin-bottom: .5rem
 </style>

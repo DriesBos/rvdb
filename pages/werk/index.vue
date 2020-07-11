@@ -1,5 +1,16 @@
 <template>
   <section class="view view-Werk">
+    <div class="anchor-Nav anchor-Nav_Fixed">
+      <!-- prettier-ignore -->
+      <ul class="menu">
+        <li v-for="item in anchorList" :key="item._uid" class="menu-Item">
+          <a class="cursorInteract" @click="scrollMeTo(item._uid)">{{ item.title }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="anchor-Nav anchor-Nav_Empty">
+      <div></div>
+    </div>
     <component
       :is="story.content.component | dashify"
       v-if="story.content.component"
@@ -42,7 +53,35 @@ export default {
   },
   data() {
     return {
-      story: { content: {} }
+      story: { content: {} },
+      anchorList: {}
+    }
+  },
+  mounted() {
+    console.log("WERK", this.story.content.body)
+    this.sortAnchorList()
+  },
+  methods: {
+    sortAnchorList() {
+      let array = this.story.content.body
+      // console.log("Array", array)
+      let filteredList = array.filter(function(el) {
+        if (el.title !== "") {
+          return true
+        }
+      })
+      console.log("Filtered list", filteredList)
+      this.anchorList = filteredList
+    },
+    scrollMeTo(refName) {
+      console.log("REF NAME", refName)
+      var element = document.getElementById(refName)
+      console.log("EL", element)
+      element.scrollIntoView({
+        behavior: "smooth",
+        inline: "start",
+        block: "start"
+      })
     }
   }
 }

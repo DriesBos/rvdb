@@ -1,6 +1,6 @@
 <template>
   <div :id="blok._uid" v-editable="blok" class="text blok">
-    <h1 v-if="blok.title">{{ blok.title }}</h1>
+    <h1 v-if="blok.title" class="blok-Title">{{ blok.title }}</h1>
     <markdown-item :input="blok.text" />
   </div>
 </template>
@@ -20,10 +20,3 @@ export default {
   }
 }
 </script>
-
-<style lang="sass" scoped>
-.text
-  h1
-    color: black
-    margin-bottom: 1.5em
-</style>
