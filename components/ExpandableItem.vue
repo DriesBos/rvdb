@@ -26,6 +26,11 @@
         />
       </a>
     </div>
+    <div v-if="blok.image" class="backgroundImage expandable-Item_Image">
+      <div class="backgroundImage-Container">
+        <img :src="blok.image" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -71,6 +76,9 @@ export default {
     display: flex
     opacity: $opacity-links
     transition: opacity $hover-nav
+  &_Image
+    pointer-events: none
+    // opacity: 0
   &_News
     display: flex
     justify-content: space-between
@@ -91,7 +99,7 @@ export default {
         svg
           transform: rotate(45deg)
   &:hover
-    .expandable-Item_Title
+    .expandable-Item_Title, .expandable-Item_Image
       opacity: 1
   &_Content
     margin-left: 2rem
