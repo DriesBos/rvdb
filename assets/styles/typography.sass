@@ -28,10 +28,17 @@
   font-weight: normal
   font-style: normal
 
+// https://www.madebymike.com.au/writing/fluid-type-calc-examples/
 html
-  // https://css-tricks.com/snippets/css/fluid-typography/
   font-size: 12px
-  // font-size: calc(17px + (20 - 17) * ((100vw - 700px) / (1400 - 700)))
+
+@media screen and (min-width: 800px)
+  html
+    font-size: calc(12px + 4 * ((100vw - 800px) / 600))
+
+@media screen and (min-width: 1400px)
+  html
+    font-size: 16px
 
 h1, h2, h3, p, a
   word-wrap: break-word
