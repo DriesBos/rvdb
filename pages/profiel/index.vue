@@ -1,14 +1,7 @@
 <template>
   <section class="view view-Profiel">
-    <div class="anchor-Nav anchor-Nav_Fixed">
-      <!-- prettier-ignore -->
-      <ul class="menu">
-        <li v-for="item in anchorList" :key="item._uid" class="menu-Item">
-          <a class="cursorInteract" @click="scrollMeTo(item._uid)">{{ item.title }}</a>
-        </li>
-      </ul>
-    </div>
-    <div class="anchor-Nav anchor-Nav_Empty">
+    <blok-anchor-nav :input="anchorList" />
+    <div class="view-NavPlaceholder">
       <div></div>
     </div>
     <component
@@ -16,7 +9,7 @@
       v-if="story.content.component"
       :key="story.content._uid"
       :blok="story.content"
-      class="view-Column"
+      class="view-Content"
     />
   </section>
 </template>

@@ -1,10 +1,15 @@
 <template>
   <section class="view view-Blog">
+    <blok-anchor-nav :input="anchorList" />
+    <div class="view-NavPlaceholder">
+      <div></div>
+    </div>
     <component
       :is="story.content.component | dashify"
       v-if="story.content.component"
       :key="story.content._uid"
       :blok="story.content"
+      class="view-Content"
     />
   </section>
 </template>

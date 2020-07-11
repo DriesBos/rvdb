@@ -48,7 +48,7 @@
 .anchor-Nav
   .menu
     padding-top: 3rem
-    padding-left: 2rem
+    padding-left: 6vw
   &_Fixed
     position: fixed
     transform: translateZ(0)
@@ -63,13 +63,15 @@ main
     position: relative
     flex-grow: 1
     z-index: 999
-    &-Profiel, &-Werk
+    &-Profiel, &-Werk, &-Blog
       display: flex
       > div
         flex-basis: 50%
         padding-left: 2rem
         padding-right: 2rem
         scrollbar-width: none
+    &-Blog
+      margin-top: 3rem
   section
     height: 100vh
     .blok

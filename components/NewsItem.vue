@@ -4,7 +4,7 @@
     <div class="news-Item_Title">
       <div>
         <h1>{{ blok.title }}</h1>
-        <h4>{{ blok.medium }}</h4>
+        <!-- <h4>{{ blok.medium }}</h4> -->
       </div>
       <div class="news-Item_TitleLine"></div>
       <div>
@@ -49,7 +49,8 @@ export default {
     // justify-content: space-between
   &_TitleLine
     flex-grow: 1
-    border-bottom: 1px dotted white
+    border-bottom: 1px dotted $color
+    transform: translateY(-.5rem)
   .markdown, .markdown p, .markdown a, p, a, .icon, h4, h1, h2, h3
     display: inline
   .icon
