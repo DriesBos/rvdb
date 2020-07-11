@@ -22,7 +22,7 @@ export default {
     blok: Object
   },
   mounted() {
-    console.log("NEWS LIST", this.blok)
+    // console.log("NEWS LIST", this.blok)
   }
 }
 </script>

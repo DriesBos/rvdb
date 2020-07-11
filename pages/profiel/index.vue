@@ -2,7 +2,9 @@
   <section class="view view-Profiel">
     <blok-anchor-nav :input="anchorList" />
     <div class="view-NavPlaceholder">
-      <div></div>
+      <div>
+        <p></p>
+      </div>
     </div>
     <component
       :is="story.content.component | dashify"
@@ -58,24 +60,12 @@ export default {
   methods: {
     sortAnchorList() {
       let array = this.story.content.body
-      // console.log("Array", array)
       let filteredList = array.filter(function(el) {
         if (el.title !== "") {
           return true
         }
       })
-      // console.log("Filtered list", filteredList)
       this.anchorList = filteredList
-    },
-    scrollMeTo(refName) {
-      console.log("REF NAME", refName)
-      var element = document.getElementById(refName)
-      console.log("EL", element)
-      element.scrollIntoView({
-        behavior: "smooth",
-        inline: "start",
-        block: "start"
-      })
     }
   }
 }

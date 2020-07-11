@@ -1,14 +1,20 @@
 @import '~/assets/styles/variables.sass'
 
 .icon
+  position: relative
+  width: 1rem
+  height: 1rem
   transition: color $hover-nav, opacity $hover-nav
   svg
     transition: transform $transition-icon
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    object-fit: contain
   &-Drop
-    // background: red
     margin-right: 1rem
-    svg
-      height: .9rem !important
 
 .cursor
   position: fixed

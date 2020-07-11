@@ -1,11 +1,6 @@
 <template>
-  <div
-    v-editable="blok"
-    class="expandable-Item"
-    :class="{ active: isOpen }"
-    @click="isOpen = !isOpen"
-  >
-    <div class="expandable-Item_Title cursorInteract">
+  <div v-editable="blok" class="expandable-Item" :class="{ active: isOpen }">
+    <div class="expandable-Item_Title cursorInteract" @click="isOpen = !isOpen">
       <!-- prettier-ignore -->
       <div class="icon icon-Drop" v-html="require('~/assets/images/icon-drop.svg?include')" />
       <h1 v-if="blok.title">{{ blok.title }}</h1>
@@ -20,8 +15,16 @@
       </div>
     </div>
     <div v-show="isOpen" class="expandable-Item_Content">
-      <markdown-item :input="blok.text" />
+      <markdown-item v-if="blok.text" :input="blok.text" />
       <h4 v-if="blok.mention">Ism {{ blok.mention }}</h4>
+      <!-- prettier-ignore -->
+      <a :href="blok.hyperlink" target="_blank">
+        <div
+          v-if="blok.hyperlink"
+          class="icon icon-Hyperlink"
+          v-html="require('~/assets/images/icon-north-east.svg?include')"
+        />
+      </a>
     </div>
   </div>
 </template>
@@ -49,8 +52,10 @@ export default {
   methods: {
     formatTime() {
       let time = this.blok.date
-      let rightTime = time.replace("00:00", "")
-      this.theTime = rightTime
+      if (time) {
+        let rightTime = time.replace("00:00", "")
+        this.theTime = rightTime
+      }
     }
   }
 }
@@ -60,7 +65,7 @@ export default {
 @import '~/assets/styles/variables.sass'
 
 .expandable-Item
-  .markdown, .markdown p, .markdown a, p, a, .icon, h4, h1, h2, h3
+  .markdown, .markdown p, .markdown a, p, a, h4, h1, h2, h3
     display: inline
   &_Title
     display: flex
@@ -82,14 +87,15 @@ export default {
   &.active
     .expandable-Item_Title
       opacity: 1
-    .icon
-      svg
-        transform: rotate(45deg)
+      .icon
+        svg
+          transform: rotate(45deg)
   &:hover
     .expandable-Item_Title
       opacity: 1
-
   &_Content
     margin-left: 2rem
-    margin-bottom: .5rem
+    // margin-bottom: .5rem
+    .icon
+      display: inline-block
 </style>

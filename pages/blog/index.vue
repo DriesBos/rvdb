@@ -52,30 +52,18 @@ export default {
     }
   },
   mounted() {
-    console.log("BLOG", this.story.content.body)
+    // console.log("BLOG", this.story.content.body)
     this.sortAnchorList()
   },
   methods: {
     sortAnchorList() {
       let array = this.story.content.body
-      // console.log("Array", array)
       let filteredList = array.filter(function(el) {
         if (el.title !== "") {
           return true
         }
       })
-      console.log("Filtered list", filteredList)
       this.anchorList = filteredList
-    },
-    scrollMeTo(refName) {
-      console.log("REF NAME", refName)
-      var element = document.getElementById(refName)
-      console.log("EL", element)
-      element.scrollIntoView({
-        behavior: "smooth",
-        inline: "start",
-        block: "start"
-      })
     }
   }
 }

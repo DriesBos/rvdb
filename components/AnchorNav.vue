@@ -12,7 +12,22 @@
 <script>
 export default {
   props: {
-    input: Object
+    input: Array
+  },
+  mounted() {
+    console.log("ANCHOR", this.input, typeof this.input)
+  },
+  methods: {
+    scrollMeTo(refName) {
+      // console.log("REF NAME", refName)
+      var element = document.getElementById(refName)
+      // console.log("EL", element)
+      element.scrollIntoView({
+        behavior: "smooth",
+        inline: "start",
+        block: "start"
+      })
+    }
   }
 }
 </script>
