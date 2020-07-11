@@ -1,10 +1,11 @@
 <template>
   <!-- prettier-ignore -->
   <div v-editable="blok" class="news-Item" :class="{ active: isOpen }" @click="isOpen = !isOpen">
-    <div class="news-Item_Title">
+    <div class="news-Item_Title cursorInteract">
       <div>
-        <h1>{{ blok.title }}</h1>
-        <!-- <h4>{{ blok.medium }}</h4> -->
+        <div class="icon icon-Drop" v-html="require('~/assets/images/icon-drop.svg?include')" />
+        <h1 v-if="blok.title">{{ blok.title }}</h1>
+        <!-- <h4 v-if="blok.medium">{{ blok.medium }}</h4> -->
       </div>
       <div class="news-Item_TitleLine"></div>
       <div>
@@ -43,14 +44,15 @@ export default {
 @import '~/assets/styles/variables.sass'
 
 .news-Item
-  margin-bottom: .5rem
   &_Title
     display: flex
-    // justify-content: space-between
+    justify-content: space-between
   &_TitleLine
     flex-grow: 1
     border-bottom: 1px dotted $color
-    transform: translateY(-.5rem)
+    transform: translateY(-.6rem)
+    margin-left: .5rem
+    margin-right: .5rem
   .markdown, .markdown p, .markdown a, p, a, .icon, h4, h1, h2, h3
     display: inline
   .icon
@@ -64,5 +66,6 @@ export default {
     h1
       color: black
   &_Content
+    margin-left: 2rem
     margin-bottom: .5rem
 </style>

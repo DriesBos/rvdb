@@ -12,7 +12,7 @@
 <script>
 export default {
   props: {
-    input: String
+    input: Object
   }
 }
 </script>

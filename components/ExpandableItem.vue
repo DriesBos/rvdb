@@ -8,8 +8,16 @@
     <div class="expandable-Item_Title cursorInteract">
       <!-- prettier-ignore -->
       <div class="icon icon-Drop" v-html="require('~/assets/images/icon-drop.svg?include')" />
-      <h1 v-if="blok.title" class="cursorInteract">{{ blok.title }}</h1>
-      <h4 v-if="blok.medium">{{ blok.medium }}</h4>
+      <h1 v-if="blok.title">{{ blok.title }}</h1>
+      <!-- <h4 v-if="blok.medium">{{ blok.medium }}</h4> -->
+      <div v-if="blok.date" class="expandable-Item_News">
+        <div>
+          <div></div>
+        </div>
+        <div>
+          <p>{{ theTime }}</p>
+        </div>
+      </div>
     </div>
     <div v-show="isOpen" class="expandable-Item_Content">
       <markdown-item :input="blok.text" />
@@ -30,11 +38,20 @@ export default {
   },
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      theTime: ""
     }
   },
   mounted() {
     console.log("EXP ITEM", this.blok)
+    this.formatTime()
+  },
+  methods: {
+    formatTime() {
+      let time = this.blok.date
+      let rightTime = time.replace("00:00", "")
+      this.theTime = rightTime
+    }
   }
 }
 </script>
@@ -45,10 +62,23 @@ export default {
 .expandable-Item
   .markdown, .markdown p, .markdown a, p, a, .icon, h4, h1, h2, h3
     display: inline
-  .expandable-Item_Title
+  &_Title
     display: flex
     opacity: $opacity-links
     transition: opacity $hover-nav
+  &_News
+    display: flex
+    justify-content: space-between
+    flex-grow: 1
+    align-items: flex-end
+    > div:first-child
+      flex-grow: 1
+      padding-left: .5rem
+      padding-right: .5rem
+      > div
+        width: 100%
+        border-bottom: 1px dotted $color
+        transform: translateY(-.58rem)
   &.active
     .expandable-Item_Title
       opacity: 1

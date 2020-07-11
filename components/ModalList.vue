@@ -1,5 +1,5 @@
 <template>
-  <div :id="blok._uid" v-editable="blok" class="expandable-List blok">
+  <div :id="blok._uid" v-editable="blok" class="news-List blok">
     <h1 v-if="blok.title" class="blok-Title">{{ blok.title }}</h1>
     <markdown-item v-if="blok.text" class="blok-Text" :input="blok.text" />
     <component
@@ -22,12 +22,12 @@ export default {
     blok: Object
   },
   mounted() {
-    console.log("EXP LIST", this.blok)
+    console.log("NEWS LIST", this.blok)
   }
 }
 </script>
 
 <style lang="sass" scoped>
-// .expandable-List
-  // margin-bottom: 1.5rem
+// .news-List
+//   margin-bottom: 1.5rem
 </style>
