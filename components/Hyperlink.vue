@@ -1,9 +1,7 @@
 <template>
   <div v-editable="blok" class="hyperlink">
-    <div
-      class="icon"
-      v-html="require('~/assets/images/icon-east.svg?include')"
-    />
+    <!-- prettier-ignore -->
+    <div class="icon" v-html="require('~/assets/images/icon-east.svg?include')" />
     <markdown-item :input="blok.hyperlink" />
   </div>
 </template>
@@ -19,7 +17,7 @@ export default {
     blok: Object
   },
   mounted() {
-    console.log("HYPERLINK", this.blok)
+    // console.log("HYPERLINK", this.blok)
   }
 }
 </script>

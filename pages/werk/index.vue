@@ -1,13 +1,12 @@
 <template>
-  <div class>
+  <section class="view view-Werk">
     <component
       :is="story.content.component | dashify"
       v-if="story.content.component"
       :key="story.content._uid"
       :blok="story.content"
     />
-    <blok-footer-form />
-  </div>
+  </section>
 </template>
 
 <script>

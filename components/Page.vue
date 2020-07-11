@@ -1,6 +1,5 @@
 <template>
   <div v-editable="blok" class="page">
-    <p>Rutger van den Berg</p>
     <component
       :is="blok.component | dashify"
       v-for="blok in blok.body"
@@ -16,7 +15,7 @@ export default {
     blok: Object
   },
   mounted() {
-    console.log("PAGE", this.blok)
+    // console.log("PAGE", this.blok)
   }
 }
 </script>

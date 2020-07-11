@@ -1,6 +1,6 @@
 <template>
-  <div v-editable="blok" class="text">
-    <h1>{{ blok.title }}</h1>
+  <div :id="blok._uid" v-editable="blok" class="text blok">
+    <h1 v-if="blok.title">{{ blok.title }}</h1>
     <markdown-item :input="blok.text" />
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
     blok: Object
   },
   mounted() {
-    console.log("TEXT", this.blok)
+    // console.log("TEXT", this.blok)
   }
 }
 </script>
@@ -25,4 +25,5 @@ export default {
 .text
   h1
     color: black
+    margin-bottom: 1.5em
 </style>

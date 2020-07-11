@@ -1,99 +1,7 @@
 <template>
-  <main class="main" :class="background">
-    <section class="landing extendable" :class="{ extend: menuOpen }">
-      <ul>
-        <li
-          class="menu-Item"
-          :class="{ active: menuOpen }"
-          @click="toggleLandingSection"
-        >
-          <h1 class="cursorInteract">
-            Rutger van den Berg
-          </h1>
-        </li>
-      </ul>
-    </section>
-    <transition name="section">
-      <section
-        v-show="menuOpen"
-        class="menu extendable"
-        :class="{ extend: aboutOpen }"
-      >
-        <ul class="content">
-          <li
-            class="menu-Item"
-            :class="{ active: aboutOpen }"
-            @click="toggleAboutSection"
-          >
-            <p class="cursorInteract">Profiel</p>
-          </li>
-          <li
-            class="menu-Item cursorInteract"
-            :class="{ active: workOpen }"
-            @click="toggleWorkSection"
-          >
-            <p class="cursorInteract">Werk</p>
-          </li>
-          <li
-            class="menu-Item cursorInteract"
-            :class="{ active: newsOpen }"
-            @click="toggleNewsSection"
-          >
-            <p class="cursorInteract">Nieuws</p>
-          </li>
-          <li
-            class="menu-Item cursorInteract"
-            :class="{ active: contactOpen }"
-            @click="toggleContactSection"
-          >
-            <p class="cursorInteract">Contact</p>
-          </li>
-        </ul>
-      </section>
-    </transition>
-    <transition name="section">
-      <section v-if="aboutOpen" class="about">
-        <component
-          :is="blok.component | dashify"
-          v-for="blok in aboutList"
-          :key="blok._uid"
-          :blok="blok"
-          class="content"
-        ></component>
-      </section>
-    </transition>
-    <transition name="section">
-      <section v-if="workOpen" class="work">
-        <component
-          :is="blok.component | dashify"
-          v-for="blok in workList"
-          :key="blok._uid"
-          :blok="blok"
-          class="content"
-        ></component>
-      </section>
-    </transition>
-    <section v-if="newsOpen" class="news">
-      <component
-        :is="blok.component | dashify"
-        v-for="blok in newsList"
-        :key="blok._uid"
-        :blok="blok"
-        class="content"
-      ></component>
-    </section>
-    <transition name="section">
-      <section v-if="contactOpen" class="contact">
-        <component
-          :is="blok.component | dashify"
-          v-for="blok in contactList"
-          :key="blok._uid"
-          :blok="blok"
-          class="content"
-        ></component>
-      </section>
-    </transition>
-  </main>
+  <div>
+    <p>HOMEPAGE</p>
+  </div>
 </template>
 
 <script>
@@ -132,24 +40,24 @@ export default {
   data() {
     return {
       stories: { content: {} },
-      homeList: {},
-      aboutList: {},
-      workList: {},
-      newsList: {},
-      contactList: {},
-      menuOpen: false,
-      aboutOpen: false,
-      workOpen: false,
-      newsOpen: false,
-      contactOpen: false,
+      // homeList: {},
+      // aboutList: {},
+      // workList: {},
+      // newsList: {},
+      // contactList: {},
+      // // menuOpen: false,
+      // // aboutOpen: false,
+      // // workOpen: false,
+      // // newsOpen: false,
+      // // contactOpen: false,
       background: "backgroundOne"
     }
   },
   mounted() {
-    this.setBackground()
-    this.setBackgroundColor()
-    this.filterLoop(this.stories)
-    document.addEventListener("click", this.backgroundColor)
+    // this.setBackground()
+    // this.setBackgroundColor()
+    // this.filterLoop(this.stories)
+    // document.addEventListener("click", this.backgroundColor)
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.addEventListener("mouseover", this.changeCursor))
@@ -160,9 +68,9 @@ export default {
       )
   },
   updated() {
-    this.setBackground()
-    this.setBackgroundColor()
-    console.log(this.menuOpen)
+    // this.setBackground()
+    // this.setBackgroundColor()
+    // console.log(this.menuOpen)
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.addEventListener("mouseover", this.changeCursor))
@@ -173,120 +81,119 @@ export default {
       )
   },
   methods: {
-    toggleLandingSection() {
-      if (this.menuOpen === false) {
-        this.menuOpen = true
-      } else {
-        this.closeAllSections()
-      }
-    },
-    toggleAboutSection() {
-      this.closeAllSectionsButMenu()
-      this.aboutOpen = true
-    },
-    toggleWorkSection() {
-      this.closeAllSectionsButMenu()
-      this.workOpen = true
-    },
-    toggleNewsSection() {
-      this.closeAllSectionsButMenu()
-      this.newsOpen = true
-    },
-    toggleContactSection() {
-      this.closeAllSectionsButMenu()
-      this.contactOpen = true
-    },
-
-    closeAllSections() {
-      this.aboutOpen = false
-      this.workOpen = false
-      this.newsOpen = false
-      this.contactOpen = false
-      this.menuOpen = false
-    },
-    closeAllSectionsButMenu() {
-      this.aboutOpen = false
-      this.workOpen = false
-      this.newsOpen = false
-      this.contactOpen = false
-    },
-    filterLoop(array) {
-      console.log("ARRAY", array)
-      let homeFilterArray = array.filter(function(el) {
-        if (el.name === "Home") {
-          return true
-        }
-      })
-      let aboutFilterArray = array.filter(function(el) {
-        if (el.name === "Over") {
-          return true
-        }
-      })
-      let workFilterArray = array.filter(function(el) {
-        if (el.name === "Werk") {
-          return true
-        }
-      })
-      let newsFilterArray = array.filter(function(el) {
-        if (el.name === "Nieuws") {
-          return true
-        }
-      })
-      let contactFilterArray = array.filter(function(el) {
-        if (el.name === "Contact") {
-          return true
-        }
-      })
-      this.homeList = homeFilterArray[0].content.body
-      this.workList = workFilterArray[0].content.body
-      this.aboutList = aboutFilterArray[0].content.body
-      this.newsList = newsFilterArray[0].content.body
-      this.contactList = contactFilterArray[0].content.body
-    },
-    setBackground() {
-      if (
-        this.aboutOpen ||
-        this.contactOpen ||
-        this.newsOpen ||
-        this.workOpen
-      ) {
-        this.background = 3
-      } else if (this.menuOpen) {
-        this.background = 2
-      } else {
-        this.background = 1
-      }
-    },
-    setBackgroundColor() {
-      if (this.background == 3) {
-        console.log("setBG 3", this.background)
-        gsap.to(CSSRulePlugin.getRule("main"), {
-          cssRule: {
-            backgroundImage:
-              "radial-gradient(90.61% 219.25% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)"
-          }
-        })
-      }
-      if (this.background == 2) {
-        console.log("setBG 2", this.background)
-        gsap.to(CSSRulePlugin.getRule("main"), {
-          cssRule: {
-            backgroundImage:
-              "radial-gradient(67.57% 163.51% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)"
-          },
-          onUpdateParams: ["main"]
-        })
-      }
-      if (this.background == 1) {
-        console.log("setBG 1", this.background)
-        gsap.to(CSSRulePlugin.getRule("main"), {
-          cssRule: {
-            backgroundImage:
-              "radial-gradient(48.25% 116.75% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)"
-          }
-        })
-      }
-    }
+    // toggleLandingSection() {
+    //   if (this.menuOpen === false) {
+    //     this.menuOpen = true
+    //   } else {
+    //     this.closeAllSections()
+    //   }
+    // },
+    // toggleAboutSection() {
+    //   this.closeAllSectionsButMenu()
+    //   this.aboutOpen = true
+    // },
+    // toggleWorkSection() {
+    //   this.closeAllSectionsButMenu()
+    //   this.workOpen = true
+    // },
+    // toggleNewsSection() {
+    //   this.closeAllSectionsButMenu()
+    //   this.newsOpen = true
+    // },
+    // toggleContactSection() {
+    //   this.closeAllSectionsButMenu()
+    //   this.contactOpen = true
+    // },
+    // closeAllSections() {
+    //   this.aboutOpen = false
+    //   this.workOpen = false
+    //   this.newsOpen = false
+    //   this.contactOpen = false
+    //   this.menuOpen = false
+    // },
+    // closeAllSectionsButMenu() {
+    //   this.aboutOpen = false
+    //   this.workOpen = false
+    //   this.newsOpen = false
+    //   this.contactOpen = false
+    // },
+    // filterLoop(array) {
+    //   console.log("ARRAY", array)
+    //   let homeFilterArray = array.filter(function(el) {
+    //     if (el.name === "Home") {
+    //       return true
+    //     }
+    //   })
+    //   let aboutFilterArray = array.filter(function(el) {
+    //     if (el.name === "Over") {
+    //       return true
+    //     }
+    //   })
+    //   let workFilterArray = array.filter(function(el) {
+    //     if (el.name === "Werk") {
+    //       return true
+    //     }
+    //   })
+    //   let newsFilterArray = array.filter(function(el) {
+    //     if (el.name === "Nieuws") {
+    //       return true
+    //     }
+    //   })
+    //   let contactFilterArray = array.filter(function(el) {
+    //     if (el.name === "Contact") {
+    //       return true
+    //     }
+    //   })
+    //   this.homeList = homeFilterArray[0].content.body
+    //   this.workList = workFilterArray[0].content.body
+    //   this.aboutList = aboutFilterArray[0].content.body
+    //   this.newsList = newsFilterArray[0].content.body
+    //   this.contactList = contactFilterArray[0].content.body
+    // }
+    // setBackground() {
+    //   if (
+    //     this.aboutOpen ||
+    //     this.contactOpen ||
+    //     this.newsOpen ||
+    //     this.workOpen
+    //   ) {
+    //     this.background = 3
+    //   } else if (this.menuOpen) {
+    //     this.background = 2
+    //   } else {
+    //     this.background = 1
+    //   }
+    // },
+    // setBackgroundColor() {
+    //   if (this.background == 3) {
+    //     console.log("setBG 3", this.background)
+    //     gsap.to(CSSRulePlugin.getRule("main"), {
+    //       cssRule: {
+    //         backgroundImage:
+    //           "radial-gradient(90.61% 219.25% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)"
+    //       }
+    //     })
+    //   }
+    //   if (this.background == 2) {
+    //     console.log("setBG 2", this.background)
+    //     gsap.to(CSSRulePlugin.getRule("main"), {
+    //       cssRule: {
+    //         backgroundImage:
+    //           "radial-gradient(67.57% 163.51% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)"
+    //       },
+    //       onUpdateParams: ["main"]
+    //     })
+    //   }
+    //   if (this.background == 1) {
+    //     console.log("setBG 1", this.background)
+    //     gsap.to(CSSRulePlugin.getRule("main"), {
+    //       cssRule: {
+    //         backgroundImage:
+    //           "radial-gradient(48.25% 116.75% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)"
+    //       }
+    //     })
+    //   }
+    // }
   }
 }
 </script>

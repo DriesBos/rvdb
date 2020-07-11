@@ -22,9 +22,15 @@
   font-weight: normal
   font-style: normal
 
-body
+@font-face
+  font-family: 'Unica'
+  src: url('~assets/fonts/neuhassunica.woff2') format('woff2')
+  font-weight: normal
+  font-style: normal
+
+html
   // https://css-tricks.com/snippets/css/fluid-typography/
-  font-size: 14px
+  font-size: 12px
   // font-size: calc(17px + (20 - 17) * ((100vw - 700px) / (1400 - 700)))
 
 h1, h2, h3, p, a
@@ -32,6 +38,8 @@ h1, h2, h3, p, a
   overflow-wrap: break-word
   word-break: normal
   hyphens: auto
+  cursor: none
+  letter-spacing: 0.025em
 
 .markdown p // No broken words in regular sized text paragraphs
   word-wrap: normal
@@ -39,10 +47,13 @@ h1, h2, h3, p, a
   overflow-wrap: normal
   hyphens: none
 
+.markdown p
+  line-height: 1.5rem
+
 li, h1, h2, h3, h4, p, a, a:link, a:visited, a:hover, a:active, span, input, button
-  font-family: 'Moderat', Helvetica, Arial, sans-serif
-  font-size: 1em
-  line-height: 1.45
+  font-family: 'Unica', Helvetica, Arial, sans-serif
+  font-size: 1rem
+  line-height: 1.5rem
   color: currentColor
   font-style: normal
   font-weight: normal

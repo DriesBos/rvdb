@@ -1,10 +1,6 @@
 <template>
-  <div
-    v-editable="blok"
-    class="news-Item"
-    :class="{ active: isOpen }"
-    @click="isOpen = !isOpen"
-  >
+  <!-- prettier-ignore -->
+  <div v-editable="blok" class="news-Item" :class="{ active: isOpen }" @click="isOpen = !isOpen">
     <div class="news-Item_Title">
       <div>
         <h1>{{ blok.title }}</h1>
@@ -38,7 +34,7 @@ export default {
     }
   },
   mounted() {
-    console.log("NEWS ITEM", this.blok)
+    // console.log("NEWS ITEM", this.blok)
   }
 }
 </script>

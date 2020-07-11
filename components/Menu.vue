@@ -15,7 +15,7 @@ export default {
     blok: Object
   },
   mounted() {
-    console.log("MENU", this.blok)
+    // console.log("MENU", this.blok)
   }
 }
 </script>

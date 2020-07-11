@@ -70,7 +70,6 @@ export default {
 .markdown
   p
     white-space: pre-line
-    max-width: 36em
   a
     cursor: none
     transition: color .16s ease

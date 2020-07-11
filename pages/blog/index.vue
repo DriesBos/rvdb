@@ -1,13 +1,12 @@
 <template>
-  <div class>
+  <section class="view view-Blog">
     <component
       :is="story.content.component | dashify"
       v-if="story.content.component"
       :key="story.content._uid"
       :blok="story.content"
     />
-    <blok-footer-form />
-  </div>
+  </section>
 </template>
 
 <script>
@@ -19,7 +18,7 @@ export default {
     let version =
       context.query._storyblok || context.isDev ? "draft" : "published"
     return context.app.$storyapi
-      .get("cdn/stories/over", {
+      .get("cdn/stories/blog", {
         version: version
       })
       .then(res => {

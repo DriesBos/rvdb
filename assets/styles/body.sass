@@ -9,48 +9,61 @@
   border-radius: 50%
   z-index: 999
   pointer-events: none
-  transition: width .18s ease, height .18s ease
+  transition: width $hover-nav, height $hover-nav
   &.active, .active
-    // width: 2rem
-    // height: 2rem
-    border: 1px solid black
+    width: 3rem
+    height: 3rem
+
+.menu
+  display: inline-flex
+  flex-direction: column
+  h1, p, a
+    position: relative
+    display: inline
+    line-height: 2em
+  &-Container
+    border: 1px solid purple
+  &-Item
+    a
+      opacity: .33
+      transition: opacity $hover-nav
+    &:hover
+      a
+        opacity: 1
+    a.nuxt-link-active
+      opacity: 1
+  &-Landing
+    min-width: 20vw
+
+.anchor-Nav
+  .menu
+    padding-top: 3rem
+    padding-left: 2rem
+  &_Fixed
+    position: fixed
+    transform: translateZ(0)
 
 main
-  width: 100vw
   height: 100vh
   color: $color
   display: flex
   cursor: none
-  background-image: radial-gradient(48.25% 116.75% at 108.86% 50%, #FFFFFF 0%, #F34988 44.88%, #F22828 73.53%, #C4C4C4 100%)
+  overflow-y: auto
+  .view
+    position: relative
+    flex-grow: 1
+    z-index: 999
+    &-Profiel
+      display: flex
+      > div
+        flex-basis: 50%
+        padding-left: 2rem
+        padding-right: 2rem
+        scrollbar-width: none
+        -ms-overflow-style: none
+        -webkit-overflow-scrolling: touch
   section
-    width: 25vw
     height: 100vh
-    // border-right: 1px solid white
-    padding: 2rem
-    padding-top: 2.5rem
-    overflow-y: auto
-    &:first-child
-      border-left: 0
-      z-index: 500
-    &:nth-child(2)
-      z-index: 400
-    &:nth-child(n+3)
-      z-index: 300
-      flex-grow: 1
-    &.extendable
-      padding-right: 4rem
-      // transition: padding-right .33s ease
-      flex-shrink: 0
-    &.extend
-      padding-right: 6rem !important
-    .menu-Item
-      h1, p
-        position: relative
-        display: inline
-      &.active
-        color: black
-      &:hover
-        h1, p
-          color: $color-hover
-    .text
-      margin-bottom: 1.5rem
+    .blok
+      padding-top: 3rem
+      padding-bottom: 3rem
