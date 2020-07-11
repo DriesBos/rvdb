@@ -78,7 +78,7 @@ export default {
     transition: opacity $hover-nav
   &_Image
     pointer-events: none
-    // opacity: 0
+    opacity: 0
   &_News
     display: flex
     justify-content: space-between
