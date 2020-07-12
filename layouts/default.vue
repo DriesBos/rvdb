@@ -127,7 +127,7 @@ export default {
   h1
     font-size: 5vw
     // letter-spacing: -.01em
-    letter-spacing: .2em
+    letter-spacing: .03em
 
 .background
   position: absolute
