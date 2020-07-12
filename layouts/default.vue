@@ -110,6 +110,7 @@ export default {
   bottom: 0
   overflow: hidden
   pointer-events: none
+  background-color: #D2D2D2
   .circle
     position: absolute
     top: 0
