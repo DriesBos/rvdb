@@ -2,7 +2,7 @@
   <div v-editable="blok" class="expandable-Item" :class="{ active: isOpen }">
     <div class="expandable-Item_Title cursorInteract" @click="isOpen = !isOpen">
       <!-- prettier-ignore -->
-      <div class="icon icon-Drop" v-html="require('~/assets/images/icon-drop.svg?include')" />
+      <!-- <div class="icon icon-Drop" v-html="require('~/assets/images/icon-drop.svg?include')" /> -->
       <h1 v-if="blok.title">{{ blok.title }}</h1>
       <!-- <h4 v-if="blok.medium">{{ blok.medium }}</h4> -->
       <div v-if="blok.date" class="expandable-Item_News">
@@ -97,13 +97,13 @@ export default {
       opacity: 1
       .icon
         svg
-          transform: rotate(45deg)
+          transform: rotate(90deg)
   &:hover
     .expandable-Item_Title, .expandable-Item_Image
       opacity: 1
   &_Content
     margin-left: 2rem
-    // margin-bottom: .5rem
+    margin-bottom: .5rem
     .icon
       display: inline-block
 </style>
