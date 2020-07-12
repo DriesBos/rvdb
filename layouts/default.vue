@@ -50,7 +50,7 @@ export default {
   },
   updated() {
     this.removeChangeCursor()
-    console.log("PAGETYPE UPDATED", this.pageType)
+    // console.log("PAGETYPE UPDATED", this.pageType)
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.removeEventListener("mouseover", this.changeCursor))
