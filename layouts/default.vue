@@ -7,6 +7,12 @@
     <Nav class="nav-Normal" />
     <Nav class="nav-Fixed" />
     <nuxt />
+    <transition name="landing">
+      <div v-show="landing" class="landing">
+        <!-- prettier-ignore -->
+        <h1 class="cursorInteract" @click="toggleLanding">Rutger van den Berg</h1>
+      </div>
+    </transition>
     <div class="cursor"></div>
   </main>
 </template>
@@ -21,18 +27,20 @@ export default {
   },
   data() {
     return {
-      pageType: "index"
+      pageType: "initial",
+      landing: true
     }
   },
   watch: {
     $route() {
       this.checkPageType()
       this.removeChangeCursor()
+      console.log("PAGETYPE ROUTE", this.pageType)
     }
   },
   mounted() {
     this.customCursor()
-    this.checkPageType()
+    console.log("PAGETYPE MOUNT", this.pageType)
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.addEventListener("mouseover", this.changeCursor))
@@ -44,6 +52,7 @@ export default {
   },
   updated() {
     this.removeChangeCursor()
+    console.log("PAGETYPE UPDATED", this.pageType)
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.removeEventListener("mouseover", this.changeCursor))
@@ -65,6 +74,9 @@ export default {
       )
   },
   methods: {
+    toggleLanding() {
+      this.landing = !this.landing
+    },
     checkPageType() {
       if (this.$route.name === "index") {
         this.pageType = "index"
@@ -102,6 +114,20 @@ export default {
 <style lang="sass">
 @import '~/assets/styles/variables.sass'
 
+.landing
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  background: rgba(0,0,0,0.01)
+  backdrop-filter: blur(5px)
+  display: flex
+  justify-content: center
+  align-items: center
+  h1
+    font-size: 5vw
+
 .background
   position: absolute
   left: 0
@@ -127,9 +153,19 @@ export default {
     top: 0
     right: 0
     bottom: 0
+    width: 100%
+    height: 100%
     background: white
     background: rgba(0,0,0,0.01)
     backdrop-filter: blur(150px)
+  &.initial
+    .circle
+      transform: translate(55%, -50%)
+    .blur
+      backdrop-filter: blur(100px)
+  &.index
+    .circle
+      transform: translate(45%, -50%)
   &.profiel
     .circle
       transform: translate(75%, -40%)
