@@ -157,6 +157,7 @@ export default {
     width: 50vmin
     height: 50vmin
     background: #7F8CBB
+    opacity: .66
     // background: #B9B3A6
     // background: #72F1F2
     border-radius: 100000000px
