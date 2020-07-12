@@ -115,7 +115,7 @@ export default {
     position: absolute
     top: 0
     right: 0
-    transform: translate(50%, -40%)
+    transform: translate(45%, -50%)
     width: 200vmin
     height: 200vmin
     background: $gradient-secondary
@@ -138,7 +138,7 @@ export default {
       transform: translate(65%, -0%)
   &.blog
     .circle
-      transform: translate(70%, -20%)
+      transform: translate(60%, -50%)
   &.error
     .circle
       transform: translate(-50%, -40%)
