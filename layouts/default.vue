@@ -8,9 +8,9 @@
     <Nav class="nav-Fixed" />
     <nuxt />
     <transition name="landing">
-      <div v-show="landing" class="landing">
+      <div v-show="landing" class="landing" @click="toggleLanding">
         <!-- prettier-ignore -->
-        <h1 class="cursorInteract" @click="toggleLanding">Rutger van den Berg</h1>
+        <h1 class="cursorInteract">Rutger van den Berg</h1>
       </div>
     </transition>
     <div class="cursor"></div>
@@ -35,12 +35,10 @@ export default {
     $route() {
       this.checkPageType()
       this.removeChangeCursor()
-      console.log("PAGETYPE ROUTE", this.pageType)
     }
   },
   mounted() {
     this.customCursor()
-    console.log("PAGETYPE MOUNT", this.pageType)
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.addEventListener("mouseover", this.changeCursor))
