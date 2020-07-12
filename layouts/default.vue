@@ -177,13 +177,13 @@ export default {
       transform: translate(55%, -50%)
     .circleDeux
       top: 100%
-      left: 50%
+      left: 45%
   &.index
     .circle
       transform: translate(45%, -50%)
     .circleDeux
       top: 100%
-      left: 50%
+      left: 55%
   &.profiel
     .circle
       transform: translate(75%, -40%)
