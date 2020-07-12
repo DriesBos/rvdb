@@ -2,6 +2,7 @@
   <main>
     <div class="background" :class="pageType">
       <div class="circle"></div>
+      <div class="circleDeux"></div>
       <div class="blur"></div>
     </div>
     <Nav class="nav-Normal" />
@@ -148,6 +149,18 @@ export default {
     background: $gradient-secondary
     border-radius: 100000000px
     transition: transform 1s ease-in-out
+  .circleDeux
+    position: absolute
+    top: 100%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 50vmin
+    height: 50vmin
+    background: #7F8CBB
+    // background: #B9B3A6
+    // background: #72F1F2
+    border-radius: 100000000px
+    transition: top 1s ease-in-out, left 1s ease-in-out
   .blur
     position: absolute
     left: 0
@@ -158,24 +171,37 @@ export default {
     height: 100%
     background: white
     background: rgba(0,0,0,0.01)
-    backdrop-filter: blur(150px)
+    backdrop-filter: blur(100px)
   &.initial
     .circle
       transform: translate(55%, -50%)
-    .blur
-      backdrop-filter: blur(100px)
+    .circleDeux
+      top: 100%
+      left: 50%
   &.index
     .circle
       transform: translate(45%, -50%)
+    .circleDeux
+      top: 100%
+      left: 50%
   &.profiel
     .circle
       transform: translate(75%, -40%)
+    .circleDeux
+      top: 75%
+      left: 75%
   &.werk
     .circle
       transform: translate(65%, -0%)
+    .circleDeux
+      top: 90%
+      left: 55%
   &.blog
     .circle
       transform: translate(60%, -50%)
+    .circleDeux
+      top: 100%
+      left: 40%
   &.error
     .circle
       transform: translate(-50%, -40%)
