@@ -4,20 +4,36 @@
     <div class="view-NavPlaceholder">
       <div></div>
     </div>
-    <component
-      :is="story.content.component | dashify"
-      v-if="story.content.component"
-      :key="story.content._uid"
-      :blok="story.content"
-      class="view-Content"
-    />
+    <div class="view-Content view-Blog_ContentContainer">
+      <component
+        :is="story.content.component | dashify"
+        v-if="story.content.component"
+        :key="story.content._uid"
+        :blok="story.content"
+      />
+      <!-- prettier-ignore -->
+      <div class="articles-List blok">
+        <h1 v-if="story.content.title" class="blok-Title">{{ story.content.title }}</h1>
+        <markdown-item v-if="story.content.text" class="blok-Text" :input="story.content.text" />
+        <ul>
+          <li v-for="item in postList" :key="item.id">
+            <p>{{ item.title }}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
 </template>
 
 <script>
 import storyblokLivePreview from "@/mixins/storyblokLivePreview"
+import MarkdownItem from "@/components/MarkdownItem.vue"
+import { mapState } from "vuex"
 
 export default {
+  components: {
+    "markdown-item": MarkdownItem
+  },
   mixins: [storyblokLivePreview],
   asyncData(context) {
     let version =
@@ -48,14 +64,27 @@ export default {
   data() {
     return {
       story: { content: {} },
-      anchorList: {}
+      anchorList: {},
+      postList: {}
     }
   },
+  computed: {
+    ...mapState({
+      posts: state => state.posts.list
+    })
+  },
   mounted() {
-    // console.log("BLOG", this.story.content.body)
+    // console.log("BLOG", this.story.content)
+    this.filterPosts()
+    console.log("ARTICLES", this.posts)
     this.sortAnchorList()
   },
   methods: {
+    filterPosts() {
+      let array = this.posts
+      let filteredArray = array.slice(1)
+      this.postList = filteredArray
+    },
     sortAnchorList() {
       let array = this.story.content.body
       let filteredList = array.filter(function(el) {
