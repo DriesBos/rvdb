@@ -161,7 +161,7 @@ export default {
     // background: #B9B3A6
     // background: #72F1F2
     border-radius: 100000000px
-    transition: top 1s ease-in-out, left 1s ease-in-out
+    transition: top 1s ease-in-out, left 1.25s ease-in-out
   .blur
     position: absolute
     left: 0
