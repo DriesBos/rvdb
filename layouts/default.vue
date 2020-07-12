@@ -125,8 +125,11 @@ export default {
   display: flex
   justify-content: center
   align-items: center
+  z-index: 999
   h1
     font-size: 5vw
+    // letter-spacing: -.01em
+    letter-spacing: .2em
 
 .background
   position: absolute
