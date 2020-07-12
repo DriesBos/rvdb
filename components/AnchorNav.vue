@@ -15,7 +15,7 @@ export default {
     input: Array
   },
   mounted() {
-    console.log("ANCHOR", this.input, typeof this.input)
+    // console.log("ANCHOR", this.input, typeof this.input)
   },
   methods: {
     scrollMeTo(refName) {
