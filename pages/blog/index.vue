@@ -16,9 +16,9 @@
         <h1 v-if="story.content.title" class="blok-Title">{{ story.content.title }}</h1>
         <markdown-item v-if="story.content.text" class="blok-Text" :input="story.content.text" />
         <ul>
-          <li v-for="item in postList" :key="item.id">
-            <p>{{ item.title }}</p>
-          </li>
+          <nuxt-link v-for="item in postList" :key="item.id" :to="`/blog/${item.id}`">
+            <p class="cursorInteract">{{ item.title }}</p>
+          </nuxt-link>
         </ul>
       </div>
     </div>
@@ -76,7 +76,7 @@ export default {
   mounted() {
     // console.log("BLOG", this.story.content)
     this.filterPosts()
-    console.log("ARTICLES", this.posts)
+    // console.log("ARTICLES", this.posts)
     this.sortAnchorList()
   },
   methods: {
