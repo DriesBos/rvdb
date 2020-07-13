@@ -64,7 +64,7 @@ export default {
   data() {
     return {
       story: { content: {} },
-      anchorList: {},
+      anchorList: [],
       postList: {}
     }
   },
@@ -74,9 +74,7 @@ export default {
     })
   },
   mounted() {
-    // console.log("BLOG", this.story.content)
     this.filterPosts()
-    // console.log("ARTICLES", this.posts)
     this.sortAnchorList()
   },
   methods: {
@@ -86,13 +84,10 @@ export default {
       this.postList = filteredArray
     },
     sortAnchorList() {
-      let array = this.story.content.body
-      let filteredList = array.filter(function(el) {
-        if (el.title !== "") {
-          return true
-        }
+      let array = this.story.content.body.filter(function(el) {
+        return el.title !== ""
       })
-      this.anchorList = filteredList
+      this.anchorList = array
     }
   }
 }

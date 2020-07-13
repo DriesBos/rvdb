@@ -48,22 +48,18 @@ export default {
   data() {
     return {
       story: { content: {} },
-      anchorList: {}
+      anchorList: []
     }
   },
   mounted() {
-    // console.log("WERK", this.story.content.body)
     this.sortAnchorList()
   },
   methods: {
     sortAnchorList() {
-      let array = this.story.content.body
-      let filteredList = array.filter(function(el) {
-        if (el.title !== "") {
-          return true
-        }
+      let array = this.story.content.body.filter(function(el) {
+        return el.title !== ""
       })
-      this.anchorList = filteredList
+      this.anchorList = array
     }
   }
 }

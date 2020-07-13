@@ -11,17 +11,13 @@
 
 <script>
 export default {
-  props: {
-    input: Array
-  },
+  props: ["input"],
   mounted() {
-    // console.log("ANCHOR", this.input, typeof this.input)
+    console.log("ANCHOR INPUT", this.input, typeof this.input)
   },
   methods: {
     scrollMeTo(refName) {
-      // console.log("REF NAME", refName)
       var element = document.getElementById(refName)
-      // console.log("EL", element)
       element.scrollIntoView({
         behavior: "smooth",
         inline: "start",
