@@ -13,6 +13,7 @@ import storyblokLivePreview from "@/mixins/storyblokLivePreview"
 import MarkdownItem from "@/components/MarkdownItem.vue"
 
 export default {
+  scrollToTop: true,
   components: {
     "markdown-item": MarkdownItem
   },
