@@ -36,6 +36,7 @@ export default {
     $route() {
       this.checkPageType()
       this.removeChangeCursor()
+      this.customCursor()
     }
   },
   mounted() {
@@ -51,6 +52,7 @@ export default {
   },
   updated() {
     this.removeChangeCursor()
+    this.customCursor()
     // console.log("PAGETYPE UPDATED", this.pageType)
     document
       .querySelectorAll(".cursorInteract")

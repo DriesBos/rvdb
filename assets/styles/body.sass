@@ -15,6 +15,17 @@
     object-fit: contain
   &-Drop
     margin-right: 1rem
+  &-Hyperlink
+    display: inline
+    border: 1px solid black
+    height: 20px
+    width: 20px
+    margin-top: -6px
+    transform: translateY(6px)
+    margin-right: .5rem
+    svg
+      height: 1.5rem
+      width: 1.3rem
 
 .backgroundImage
   position: fixed
@@ -42,17 +53,18 @@
 
 .cursor
   position: fixed
-  width: 1vw
-  height: 1vw
+  width: 1vmax
+  height: 1vmax
   transform: translate(-50%, -50%)
   border: 1px solid $color
+  background: black
   border-radius: 50%
   z-index: 999
   pointer-events: none
   transition: width $hover-nav, height $hover-nav
   &.active, .active
-    width: 3vw
-    height: 3vw
+    width: 3vmax
+    height: 3vmax
 
 .menu
   display: inline-flex
@@ -72,8 +84,8 @@
         opacity: 1
     a.nuxt-link-active
       opacity: 1
-    // a.nuxt-link-exact-active
-      // text-decoration: underline
+    a.nuxt-link-exact-active
+      text-decoration: underline
   &-Landing
     min-width: 22vw
 

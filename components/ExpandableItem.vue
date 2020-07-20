@@ -3,8 +3,13 @@
     <div class="expandable-Item_Title cursorInteract" @click="isOpen = !isOpen">
       <!-- prettier-ignore -->
       <!-- <div class="icon icon-Drop" v-html="require('~/assets/images/icon-drop.svg?include')" /> -->
+      <!-- <div class="expandable-Item_Dropdown">
+        <div></div>
+      </div>-->
       <h1 v-if="blok.title">{{ blok.title }}</h1>
-      <!-- <h4 v-if="blok.medium">{{ blok.medium }}</h4> -->
+      <div v-if="blok.medium" class="tag">
+        <h4>{{ blok.medium }}</h4>
+      </div>
       <div v-if="blok.date" class="expandable-Item_News">
         <div>
           <div></div>
@@ -14,9 +19,13 @@
         </div>
       </div>
     </div>
-    <div v-show="isOpen" class="expandable-Item_Content">
+    <!-- <transition name="fade"> -->
+    <!-- prettier-ignore -->
+    <div v-show="isOpen" class="expandable-Item_Content" :class="{ active: isOpen }">
       <markdown-item v-if="blok.text" :input="blok.text" />
-      <h4 v-if="blok.mention">Ism {{ blok.mention }}</h4>
+      <div v-if="blok.mention" class="tag">
+        <h4>Ism {{ blok.mention }}</h4>
+      </div>
       <!-- prettier-ignore -->
       <a :href="blok.hyperlink" target="_blank">
         <div
@@ -26,6 +35,7 @@
         />
       </a>
     </div>
+    <!-- </transition> -->
     <div v-if="blok.image" class="backgroundImage expandable-Item_Image">
       <div class="backgroundImage-Container">
         <img :src="blok.image" />
@@ -74,8 +84,12 @@ export default {
     display: inline
   &_Title
     display: flex
+    align-items: flex-start
     opacity: $opacity-links
     transition: opacity $hover-nav
+    h1
+      line-height: 1.75
+      margin-right: .5rem
   &_Image
     pointer-events: none
     opacity: 0
@@ -92,18 +106,31 @@ export default {
         width: 100%
         border-bottom: 1px dotted $color
         transform: translateY(-.58rem)
+  &_Dropdown
+    margin-top: 4px
+    margin-bottom: 8px
+    margin-right: 6px
+    > div
+      width: 5px
+      height: 100%
+      border-left: 1px solid black
+      border-bottom: 1px solid black
+  &_Content
+    margin-left: 2rem
+    margin-bottom: .33rem
+    .icon
+      display: inline-block
   &.active
     .expandable-Item_Title
       opacity: 1
       .icon
         svg
           transform: rotate(90deg)
+      h1
+        text-decoration: underline
   &:hover
     .expandable-Item_Title, .expandable-Item_Image
       opacity: 1
-  &_Content
-    margin-left: 2rem
-    margin-bottom: .5rem
-    .icon
-      display: inline-block
+    h1
+      text-decoration: underline
 </style>
