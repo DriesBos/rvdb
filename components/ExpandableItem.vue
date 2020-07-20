@@ -6,7 +6,8 @@
       <!-- <div class="expandable-Item_Dropdown">
         <div></div>
       </div>-->
-      <h1 v-if="blok.title">{{ blok.title }}</h1>
+      <!-- prettier-ignore -->
+      <h1 v-if="blok.title" class="expandable-Item_Title_Title">{{ blok.title }}</h1>
       <div v-if="blok.medium" class="tag">
         <h4>{{ blok.medium }}</h4>
       </div>
@@ -23,11 +24,14 @@
     <!-- prettier-ignore -->
     <div v-show="isOpen" class="expandable-Item_Content" :class="{ active: isOpen }">
       <markdown-item v-if="blok.text" :input="blok.text" />
+      <div v-if="blok.medium" class="tag">
+        <h4>{{ blok.medium }}</h4>
+      </div>
       <div v-if="blok.mention" class="tag">
         <h4>Ism {{ blok.mention }}</h4>
       </div>
       <!-- prettier-ignore -->
-      <a :href="blok.hyperlink" target="_blank">
+      <a :href="blok.hyperlink" class="icon-LinkWrapper" target="_blank">
         <div
           v-if="blok.hyperlink"
           class="icon icon-Hyperlink"
@@ -80,7 +84,7 @@ export default {
 @import '~/assets/styles/variables.sass'
 
 .expandable-Item
-  .markdown, .markdown p, .markdown a, p, a, h4, h1, h2, h3
+  .markdown p, .markdown a, p, a, h4, h1, h2, h3
     display: inline
   &_Title
     display: flex
@@ -117,7 +121,7 @@ export default {
       border-bottom: 1px solid black
   &_Content
     margin-left: 2rem
-    margin-bottom: .33rem
+    margin-bottom: 1.5rem
     .icon
       display: inline-block
   &.active
@@ -128,6 +132,11 @@ export default {
           transform: rotate(90deg)
       h1
         text-decoration: underline
+      .tag
+        opacity: 0
+    .expandable-Item_Content
+      .tag
+        opacity: 1
   &:hover
     .expandable-Item_Title, .expandable-Item_Image
       opacity: 1
