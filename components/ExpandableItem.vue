@@ -131,7 +131,7 @@ export default {
         svg
           transform: rotate(90deg)
       h1
-        text-decoration: underline
+        border-bottom: 1px solid black
       .tag
         opacity: 0
     .expandable-Item_Content
@@ -141,5 +141,5 @@ export default {
     .expandable-Item_Title, .expandable-Item_Image
       opacity: 1
     h1
-      text-decoration: underline
+      border-bottom: 1px solid black
 </style>

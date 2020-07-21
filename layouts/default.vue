@@ -6,10 +6,10 @@
       <div class="blur"></div>
     </div>
     <transition name="menu">
-      <Nav v-if="navActive" class="nav-Normal" />
+      <Nav v-if="navActive" class="nav-Fixed" />
     </transition>
     <transition name="menu">
-      <Nav v-if="navActive" class="nav-Fixed" />
+      <Nav v-if="navActive" class="nav-Normal" />
     </transition>
     <transition name="normal" mode="in-out">
       <nuxt></nuxt>
@@ -44,7 +44,6 @@ export default {
     $route() {
       this.checkPageType()
       this.removeChangeCursor()
-      this.customCursor()
       this.checkNav()
     }
   },
@@ -62,8 +61,6 @@ export default {
   },
   updated() {
     this.removeChangeCursor()
-    this.customCursor()
-    // this.checkNav()
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.removeEventListener("mouseover", this.changeCursor))
@@ -105,7 +102,7 @@ export default {
     customCursor() {
       let cursor = document.querySelector(".cursor")
       function moveCursor(e) {
-        gsap.to(cursor, 0, {
+        gsap.to(cursor, 0.1, {
           left: e.clientX,
           top: e.clientY
         })
