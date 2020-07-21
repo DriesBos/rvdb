@@ -5,8 +5,12 @@
       <div class="circleDeux"></div>
       <div class="blur"></div>
     </div>
-    <Nav class="nav-Normal" />
-    <Nav class="nav-Fixed" />
+    <transition name="menu">
+      <Nav v-if="navActive" class="nav-Normal" />
+    </transition>
+    <transition name="menu">
+      <Nav v-if="navActive" class="nav-Fixed" />
+    </transition>
     <transition name="normal" mode="in-out">
       <nuxt></nuxt>
     </transition>
@@ -32,7 +36,8 @@ export default {
     return {
       pageType: "initial",
       landing: true,
-      transitionName: ""
+      transitionName: "",
+      navActive: ""
     }
   },
   watch: {
@@ -40,19 +45,12 @@ export default {
       this.checkPageType()
       this.removeChangeCursor()
       this.customCursor()
-      // const toArticle = to.name
-      // const fromArticle = from.name
-      // if (toArticle === "blog-slug") {
-      //   this.transitionName = "toArticle"
-      // } else if (fromArticle === "blog-slug") {
-      //   this.transitionName = "fromArticle"
-      // } else {
-      //   this.transitionName = "normal"
-      // }
+      this.checkNav()
     }
   },
   mounted() {
     this.customCursor()
+    this.checkNav()
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.addEventListener("mouseover", this.changeCursor))
@@ -65,7 +63,7 @@ export default {
   updated() {
     this.removeChangeCursor()
     this.customCursor()
-    // console.log("PAGETYPE UPDATED", this.pageType)
+    // this.checkNav()
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.removeEventListener("mouseover", this.changeCursor))
@@ -119,6 +117,13 @@ export default {
     },
     removeChangeCursor() {
       document.querySelector(".cursor").classList.remove("active")
+    },
+    checkNav() {
+      if (this.$route.name !== "blog-slug") {
+        this.navActive = true
+      } else {
+        this.navActive = false
+      }
     }
   }
 }

@@ -1,7 +1,9 @@
 <template>
   <section class="view view-Article">
     <!-- prettier-ignore -->
-    <div :id="story.content._uid" v-editable="story.content" class="view-Content">
+    <nuxt-link class="article-Close" to="/blog">Close</nuxt-link>
+    <!-- prettier-ignore -->
+    <div :id="story.content._uid" v-editable="story.content" class="article-Content">
       <h1 v-if="story.content.title" class="article-Title">{{ story.content.title }}</h1>
       <markdown-item :input="story.content.text" />
     </div>
@@ -66,4 +68,15 @@ export default {
 .view-Article
   // background: purple
   // z-index: 999
+
+.article
+  &-Close
+    position: fixed
+    top: 0
+    right: 0
+    margin: 3rem 2rem
+  &-Content
+    max-width: 42rem
+  &-Title
+    margin-bottom: 3rem
 </style>
