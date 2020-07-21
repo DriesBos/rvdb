@@ -14,6 +14,10 @@ import MarkdownItem from "@/components/MarkdownItem.vue"
 
 export default {
   scrollToTop: true,
+  // transition: {
+  //   name: "article",
+  //   mode: "out-in"
+  // },
   components: {
     "markdown-item": MarkdownItem
   },
@@ -53,7 +57,7 @@ export default {
   },
 
   mounted() {
-    console.log("Article", this.story.content)
+    // console.log("Article", this.story.content)
   }
 }
 </script>

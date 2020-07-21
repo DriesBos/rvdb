@@ -48,3 +48,42 @@ section:nth-child(n+3)
 
 .fade-enter, .fade-leave-to
   opacity: 0
+
+// TOARTICLE
+.toArticle-enter-active, .toArticle-leave-active
+  transition: all 1s ease
+  background: green
+
+.toArticle-enter
+  transform: translateX(-100%)
+
+.toArticle-leave-to
+  transform: translateX(100%)
+
+// FROMARTICLE
+.fromArticle-enter-active, .fromArticle-leave-active
+  background: blue
+  transition: all 1s ease
+
+.fromArticle-enter
+  transform: translateX(-100%)
+
+.fromArticle-leave-to
+  transform: translateX(100%)
+
+// NORMAL PAGE TRANS
+.normal-enter-active, .normal-leave-active
+  transition: all .66s ease
+
+.normal-enter, .normal-leave-to
+  opacity: 0
+
+// TOARTICLE
+.article-enter-active, .article-leave-active
+  transition: all .66s ease
+
+.article-enter
+  transform: translateY(100%)
+
+.article-leave-to
+  transform: translateY(-100%)

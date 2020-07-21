@@ -7,7 +7,9 @@
     </div>
     <Nav class="nav-Normal" />
     <Nav class="nav-Fixed" />
-    <nuxt />
+    <transition name="normal" mode="in-out">
+      <nuxt></nuxt>
+    </transition>
     <transition name="landing">
       <div v-show="landing" class="landing" @click="toggleLanding">
         <!-- prettier-ignore -->
@@ -29,7 +31,8 @@ export default {
   data() {
     return {
       pageType: "initial",
-      landing: true
+      landing: true,
+      transitionName: ""
     }
   },
   watch: {
@@ -37,6 +40,15 @@ export default {
       this.checkPageType()
       this.removeChangeCursor()
       this.customCursor()
+      // const toArticle = to.name
+      // const fromArticle = from.name
+      // if (toArticle === "blog-slug") {
+      //   this.transitionName = "toArticle"
+      // } else if (fromArticle === "blog-slug") {
+      //   this.transitionName = "fromArticle"
+      // } else {
+      //   this.transitionName = "normal"
+      // }
     }
   },
   mounted() {
