@@ -14,15 +14,10 @@ export default {
   props: ["input"],
   methods: {
     scrollMeTo(refName) {
-      var element = document.getElementById(refName)
-      element.scrollIntoView({
-        behavior: "smooth",
-        inline: "start",
-        block: "start"
+      document.getElementById(refName).scrollIntoView({
+        behavior: "smooth"
       })
     }
   }
 }
 </script>
-
-<style lang="sass" scoped></style>
