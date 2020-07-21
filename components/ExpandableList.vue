@@ -21,9 +21,7 @@ export default {
   props: {
     blok: Object
   },
-  mounted() {
-    // console.log("EXP LIST", this.blok)
-  }
+  mounted() {}
 }
 </script>
 

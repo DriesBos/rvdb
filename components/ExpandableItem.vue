@@ -65,7 +65,6 @@ export default {
     }
   },
   mounted() {
-    // console.log("EXP ITEM", this.blok)
     this.formatTime()
   },
   methods: {

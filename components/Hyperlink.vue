@@ -16,9 +16,7 @@ export default {
   props: {
     blok: Object
   },
-  mounted() {
-    // console.log("HYPERLINK", this.blok)
-  }
+  mounted() {}
 }
 </script>
 

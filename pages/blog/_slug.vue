@@ -56,10 +56,6 @@ export default {
     return {
       story: { content: {} }
     }
-  },
-
-  mounted() {
-    // console.log("Article", this.story.content)
   }
 }
 </script>

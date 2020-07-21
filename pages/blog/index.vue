@@ -75,8 +75,6 @@ export default {
     })
   },
   mounted() {
-    // console.log("POSTS", this.posts)
-    // console.log("STORY", this.story)
     this.filterPosts()
     this.sortAnchorList()
   },
@@ -93,7 +91,6 @@ export default {
       let arrayTwo = this.story.content
       this.anchorList = arrayOne
       this.anchorList.push(arrayTwo)
-      console.log(this.anchorList)
     }
   }
 }

@@ -99,7 +99,6 @@ export default {
       } else {
         this.pageType = "error"
       }
-      console.log("PAGETYPE", this.pageType, this.$route)
     },
     customCursor() {
       let cursor = document.querySelector(".cursor")

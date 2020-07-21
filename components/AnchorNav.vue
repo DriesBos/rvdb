@@ -12,9 +12,6 @@
 <script>
 export default {
   props: ["input"],
-  mounted() {
-    // console.log("ANCHOR INPUT", this.input, typeof this.input)
-  },
   methods: {
     scrollMeTo(refName) {
       var element = document.getElementById(refName)

@@ -14,8 +14,6 @@ export default {
   props: {
     blok: Object
   },
-  mounted() {
-    // console.log("PAGE", this.blok)
-  }
+  mounted() {}
 }
 </script>
