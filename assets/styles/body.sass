@@ -73,7 +73,7 @@
   h1, p, a
     position: relative
     display: inline
-    line-height: 1.8em
+    line-height: 2.5
   &-Container
     border: 1px solid purple
   &-Item
@@ -84,11 +84,28 @@
       a
         opacity: 1
     a.nuxt-link-active
+      position: relative
       opacity: 1
-    a.nuxt-link-exact-active
-      border-bottom: 1px solid black
+      &::after
+        content: ""
+        position: absolute
+        bottom: -.5rem
+        left: 0
+        width: 100%
+        border-bottom: 2px solid black
   &-Landing
     min-width: 22vw
+
+.landing
+  h1
+    position: relative
+    &::after
+      content: ""
+      position: absolute
+      bottom: -.5em
+      left: 0
+      width: 100%
+      border-bottom: 4px solid black
 
 .anchor-Nav
   .menu
