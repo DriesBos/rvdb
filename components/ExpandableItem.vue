@@ -108,7 +108,7 @@ export default {
       padding-right: .5rem
       > div
         width: 100%
-        border-bottom: 1px dotted $color
+        // border-bottom: 1px dotted $color
         transform: translateY(-.58rem)
   &_Dropdown
     margin-top: 4px
@@ -118,7 +118,7 @@ export default {
       width: 5px
       height: 100%
       border-left: 1px solid black
-      border-bottom: 1px solid black
+      // border-bottom: 1px solid black
   &_Content
     margin-left: 2rem
     margin-bottom: 1.5rem
@@ -131,7 +131,7 @@ export default {
         svg
           transform: rotate(90deg)
       h1
-        border-bottom: 1px solid black
+        // border-bottom: 1px solid black
       .tag
         opacity: 0
     .expandable-Item_Content
@@ -141,5 +141,5 @@ export default {
     .expandable-Item_Title, .expandable-Item_Image
       opacity: 1
     h1
-      border-bottom: 1px solid black
+      // border-bottom: 1px solid black
 </style>

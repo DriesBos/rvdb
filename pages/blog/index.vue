@@ -12,7 +12,7 @@
         :blok="story.content"
       />
       <!-- prettier-ignore -->
-      <div class="articles-List blok">
+      <div :id="story.content._uid" class="articles-List blok">
         <h1 v-if="story.content.title" class="blok-Title">{{ story.content.title }}</h1>
         <markdown-item v-if="story.content.text" class="blok-Text" :input="story.content.text" />
         <ul>
@@ -75,6 +75,8 @@ export default {
     })
   },
   mounted() {
+    // console.log("POSTS", this.posts)
+    // console.log("STORY", this.story)
     this.filterPosts()
     this.sortAnchorList()
   },
@@ -85,10 +87,13 @@ export default {
       this.postList = filteredArray
     },
     sortAnchorList() {
-      let array = this.story.content.body.filter(function(el) {
+      let arrayOne = this.story.content.body.filter(function(el) {
         return el.title !== ""
       })
-      this.anchorList = array
+      let arrayTwo = this.story.content
+      this.anchorList = arrayOne
+      this.anchorList.push(arrayTwo)
+      console.log(this.anchorList)
     }
   }
 }
