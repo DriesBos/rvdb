@@ -94,10 +94,12 @@ export default {
         this.pageType = "werk"
       } else if (this.$route.name === "blog") {
         this.pageType = "blog"
+      } else if (this.$route.name === "blog-slug") {
+        this.pageType = "blog-slug"
       } else {
         this.pageType = "error"
       }
-      // console.log("PAGETYPE", this.pageType, this.$route)
+      console.log("PAGETYPE", this.pageType, this.$route)
     },
     customCursor() {
       let cursor = document.querySelector(".cursor")
@@ -219,6 +221,12 @@ export default {
     .circleDeux
       top: 100%
       left: 40%
+  &.blog-slug
+    .circle
+      transform: translate(90%, -25%)
+    .circleDeux
+      top: 100%
+      left: 90%
   &.error
     .circle
       transform: translate(-50%, -40%)
