@@ -23,7 +23,6 @@
 export default {
   props: {
     blok: Object
-  },
-  mounted() {}
+  }
 }
 </script>
