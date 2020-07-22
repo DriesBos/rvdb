@@ -49,9 +49,8 @@
       width: 100%
       height: 100%
       object-fit: contain
-      // object-position: left bottom
-      // filter: greyscale(1)
-      // -webkit-filter: grayscale(1)
+      filter: greyscale(1)
+      -webkit-filter: grayscale(1)
       z-index: -1
 
 .cursor
@@ -115,16 +114,12 @@
       border-bottom: 4px solid black
 
 main
-  // height: 100vh
   color: $color
   display: flex
   cursor: none
-  // overflow-y: auto
   .view
     position: relative
     flex-grow: 1
-    // background: purple
-    // z-index: 800
     &-Profiel, &-Werk, &-Blog
       display: flex
       > div
@@ -132,11 +127,8 @@ main
         padding-left: 2rem
         padding-right: 2rem
         scrollbar-width: none
-        // border: 1px solid green
       .view-Content
-        // background: blue
         > .blok:last-child
-          // background: orange
           padding-bottom: 100vh // TODO: dynamically distract blok height
 
     &-Article
