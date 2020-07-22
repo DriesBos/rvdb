@@ -13,7 +13,7 @@
       />
       <!-- prettier-ignore -->
       <div :id="story.content._uid" class="articles-List blok">
-        <h1 v-if="story.content.title" class="blok-Title">{{ story.content.title }}</h1>
+        <h1 v-if="story.content.title" class="blok-Title">{{ story.content.subtitle }}</h1>
         <markdown-item v-if="story.content.text" class="blok-Text" :input="story.content.text" />
         <ul>
           <nuxt-link v-for="item in postList" :key="item.id" :to="`/blog/${item.id}`">
@@ -77,6 +77,7 @@ export default {
   mounted() {
     this.filterPosts()
     this.sortAnchorList()
+    console.log("CONTENT", this.story.content.component)
   },
   methods: {
     filterPosts() {
