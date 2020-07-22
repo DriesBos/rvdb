@@ -88,11 +88,12 @@ export default {
   &_Title
     display: flex
     align-items: flex-start
-    opacity: $opacity-links
-    transition: opacity $hover-nav
+    margin-bottom: .5em
     h1
       // line-height: 1.75
       margin-right: .5rem
+    &:hover ~ .expandable-Item_Image
+      opacity: 1
   &_Image
     pointer-events: none
     opacity: 0
@@ -123,22 +124,9 @@ export default {
     margin-bottom: 1.5rem
     .icon
       display: inline-block
-  &.active
-    .expandable-Item_Title
-      opacity: 1
-      .icon
-        svg
-          transform: rotate(90deg)
-      h1
-        // border-bottom: 1px solid black
-      .tag
-        opacity: 0
-    .expandable-Item_Content
-      .tag
-        opacity: 1
   &:hover
-    .expandable-Item_Title, .expandable-Item_Image
-      opacity: 1
-    h1
-      // border-bottom: 1px solid black
+    // .expandable-Item_Title
+    //   color: white
+    // .expandable-Item_Image
+    //   opacity: 1
 </style>
