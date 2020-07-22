@@ -91,7 +91,7 @@ export default {
     opacity: $opacity-links
     transition: opacity $hover-nav
     h1
-      line-height: 1.75
+      // line-height: 1.75
       margin-right: .5rem
   &_Image
     pointer-events: none

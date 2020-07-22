@@ -154,6 +154,14 @@ main
       padding-top: 3rem
       padding-bottom: 3rem
       &-Title
+        position: relative
         margin-bottom: 1.5rem
+        &::after
+          content: ""
+          position: absolute
+          bottom: -.5rem
+          left: 0
+          width: 100%
+          border-bottom: 2px solid black
       &-Text
         margin-bottom: 1.5rem
