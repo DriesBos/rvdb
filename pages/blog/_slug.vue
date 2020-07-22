@@ -60,7 +60,7 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .article
   &-Close
     position: fixed
@@ -69,6 +69,11 @@ export default {
     margin: 3rem 2rem
   &-Content
     max-width: 42rem
+    .markdown
+      p, h1, h2, h3, h4, h5
+        margin-bottom: 1.5em
+      p:last-child
+        margin-bottom: 0
   &-Title
     margin-bottom: 3rem
 </style>

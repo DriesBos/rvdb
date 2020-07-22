@@ -27,5 +27,8 @@ export default {
 
 <style lang="sass" scoped>
 // .expandable-List
-  // margin-bottom: 1.5rem
+//   .expandable-Item:last-child
+//     background: red
+//     .expandable-Item_Title, > div
+//       margin-bottom: 0 !important
 </style>

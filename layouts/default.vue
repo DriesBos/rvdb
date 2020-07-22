@@ -138,6 +138,9 @@ export default {
 <style lang="sass">
 @import '~/assets/styles/variables.sass'
 
+.nav-Normal
+  pointer-events: none
+
 .landing
   position: fixed
   left: 0
@@ -175,6 +178,7 @@ export default {
     background: $gradient-secondary
     border-radius: 100000000px
     transition: transform 1s ease-in-out
+    will-change: transform
   .circleDeux
     position: absolute
     top: 100%
@@ -188,6 +192,7 @@ export default {
     // background: #72F1F2
     border-radius: 100000000px
     transition: top 1s ease-in-out, left 1.25s ease-in-out
+    will-change: top, left
   .blur
     position: absolute
     left: 0

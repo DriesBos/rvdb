@@ -15,9 +15,9 @@
       <div :id="story.content.title" class="articles-List blok">
         <h1 v-if="story.content.title" class="blok-Title">{{ story.content.subtitle }}</h1>
         <markdown-item v-if="story.content.text" class="blok-Text" :input="story.content.text" />
-        <ul>
-          <nuxt-link v-for="item in postList" :key="item.id" :to="`/blog/${item.id}`">
-            <p class="cursorInteract">{{ item.title }}</p>
+        <ul class="article-Link_Container">
+          <nuxt-link v-for="item in postList" :key="item.id" :to="`/blog/${item.id}`" tag="li">
+            <p class="cursorInteract article-Link">{{ item.title }}</p>
           </nuxt-link>
         </ul>
       </div>
@@ -96,3 +96,11 @@ export default {
   }
 }
 </script>
+
+<style lang="sass">
+.article-Link_Container
+  li
+    margin-bottom: .5rem
+    &:last-child
+      margin-bottom: 0
+</style>
