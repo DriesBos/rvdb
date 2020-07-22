@@ -64,11 +64,11 @@ export default {
     this.removeChangeCursor()
     document
       .querySelectorAll(".cursorInteract")
-      .forEach(item => item.removeEventListener("mouseover", this.changeCursor))
+      .forEach(item => item.addEventListener("mouseover", this.changeCursor))
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item =>
-        item.removeEventListener("mouseleave", this.removeChangeCursor)
+        item.addEventListener("mouseleave", this.removeChangeCursor)
       )
   },
   destroyed() {
