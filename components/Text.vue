@@ -1,5 +1,5 @@
 <template>
-  <div :id="blok._uid" v-editable="blok" class="text blok">
+  <div :id="blok.title" v-editable="blok" class="text blok">
     <h1 v-if="blok.title" class="blok-Title">{{ blok.title }}</h1>
     <markdown-item :input="blok.text" />
   </div>
