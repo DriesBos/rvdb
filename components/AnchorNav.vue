@@ -1,7 +1,7 @@
 <template>
   <div class="anchor-Nav anchor-Nav_Fixed">
     <!-- prettier-ignore -->
-    <scrollactive class="menu my-nav">
+    <scrollactive class="menu my-nav" :offset="0">
       <li v-for="item in input" :key="item.title" class="menu-Item cursorInteract">
         <a :href="'#' + item.title" class="scrollactive-item">{{ item.title }}</a>
       </li>
@@ -11,7 +11,24 @@
 
 <script>
 export default {
-  props: ["input"] // Is an object
+  props: ["input"], // Is an object
+  mounted() {
+    this.handleScroll()
+  },
+  updated() {
+    this.handleScroll()
+  },
+  destroyed() {
+    this.handleScroll()
+  },
+  methods: {
+    handleScroll() {
+      var el = document.getElementsByClassName("scrollactive-item").item(0)
+      if (el !== null) {
+        el.classList.add("is-active")
+      }
+    }
+  }
 }
 </script>
 
