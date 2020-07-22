@@ -8,7 +8,7 @@
       </div>-->
       <!-- prettier-ignore -->
       <h1 v-if="blok.title" class="expandable-Item_Title_Title">{{ blok.title }}</h1>
-      <div v-if="blok.medium" class="tag">
+      <div v-if="blok.medium && isOpen === false" class="tag">
         <h4>{{ blok.medium }}</h4>
       </div>
       <div v-if="blok.date" class="expandable-Item_News">
