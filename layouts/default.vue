@@ -163,6 +163,7 @@ export default {
   bottom: 0
   overflow: hidden
   pointer-events: none
+  z-index: -100
   // background-color: #D2D2D2
   .circle
     position: absolute
