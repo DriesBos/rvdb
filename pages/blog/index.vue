@@ -12,7 +12,7 @@
         :blok="story.content"
       />
       <!-- prettier-ignore -->
-      <div :id="story.content._uid" class="articles-List blok">
+      <div :id="story.content.title" class="articles-List blok">
         <h1 v-if="story.content.title" class="blok-Title">{{ story.content.subtitle }}</h1>
         <markdown-item v-if="story.content.text" class="blok-Text" :input="story.content.text" />
         <ul>
