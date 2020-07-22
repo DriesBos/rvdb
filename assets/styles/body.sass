@@ -4,7 +4,6 @@
   position: relative
   width: 1rem
   height: 1rem
-  transition: color $hover-nav, opacity $hover-nav
   svg
     transition: transform $transition-icon
     position: absolute
@@ -37,10 +36,11 @@
   bottom: 0
   left: 0
   right: 0
+  z-index: -1
   &-Container
     position: relative
-    width: 40vmin
-    height: 40vmin
+    width: 100vw
+    height: 100vh
     img
       position: absolute
       top: 0
@@ -116,8 +116,8 @@ main
   .view
     position: relative
     flex-grow: 1
-    z-index: 999
     // background: purple
+    z-index: 800
     &-Profiel, &-Werk, &-Blog
       display: flex
       > div

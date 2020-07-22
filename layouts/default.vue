@@ -149,7 +149,7 @@ export default {
   display: flex
   justify-content: center
   align-items: center
-  z-index: 999
+  z-index: 900
   h1
     font-size: 5vw
     // letter-spacing: -.01em

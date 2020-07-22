@@ -61,10 +61,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.view-Article
-  // background: purple
-  // z-index: 999
-
 .article
   &-Close
     position: fixed
