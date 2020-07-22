@@ -24,6 +24,7 @@
     "sharp": "^0.25.4",
     "storyblok-nuxt": "^1.2.0",
     "vue-lazyload": "^1.3.3",
+    "vue-scrollactive": "^0.9.3",
     "vue-scrollto": "^2.18.1"
   },
   "devDependencies": {

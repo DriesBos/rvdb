@@ -35,7 +35,7 @@ export default {
   data() {
     return {
       pageType: "initial",
-      landing: true,
+      landing: false,
       transitionName: "",
       navActive: ""
     }
@@ -48,6 +48,7 @@ export default {
     }
   },
   mounted() {
+    this.checkLanding()
     this.customCursor()
     this.checkNav()
     document
@@ -82,8 +83,15 @@ export default {
       )
   },
   methods: {
+    checkLanding() {
+      if (this.$route.name === "index") {
+        this.landing = true
+      } else {
+        this.landing = false
+      }
+    },
     toggleLanding() {
-      this.landing = !this.landing
+      this.landing = false
     },
     checkPageType() {
       if (this.$route.name === "index") {
@@ -148,7 +156,7 @@ export default {
     letter-spacing: .03em
 
 .background
-  position: absolute
+  position: fixed
   left: 0
   top: 0
   right: 0

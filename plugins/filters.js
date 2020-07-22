@@ -27,3 +27,7 @@ Vue.filter("dashify", function(value) {
 
   return "blok-" + dashified
 })
+
+import VueScrollactive from "vue-scrollactive"
+
+Vue.use(VueScrollactive)

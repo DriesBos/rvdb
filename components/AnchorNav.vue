@@ -1,29 +1,37 @@
 <template>
   <div class="anchor-Nav anchor-Nav_Fixed">
     <!-- prettier-ignore -->
-    <ul class="menu">
+    <scrollactive class="menu my-nav">
       <li v-for="item in input" :key="item.title" class="menu-Item cursorInteract">
-        <a @click="scrollMeTo(item.title)">{{ item.title }}</a>
+        <a :href="'#' + item.title" class="scrollactive-item">{{ item.title }}</a>
       </li>
-    </ul>
+      </scrollactive>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["input"],
-  mounted() {
-    this.newScroll()
-  },
-  methods: {
-    scrollMeTo(refName) {
-      document.getElementById(refName).scrollIntoView({
-        behavior: "smooth"
-      })
-    },
-    newScroll() {
-      console.log("INPUT", this.input)
-    }
-  }
+  props: ["input"] // Is an object
 }
 </script>
+
+<style lang="sass" scoped>
+.anchor-Nav
+  .menu
+    padding-top: 3rem
+    padding-left: 2vw
+  a
+    position: relative
+    &.is-active
+      opacity: 1
+      &::after
+        content: ""
+        position: absolute
+        bottom: -.5rem
+        left: 0
+        width: 100%
+        border-bottom: 2px solid black
+  &_Fixed
+    position: fixed
+    transform: translateZ(0)
+</style>
