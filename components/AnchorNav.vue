@@ -5,30 +5,13 @@
       <li v-for="item in input" :key="item.title" class="menu-Item cursorInteract">
         <a :href="'#' + item.title" class="scrollactive-item">{{ item.title }}</a>
       </li>
-      </scrollactive>
+    </scrollactive>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["input"], // Is an object
-  mounted() {
-    this.handleScroll()
-  },
-  updated() {
-    this.handleScroll()
-  },
-  destroyed() {
-    this.handleScroll()
-  },
-  methods: {
-    handleScroll() {
-      var el = document.getElementsByClassName("scrollactive-item").item(0)
-      if (el !== null) {
-        el.classList.add("is-active")
-      }
-    }
-  }
+  props: ["input"] // Is an object
 }
 </script>
 

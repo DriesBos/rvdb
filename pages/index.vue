@@ -3,11 +3,7 @@
 </template>
 
 <script>
-import gsap from "gsap"
-import { CSSRulePlugin } from "gsap/CSSRulePlugin"
 import storyblokLivePreview from "@/mixins/storyblokLivePreview"
-
-gsap.registerPlugin(CSSRulePlugin)
 
 export default {
   mixins: [storyblokLivePreview],
@@ -37,29 +33,8 @@ export default {
   },
   data() {
     return {
-      stories: { content: {} },
-      background: "backgroundOne"
+      stories: { content: {} }
     }
-  },
-  mounted() {
-    document
-      .querySelectorAll(".cursorInteract")
-      .forEach(item => item.addEventListener("mouseover", this.changeCursor))
-    document
-      .querySelectorAll(".cursorInteract")
-      .forEach(item =>
-        item.addEventListener("mouseleave", this.removeChangeCursor)
-      )
-  },
-  updated() {
-    document
-      .querySelectorAll(".cursorInteract")
-      .forEach(item => item.addEventListener("mouseover", this.changeCursor))
-    document
-      .querySelectorAll(".cursorInteract")
-      .forEach(item =>
-        item.addEventListener("mouseleave", this.removeChangeCursor)
-      )
   }
 }
 </script>

@@ -43,7 +43,6 @@ export default {
   watch: {
     $route() {
       this.checkPageType()
-      this.removeChangeCursor()
       this.checkNav()
     }
   },
@@ -61,7 +60,6 @@ export default {
       )
   },
   updated() {
-    this.removeChangeCursor()
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.addEventListener("mouseover", this.changeCursor))
@@ -72,7 +70,6 @@ export default {
       )
   },
   destroyed() {
-    this.removeChangeCursor()
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.removeEventListener("mouseover", this.changeCursor))
@@ -83,6 +80,7 @@ export default {
       )
   },
   methods: {
+    // Landing function
     checkLanding() {
       if (this.$route.name === "index") {
         this.landing = true
@@ -93,6 +91,7 @@ export default {
     toggleLanding() {
       this.landing = false
     },
+    // Used for background styling
     checkPageType() {
       if (this.$route.name === "index") {
         this.pageType = "index"
@@ -108,6 +107,7 @@ export default {
         this.pageType = "error"
       }
     },
+    // Cursor functions
     customCursor() {
       let cursor = document.querySelector(".cursor")
       function moveCursor(e) {
@@ -124,6 +124,7 @@ export default {
     removeChangeCursor() {
       document.querySelector(".cursor").classList.remove("active")
     },
+    // Used to disable menu
     checkNav() {
       if (this.$route.name !== "blog-slug") {
         this.navActive = true
