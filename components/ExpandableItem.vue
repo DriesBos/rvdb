@@ -2,11 +2,6 @@
   <div v-editable="blok" class="expandable-Item" :class="{ active: isOpen }">
     <div class="expandable-Item_Title cursorInteract" @click="isOpen = !isOpen">
       <!-- prettier-ignore -->
-      <!-- <div class="icon icon-Drop" v-html="require('~/assets/images/icon-drop.svg?include')" /> -->
-      <!-- <div class="expandable-Item_Dropdown">
-        <div></div>
-      </div>-->
-      <!-- prettier-ignore -->
       <h1 v-if="blok.title" class="expandable-Item_Title_Title">{{ blok.title }}</h1>
       <div v-if="blok.medium && isOpen === false" class="tag">
         <h4>{{ blok.medium }}</h4>
@@ -20,7 +15,6 @@
         </div>
       </div>
     </div>
-    <!-- <transition name="fade"> -->
     <!-- prettier-ignore -->
     <div v-show="isOpen" class="expandable-Item_Content" :class="{ active: isOpen }">
       <markdown-item v-if="blok.text" :input="blok.text" />
@@ -39,7 +33,6 @@
         />
       </a>
     </div>
-    <!-- </transition> -->
     <div v-if="blok.image" class="backgroundImage expandable-Item_Image">
       <div class="backgroundImage-Container">
         <img :src="blok.image" />
