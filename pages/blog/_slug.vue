@@ -3,7 +3,7 @@
     <!-- prettier-ignore -->
     <nuxt-link class="article-Close" to="/blog">Close</nuxt-link>
     <!-- prettier-ignore -->
-    <div :id="story.content._uid" v-editable="story.content" class="article-Content">
+    <div :id="story.content._uid" v-editable="story.content" class="article-Content blok">
       <h1 v-if="story.content.title" class="article-Title">{{ story.content.title }}</h1>
       <markdown-item :input="story.content.text" />
     </div>
@@ -69,6 +69,8 @@ export default {
     margin: 3rem 2rem
   &-Content
     max-width: 42rem
+    img
+      max-width: 42rem
     .markdown
       p, h1, h2, h3, h4, h5
         margin-bottom: 1.5em

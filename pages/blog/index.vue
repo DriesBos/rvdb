@@ -77,7 +77,6 @@ export default {
   mounted() {
     this.filterPosts()
     this.sortAnchorList()
-    // console.log("CONTENT", this.story.content.component)
   },
   methods: {
     filterPosts() {
