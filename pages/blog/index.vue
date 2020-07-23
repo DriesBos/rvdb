@@ -18,6 +18,11 @@
         <ul class="article-Link_Container">
           <nuxt-link v-for="item in postList" :key="item.id" :to="`/blog/${item.id}`" tag="li">
             <p class="cursorInteract article-Link">{{ item.title }}</p>
+            <div v-if="item.image" class="backgroundImage expandable-Item_Image">
+              <div class="backgroundImage-Container">
+                <img :src="item.image" />
+              </div>
+            </div>
           </nuxt-link>
         </ul>
       </div>
@@ -77,6 +82,7 @@ export default {
   mounted() {
     this.filterPosts()
     this.sortAnchorList()
+    console.log(this.postList)
   },
   methods: {
     filterPosts() {
@@ -102,4 +108,6 @@ export default {
     margin-bottom: .5rem
     &:last-child
       margin-bottom: 0
+  .article-Link:hover ~ .expandable-Item_Image
+    opacity: 1
 </style>

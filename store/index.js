@@ -28,7 +28,8 @@ export default {
         return {
           id: bp.slug,
           title: bp.content.title,
-          text: bp.content.text
+          text: bp.content.text,
+          image: bp.content.image
         }
       })
       commit("posts/update", posts)
