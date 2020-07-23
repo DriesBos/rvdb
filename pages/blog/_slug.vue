@@ -71,6 +71,8 @@ export default {
         margin-bottom: 1.5em
       p:last-child
         margin-bottom: 0
+      a
+        text-decoration: underline
   &-Title
     margin-bottom: 3rem
 </style>
