@@ -1,7 +1,6 @@
 <template>
   <section class="view view-Article">
-    <!-- prettier-ignore -->
-    <nuxt-link class="article-Close" to="/blog">Close</nuxt-link>
+    <nuxt-link class="article-Close" to="/blog">Sluiten</nuxt-link>
     <!-- prettier-ignore -->
     <div :id="story.content._uid" v-editable="story.content" class="article-Content blok">
       <h1 v-if="story.content.title" class="article-Title">{{ story.content.title }}</h1>
@@ -16,10 +15,6 @@ import MarkdownItem from "@/components/MarkdownItem.vue"
 
 export default {
   scrollToTop: true,
-  // transition: {
-  //   name: "article",
-  //   mode: "out-in"
-  // },
   components: {
     "markdown-item": MarkdownItem
   },
