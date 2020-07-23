@@ -156,7 +156,6 @@ export default {
   z-index: 900
   h1
     font-size: 5vw
-    // letter-spacing: -.01em
     letter-spacing: .03em
 
 .background
@@ -168,7 +167,6 @@ export default {
   overflow: hidden
   pointer-events: none
   z-index: -100
-  // background-color: #D2D2D2
   .circle
     position: absolute
     top: 0
@@ -178,7 +176,7 @@ export default {
     height: 200vmin
     background: $gradient-secondary
     border-radius: 100000000px
-    transition: transform 1s ease-in-out
+    transition: transform 1s ease-in-out 2s
     will-change: transform
   .circleDeux
     position: absolute
@@ -189,10 +187,8 @@ export default {
     height: 50vmin
     background: #7F8CBB
     opacity: .66
-    // background: #B9B3A6
-    // background: #72F1F2
     border-radius: 100000000px
-    transition: top 1s ease-in-out, left 1.25s ease-in-out
+    transition: top 1s ease-in-out, left 1.25s ease-in-out 2s
     will-change: top, left
   .blur
     position: absolute
