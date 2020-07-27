@@ -176,7 +176,7 @@ export default {
     height: 200vmin
     background: $gradient-secondary
     border-radius: 100000000px
-    transition: transform 1s ease-in-out 2s
+    transition: transform 1s ease-in-out
     will-change: transform
   .circleDeux
     position: absolute
@@ -186,9 +186,10 @@ export default {
     width: 50vmin
     height: 50vmin
     background: #7F8CBB
+    // background: #7193E8
     opacity: .66
     border-radius: 100000000px
-    transition: top 1s ease-in-out, left 1.25s ease-in-out 2s
+    transition: top 1s ease-in-out, left 1.25s ease-in-out
     will-change: top, left
   .blur
     position: absolute
@@ -200,7 +201,7 @@ export default {
     height: 100%
     background: white
     background: rgba(0,0,0,0.01)
-    backdrop-filter: blur(100px)
+    // backdrop-filter: blur(100px)
   &.initial
     .circle
       transform: translate(55%, -50%)
