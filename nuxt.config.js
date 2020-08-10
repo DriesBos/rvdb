@@ -34,9 +34,9 @@ module.exports = {
         content: "black-translucent"
       },
       {
-        name="theme-color",
+        name: "theme-color",
         content: "#ffffff"
-      },
+      }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
