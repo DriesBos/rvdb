@@ -32,7 +32,11 @@ module.exports = {
       {
         name: "apple-mobile-web-app-status-bar-style",
         content: "black-translucent"
-      }
+      },
+      {
+        name="theme-color",
+        content: "#ffffff"
+      },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
