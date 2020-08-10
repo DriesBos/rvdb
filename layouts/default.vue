@@ -1,5 +1,5 @@
 <template>
-  <main lang="en-US">
+  <main lang="nl">
     <div class="background" :class="pageType">
       <div class="circle"></div>
       <div class="circleDeux"></div>
