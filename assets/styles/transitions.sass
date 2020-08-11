@@ -5,31 +5,31 @@
 // .pages-enter, .pages-leave-to
 //   opacity: 0
 
-.section-leave-active
-  // transition: transform .33s ease .33s
-  .content
-    transition: opacity .33s ease
+// .section-leave-active
+//   // transition: transform .33s ease .33s
+//   .content
+//     transition: opacity .33s ease
 
-.section-enter-active
-  // transition: transform .33s ease
-  .content
-    transition: opacity .33s ease
+// .section-enter-active
+//   // transition: transform .33s ease
+//   .content
+//     transition: opacity .33s ease
 
-.section-enter, .section-leave-to
-  // transform: translateX(-100%)
-  .content
-    opacity: 0
+// .section-enter, .section-leave-to
+//   // transform: translateX(-100%)
+//   .content
+//     opacity: 0
 
-section:nth-child(n+3)
-  &.section-leave-active
-    // transition: transform .66s ease .33s
-    .content
-      transition: opacity .33s ease
+// section:nth-child(n+3)
+//   &.section-leave-active
+//     // transition: transform .66s ease .33s
+//     .content
+//       transition: opacity .33s ease
 
-  &.section-enter-active
-    // transition: transform .66s ease
-    .content
-      transition: opacity .33s ease
+//   &.section-enter-active
+//     // transition: transform .66s ease
+//     .content
+//       transition: opacity .33s ease
 
 // LANDING
 .landing-leave-active
@@ -41,39 +41,38 @@ section:nth-child(n+3)
   h1, h2, h3
     opacity: 0
 
-// CONTENT
-.fade-enter-active, .fade-leave-active
-  transition: opacity .5s ease, max-height .5s ease
+// // CONTENT
+// .fade-enter-active, .fade-leave-active
+//   transition: opacity .5s ease, max-height .5s ease
 
-.fade-enter, .fade-leave-to
-  opacity: 0
+// .fade-enter, .fade-leave-to
+//   opacity: 0
 
 // TOARTICLE
-.toArticle-enter-active, .toArticle-leave-active
-  transition: all 1s ease
-  background: green
+// .toArticle-enter-active, .toArticle-leave-active
+//   transition: all 1s ease
+//   background: green
 
-.toArticle-enter
-  transform: translateX(-100%)
+// .toArticle-enter
+//   transform: translateX(-100%)
 
-.toArticle-leave-to
-  transform: translateX(100%)
+// .toArticle-leave-to
+//   transform: translateX(100%)
 
 // FROMARTICLE
-.fromArticle-enter-active, .fromArticle-leave-active
-  background: blue
-  transition: all 1s ease
+// .fromArticle-enter-active, .fromArticle-leave-active
+//   background: blue
+//   transition: all 1s ease
 
-.fromArticle-enter
-  transform: translateX(-100%)
+// .fromArticle-enter
+//   transform: translateX(-100%)
 
-.fromArticle-leave-to
-  transform: translateX(100%)
+// .fromArticle-leave-to
+//   transform: translateX(100%)
 
 // NORMAL PAGE TRANS
 .normal-enter-active, .normal-leave-active
-  transition: all .66s ease
-
+  transition: all .33s ease
 .normal-enter, .normal-leave-to
   opacity: 0
 
@@ -88,11 +87,11 @@ section:nth-child(n+3)
   opacity: 0
 
 // TOARTICLE
-.article-enter-active, .article-leave-active
-  transition: all .66s ease
+// .article-enter-active, .article-leave-active
+//   transition: all .66s ease
 
-.article-enter
-  transform: translateY(100%)
+// .article-enter
+//   transform: translateY(100%)
 
-.article-leave-to
-  transform: translateY(-100%)
+// .article-leave-to
+//   transform: translateY(-100%)

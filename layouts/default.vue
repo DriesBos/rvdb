@@ -55,7 +55,6 @@ export default {
     this.checkLanding()
     this.customCursor()
     this.checkNav()
-    console.log("MOUNTED")
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.addEventListener("mouseover", this.changeCursor))
@@ -66,7 +65,6 @@ export default {
       )
   },
   updated() {
-    console.log("UPDATED")
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.addEventListener("mouseover", this.changeCursor))
@@ -77,7 +75,6 @@ export default {
       )
   },
   destroyed() {
-    console.log("DESTROYED")
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.removeEventListener("mouseover", this.changeCursor))
@@ -202,7 +199,7 @@ export default {
     height: 200vmin
     background: $gradient-secondary
     border-radius: 100000000px
-    transition: transform 1s ease-in-out
+    transition: transform .9s ease-out
     will-change: transform
   .circleDeux
     position: absolute
@@ -215,7 +212,7 @@ export default {
     // background: #7193E8
     opacity: .66
     border-radius: 100000000px
-    transition: top 1s ease-in-out, left 1.25s ease-in-out
+    transition: top .9s ease-out, left .9s ease-out
     will-change: top, left
   .blur
     position: absolute
@@ -256,8 +253,8 @@ export default {
     .circle
       transform: translate(60%, -50%)
     .circleDeux
-      top: 100%
-      left: 40%
+      top: 105%
+      left: 55%
   &.blog-slug
     .circle
       transform: translate(90%, -25%)
@@ -266,10 +263,10 @@ export default {
       left: 90%
   &.contact
     .circle
-      transform: translate(60%, -50%)
+      transform: translate(60%, -60%)
     .circleDeux
-      top: 100%
-      left: 40%
+      top: 40%
+      left: 45%
   &.error
     .circle
       transform: translate(-50%, -40%)
