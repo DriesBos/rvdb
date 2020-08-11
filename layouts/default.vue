@@ -44,12 +44,14 @@ export default {
     $route() {
       this.checkPageType()
       this.checkNav()
+      this.removeChangeCursor()
     }
   },
   mounted() {
     this.checkLanding()
     this.customCursor()
     this.checkNav()
+    console.log("MOUNTED")
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.addEventListener("mouseover", this.changeCursor))
@@ -60,6 +62,7 @@ export default {
       )
   },
   updated() {
+    console.log("UPDATED")
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.addEventListener("mouseover", this.changeCursor))
@@ -70,6 +73,7 @@ export default {
       )
   },
   destroyed() {
+    console.log("DESTROYED")
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.removeEventListener("mouseover", this.changeCursor))
@@ -82,6 +86,7 @@ export default {
   methods: {
     // Landing function
     checkLanding() {
+      console.log("LANDING")
       if (this.$route.name === "index") {
         this.landing = true
       } else {
@@ -93,6 +98,7 @@ export default {
     },
     // Used for background styling
     checkPageType() {
+      console.log("CHECKPAGE TYPE", this.$route.name)
       if (this.$route.name === "index") {
         this.pageType = "index"
       } else if (this.$route.name === "profiel") {
