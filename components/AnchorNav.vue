@@ -2,8 +2,8 @@
   <div class="anchor-Nav anchor-Nav_Fixed">
     <!-- prettier-ignore -->
     <scrollactive class="menu my-nav" :offset="0">
-      <li v-for="item in input" :key="item.title" class="menu-Item cursorInteract">
-        <a :href="'#' + item.title" class="scrollactive-item">{{ item.title }}</a>
+      <li v-for="item in input" :key="item.title" class="menu-Item">
+        <a :href="'#' + item.title" class="scrollactive-item cursorInteract">{{ item.title }}</a>
       </li>
     </scrollactive>
   </div>

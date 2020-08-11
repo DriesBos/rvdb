@@ -3,22 +3,22 @@
     <section class="menu-Landing">
       <ul class="menu">
         <!-- prettier-ignore -->
-        <li class="menu-Item cursorInteract">
-          <nuxt-link to="/">Rutger van den Berg</nuxt-link>
+        <li class="menu-Item">
+          <nuxt-link class="cursorInteract" to="/">Rutger van den Berg</nuxt-link>
         </li>
       </ul>
     </section>
     <section>
       <!-- prettier-ignore -->
       <ul class="menu">
-        <li class="menu-Item cursorInteract">
-          <nuxt-link to="/profiel">Profiel</nuxt-link>
+        <li class="menu-Item">
+          <nuxt-link class="cursorInteract" to="/profiel">Profiel</nuxt-link>
         </li>
-        <li class="menu-Item cursorInteract">
-          <nuxt-link to="/werk">Werk</nuxt-link>
+        <li class="menu-Item">
+          <nuxt-link class="cursorInteract" to="/werk">Werk</nuxt-link>
         </li>
-        <li class="menu-Item cursorInteract">
-          <nuxt-link to="/blog">Blog</nuxt-link>
+        <li class="menu-Item">
+          <nuxt-link class="cursorInteract" to="/blog">Blog</nuxt-link>
         </li>
       </ul>
     </section>
