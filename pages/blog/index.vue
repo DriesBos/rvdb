@@ -5,12 +5,6 @@
       <div></div>
     </div>
     <div class="view-Content view-Blog_ContentContainer">
-      <component
-        :is="story.content.component | dashify"
-        v-if="story.content.component"
-        :key="story.content._uid"
-        :blok="story.content"
-      />
       <!-- prettier-ignore -->
       <div :id="story.content.title" class="articles-List blok">
         <h1 v-if="story.content.title" class="blok-Title">{{ story.content.subtitle }}</h1>
@@ -26,6 +20,12 @@
           </nuxt-link>
         </ul>
       </div>
+      <component
+        :is="story.content.component | dashify"
+        v-if="story.content.component"
+        :key="story.content._uid"
+        :blok="story.content"
+      />
     </div>
   </section>
 </template>

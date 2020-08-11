@@ -32,14 +32,13 @@ section:nth-child(n+3)
       transition: opacity .33s ease
 
 // LANDING
-.landing-enter-active, .landing-leave-active
-  transition: opacity .33s ease .36s
-  h1
+.landing-leave-active
+  transition: opacity .66s ease .33s
+  h1, h2, h3
     transition: opacity .33s ease
-
-.landing-enter, .landing-leave-to
+.landing-leave-to
   opacity: 0
-  h1
+  h1, h2, h3
     opacity: 0
 
 // CONTENT
