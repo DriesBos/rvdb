@@ -124,7 +124,7 @@ main
   .view
     position: relative
     flex-grow: 1
-    &-Profiel, &-Werk, &-Blog
+    &-Profiel, &-Werk, &-Blog, &-Contact
       display: flex
       > div
         flex-basis: 50%
@@ -133,13 +133,15 @@ main
       .view-Content
         > .blok:last-child
           padding-bottom: 100vh // TODO: dynamically distract blok height
-
     &-Article
       display: flex
       justify-content: center
       align-items: flex-start
       padding-left: 2rem
       padding-right: 2rem
+    &-Contact
+      padding-top: 3rem
+
   section
     height: 100vh
     position: relative

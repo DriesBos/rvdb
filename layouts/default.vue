@@ -98,7 +98,6 @@ export default {
     },
     // Used for background styling
     checkPageType() {
-      console.log("CHECKPAGE TYPE", this.$route.name)
       if (this.$route.name === "index") {
         this.pageType = "index"
       } else if (this.$route.name === "profiel") {
@@ -109,6 +108,8 @@ export default {
         this.pageType = "blog"
       } else if (this.$route.name === "blog-slug") {
         this.pageType = "blog-slug"
+      } else if (this.$route.name === "contact") {
+        this.pageType = "contact"
       } else {
         this.pageType = "error"
       }
@@ -244,6 +245,12 @@ export default {
     .circleDeux
       top: 100%
       left: 90%
+  &.contact
+    .circle
+      transform: translate(60%, -50%)
+    .circleDeux
+      top: 100%
+      left: 40%
   &.error
     .circle
       transform: translate(-50%, -40%)

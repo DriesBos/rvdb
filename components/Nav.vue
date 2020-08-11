@@ -20,6 +20,10 @@
         <li class="menu-Item">
           <nuxt-link class="cursorInteract" to="/blog">Blog</nuxt-link>
         </li>
+
+        <li class="menu-Item">
+          <nuxt-link class="cursorInteract" to="/contact">Contact</nuxt-link>
+        </li>
       </ul>
     </section>
   </header>

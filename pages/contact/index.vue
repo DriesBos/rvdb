@@ -1,10 +1,16 @@
 <template>
   <section class="view view-Contact">
+    <div class="view-NavPlaceholder">
+      <div>
+        <p></p>
+      </div>
+    </div>
     <component
       :is="story.content.component | dashify"
       v-if="story.content.component"
       :key="story.content._uid"
       :blok="story.content"
+      class="view-Content"
     />
   </section>
 </template>
