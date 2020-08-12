@@ -1,20 +1,27 @@
 @font-face
-  font-family: 'Univers Light'
-  src: url('~assets/fonts/univers-lt-std-light.woff') format('woff')
-  font-weight: normal
-  font-style: normal
-  font-display: swap
-
-@font-face
-  font-family: 'Univers'
-  src: url('~assets/fonts/UniversLTStd.woff2') format('woff2')
-  font-weight: normal
-  font-style: normal
-  font-display: swap
-
-@font-face
   font-family: 'Univers Roman'
-  src: url('~assets/fonts/universRoman.woff2') format('woff2')
+  src: url('~assets/fonts/Univers-55-Roman.woff2') format('woff2'), url('~assets/fonts/Univers-55-Roman.woff') format('woff')
+  font-weight: normal
+  font-style: normal
+  font-display: swap
+
+@font-face
+  font-family: 'Univers Oblique'
+  src: url('~assets/fonts/Univers-55-Oblique.woff2') format('woff2'), url('~assets/fonts/Univers-55-Oblique.woff') format('woff')
+  font-weight: normal
+  font-style: normal
+  font-display: swap
+
+@font-face
+  font-family: 'Univers Bold'
+  src: url('~assets/fonts/Univers-55-Bold.woff2') format('woff2'), url('~assets/fonts/Univers-55-Bold.woff') format('woff')
+  font-weight: normal
+  font-style: normal
+  font-display: swap
+
+@font-face
+  font-family: 'Univers Bold Oblique'
+  src: url('~assets/fonts/Univers-55-BoldOblique.woff2') format('woff2'), url('~assets/fonts/Univers-55-BoldOblique.woff') format('woff')
   font-weight: normal
   font-style: normal
   font-display: swap
@@ -63,10 +70,14 @@ a
   text-decoration: none
 
 strong
-  font-weight: bold
+  font-family: 'Univers Bold', Helvetica, Arial, sans-serif
+  em
+    font-family: 'Univers Bold Oblique', Helvetica, Arial, sans-serif
 
 em
-  font-style: italic
+  font-family: 'Univers Oblique', Helvetica, Arial, sans-serif
+  strong
+    font-family: 'Univers Bold Oblique', Helvetica, Arial, sans-serif
 
 .ellipsis
   overflow: hidden
