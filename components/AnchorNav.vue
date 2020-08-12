@@ -15,14 +15,6 @@ export default {
     input: {
       type: Array
     }
-  }, // Is an object
-  mounted() {
-    console.log("ANCHORLIST INPUT", this.input)
-  },
-  methods: {
-    removeSpaces(el) {
-      return el.replace(/\s/g, "")
-    }
   }
 }
 </script>
