@@ -82,7 +82,6 @@ export default {
   mounted() {
     this.filterPosts()
     this.sortAnchorList()
-    console.log(this.postList)
   },
   methods: {
     filterPosts() {
@@ -91,13 +90,10 @@ export default {
       this.postList = filteredArray
     },
     sortAnchorList() {
-      let arrayOne = this.story.content.body.filter(function(el) {
-        return el.title !== ""
-      })
-      let arrayTwo = this.story.content
-      console.log(arrayOne, arrayTwo)
-      this.anchorList = arrayOne
-      this.anchorList.push(arrayTwo)
+      let array = this.story.content.body.map(el => el.title)
+      this.anchorList = array
+      let arrayTwo = this.story.content.title
+      this.anchorList.unshift(arrayTwo)
     }
   }
 }

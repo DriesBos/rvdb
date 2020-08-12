@@ -2,8 +2,8 @@
   <div class="anchor-Nav anchor-Nav_Fixed">
     <!-- prettier-ignore -->
     <scrollactive class="menu my-nav" :offset="0">
-      <li v-for="item in input" :key="item.title" class="menu-Item">
-        <a :href="'#' + item.title" class="scrollactive-item cursorInteract">{{ item.title }}</a>
+      <li v-for="item in input" :key="item" class="menu-Item">
+        <a :href="'#' + item" class="scrollactive-item cursorInteract">{{ item }}</a>
       </li>
     </scrollactive>
   </div>
@@ -11,7 +11,19 @@
 
 <script>
 export default {
-  props: ["input"] // Is an object
+  props: {
+    input: {
+      type: Array
+    }
+  }, // Is an object
+  mounted() {
+    console.log("ANCHORLIST INPUT", this.input)
+  },
+  methods: {
+    removeSpaces(el) {
+      return el.replace(/\s/g, "")
+    }
+  }
 }
 </script>
 

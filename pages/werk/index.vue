@@ -57,10 +57,9 @@ export default {
   },
   methods: {
     sortAnchorList() {
-      let array = this.story.content.body.filter(function(el) {
-        return el.title !== ""
-      })
+      let array = this.story.content.body.map(el => el.title)
       this.anchorList = array
+      console.log("WERK ANCHORLIST", this.anchorList, typeof this.anchorList)
     }
   }
 }
