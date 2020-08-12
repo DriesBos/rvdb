@@ -7,6 +7,14 @@
     <div :id="story.content._uid" v-editable="story.content" class="article-Content blok">
       <h1 v-if="story.content.title" class="article-Title">{{ story.content.title }}</h1>
       <markdown-item :input="story.content.text" />
+      <div v-if="story.content.body" class="hyperlinks">
+        <component
+          :is="blok.component | dashify"
+          v-for="blok in story.content.body"
+          :key="blok._uid"
+          :blok="blok"
+        ></component>
+      </div>
     </div>
   </section>
 </template>
@@ -53,6 +61,9 @@ export default {
     return {
       story: { content: {} }
     }
+  },
+  mounted() {
+    console.log(this.story.content.body, "ARTICLE")
   }
 }
 </script>

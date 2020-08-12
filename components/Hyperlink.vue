@@ -25,7 +25,7 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 .hyperlink
   display: flex
   align-items: center
