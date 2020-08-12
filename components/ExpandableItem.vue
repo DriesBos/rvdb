@@ -1,5 +1,6 @@
 <template>
   <div v-editable="blok" class="expandable-Item" :class="{ active: isOpen }">
+    <!-- TITLE -->
     <div class="expandable-Item_Title cursorInteract" @click="isOpen = !isOpen">
       <!-- prettier-ignore -->
       <h1 v-if="blok.title" class="expandable-Item_Title_Title">{{ blok.title }}</h1>
@@ -15,9 +16,11 @@
         </div>
       </div>
     </div>
+    <!-- CONTENT -->
     <!-- prettier-ignore -->
     <div v-show="isOpen" class="expandable-Item_Content" :class="{ active: isOpen }">
       <markdown-item v-if="blok.text" :input="blok.text" />
+      <div class="expandable-Item_ContentIcons">
       <div v-if="blok.medium" class="tag">
         <h4>{{ blok.medium }}</h4>
       </div>
@@ -25,14 +28,16 @@
         <h4>Ism {{ blok.mention }}</h4>
       </div>
       <!-- prettier-ignore -->
-      <a :href="blok.hyperlink" class="icon-LinkWrapper" target="_blank">
-        <div
-          v-if="blok.hyperlink"
-          class="icon icon-Hyperlink"
-          v-html="require('~/assets/images/icon-north-east.svg?include')"
-        />
-      </a>
+      <nuxt-link :to="blok.hyperlink" class="icontag cursorInteract" tag="div">
+          <div
+            v-if="blok.hyperlink"
+            v-html="require('~/assets/images/icon-hyperlink.svg?include')"
+          />
+      </nuxt-link>
+
+      </div>
     </div>
+    <!-- IMAGE -->
     <div v-if="blok.image" class="backgroundImage expandable-Item_Image">
       <div class="backgroundImage-Container">
         <img :src="blok.image" :alt="blok.image_caption" />
@@ -117,6 +122,10 @@ export default {
     margin-bottom: 1.5rem
     .icon
       display: inline-block
+  &_ContentIcons
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
   &:hover
     // .expandable-Item_Title
     //   color: white
