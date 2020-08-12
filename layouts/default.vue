@@ -87,7 +87,7 @@ export default {
   methods: {
     // Landing function
     checkLanding() {
-      console.log("LANDING")
+      // console.log("LANDING")
       if (this.$route.name === "index") {
         this.landing = true
       } else {
