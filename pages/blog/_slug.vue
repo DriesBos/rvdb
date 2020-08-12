@@ -1,6 +1,8 @@
 <template>
   <section class="view view-Article">
-    <nuxt-link class="article-Close" to="/blog">Sluiten</nuxt-link>
+    <nuxt-link class="article-Close" to="/blog" title="sluit artikel"
+      >sluiten</nuxt-link
+    >
     <!-- prettier-ignore -->
     <div :id="story.content._uid" v-editable="story.content" class="article-Content blok">
       <h1 v-if="story.content.title" class="article-Title">{{ story.content.title }}</h1>
