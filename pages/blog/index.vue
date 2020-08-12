@@ -7,14 +7,14 @@
     <div class="view-Content view-Blog_ContentContainer">
       <!-- prettier-ignore -->
       <div :id="story.content.title" class="articles-List blok">
-        <h1 v-if="story.content.title" class="blok-Title">{{ story.content.subtitle }}</h1>
+        <h1 v-if="story.content.title" class="blok-Title">{{ story.content.title }}</h1>
         <markdown-item v-if="story.content.text" class="blok-Text" :input="story.content.text" />
         <ul class="article-Link_Container">
           <nuxt-link v-for="item in postList" :key="item.id" :to="`/blog/${item.id}`" tag="li">
             <p class="cursorInteract article-Link">{{ item.title }}</p>
             <div v-if="item.image" class="backgroundImage expandable-Item_Image">
               <div class="backgroundImage-Container">
-                <img :src="item.image" />
+                <img :src="item.image" :alt="item.image_caption" />
               </div>
             </div>
           </nuxt-link>
@@ -95,6 +95,7 @@ export default {
         return el.title !== ""
       })
       let arrayTwo = this.story.content
+      console.log(arrayOne, arrayTwo)
       this.anchorList = arrayOne
       this.anchorList.push(arrayTwo)
     }

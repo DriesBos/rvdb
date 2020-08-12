@@ -35,7 +35,7 @@
     </div>
     <div v-if="blok.image" class="backgroundImage expandable-Item_Image">
       <div class="backgroundImage-Container">
-        <img :src="blok.image" />
+        <img :src="blok.image" :alt="blok.image_caption" />
       </div>
     </div>
   </div>
