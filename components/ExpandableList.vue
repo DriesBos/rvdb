@@ -20,15 +20,6 @@ export default {
   },
   props: {
     blok: Object
-  },
-  mounted() {}
+  }
 }
 </script>
-
-<style lang="sass" scoped>
-// .expandable-List
-//   .expandable-Item:last-child
-//     background: red
-//     .expandable-Item_Title, > div
-//       margin-bottom: 0 !important
-</style>
