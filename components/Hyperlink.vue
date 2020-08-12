@@ -1,7 +1,12 @@
 <template>
   <div v-editable="blok" class="hyperlink">
     <!-- prettier-ignore -->
-    <div class="icon" v-html="require('~/assets/images/icon-east.svg?include')" />
+    <nuxt-link to="" class="icontag cursorInteract" tag="div">
+          <div
+            v-if="blok.hyperlink"
+            v-html="require('~/assets/images/icon-contact.svg?include')"
+          />
+      </nuxt-link>
     <markdown-item :input="blok.hyperlink" />
   </div>
 </template>
@@ -23,11 +28,7 @@ export default {
 <style lang="sass" scoped>
 .hyperlink
   display: flex
-  .icon
-    transition: color .16s ease
-    height: 100%
-    margin-right: .5rem
-  &:hover
-    .icon
-      color: black
+  margin-bottom: .5rem
+  .icontag
+    border: 0
 </style>
