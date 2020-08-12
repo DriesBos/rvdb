@@ -28,12 +28,14 @@
         <h4>Ism {{ blok.mention }}</h4>
       </div>
       <!-- prettier-ignore -->
-      <nuxt-link :to="blok.hyperlink" class="icontag cursorInteract" tag="div">
+      <div class="icontag cursorInteract">
+        <a :href="blok.hyperlink" target="_blank">
           <div
             v-if="blok.hyperlink"
             v-html="require('~/assets/images/icon-hyperlink.svg?include')"
           />
-      </nuxt-link>
+        </a>
+      </div>
 
       </div>
     </div>

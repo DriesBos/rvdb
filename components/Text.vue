@@ -14,7 +14,17 @@ export default {
   },
   props: {
     blok: Object
-  },
-  mounted() {}
+  }
 }
 </script>
+
+<style lang="sass">
+.text
+  overflow: hidden
+  img
+    width: 100%
+    height: auto
+    max-width: 100%
+    margin-top: 1.5rem
+    margin-bottom: 1.5rem
+</style>

@@ -1,27 +1,30 @@
 <template>
   <div v-editable="blok" class="hyperlink">
     <!-- prettier-ignore -->
-    <markdown-item :input="blok.hyperlink" />
-    <nuxt-link to="" class="icontag cursorInteract" tag="div">
+    <p>{{ blok.hyperlink_text }}</p>
+    <a
+      v-if="blok.hyperlink"
+      :href="blok.hyperlink"
+      target="_blank"
+      class="icontag cursorInteract"
+      tag="div"
+    >
       <div
         v-if="blok.hyperlink"
         v-html="require('~/assets/images/icon-hyperlink.svg?include')"
       />
-    </nuxt-link>
+    </a>
   </div>
 </template>
 
 <script>
-import MarkdownItem from "@/components/MarkdownItem.vue"
-
 export default {
-  components: {
-    "markdown-item": MarkdownItem
-  },
   props: {
     blok: Object
   },
-  mounted() {}
+  mounted() {
+    console.log(this.blok)
+  }
 }
 </script>
 
