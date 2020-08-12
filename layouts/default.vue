@@ -55,6 +55,7 @@ export default {
     this.checkLanding()
     this.customCursor()
     this.checkNav()
+    this.checkPageType()
     document
       .querySelectorAll(".cursorInteract")
       .forEach(item => item.addEventListener("mouseover", this.changeCursor))
@@ -114,6 +115,7 @@ export default {
       } else {
         this.pageType = "error"
       }
+      console.log(this.$route, this.pageType)
     },
     // Cursor functions
     customCursor() {
@@ -134,7 +136,13 @@ export default {
     },
     // Used to disable menu
     checkNav() {
-      if (this.$route.name !== "blog-slug") {
+      if (
+        this.$route.name === "index" ||
+        this.$route.name === "profiel" ||
+        this.$route.name === "werk" ||
+        this.$route.name === "blog" ||
+        this.$route.name === "contact"
+      ) {
         this.navActive = true
       } else {
         this.navActive = false
@@ -269,5 +277,8 @@ export default {
       left: 45%
   &.error
     .circle
-      transform: translate(-50%, -40%)
+      transform: translate(50%, 40%)
+    .circleDeux
+      top: 100%
+      left: 100%
 </style>
