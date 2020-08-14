@@ -17,7 +17,9 @@
     <transition name="landing">
       <div v-show="landing" class="landing" @click="toggleLanding">
         <!-- prettier-ignore -->
-        <h1 class="cursorInteract">Rutger van den Berg</h1>
+        <div class="landing-Title">
+          <h1 class="cursorInteract">Rutger van den Berg</h1>
+        </div>
         <div class="landing-Bottom">
           <h2>onderzoeker — spreker — auteur</h2>
           <h3>Gespecialiseerd in jongerencultuur</h3>

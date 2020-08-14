@@ -31,7 +31,7 @@ export default {
       &::after
         content: ""
         position: absolute
-        bottom: -.5rem
+        bottom: -.5em
         left: 0
         width: 100%
         border-bottom: 2px solid black
