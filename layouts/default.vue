@@ -3,7 +3,7 @@
     <div class="background" :class="pageType">
       <div class="circle"></div>
       <div class="circleDeux"></div>
-      <div class="blur"></div>
+      <!-- <div class="blur"></div> -->
     </div>
     <transition name="menu">
       <Nav v-if="navActive" />
@@ -195,7 +195,7 @@ export default {
     position: absolute
     top: 0
     right: 0
-    transform: translate(45%, -50%)
+    transform: translate(50%, -50%)
     width: 200vmin
     height: 200vmin
     background: $gradient-secondary
@@ -215,16 +215,16 @@ export default {
     border-radius: 100000000px
     transition: top .9s ease-out, left .9s ease-out
     will-change: top, left
-  .blur
-    position: absolute
-    left: 0
-    top: 0
-    right: 0
-    bottom: 0
-    width: 100%
-    height: 100%
-    background: white
-    background: rgba(0,0,0,0.01)
+  // .blur
+  //   position: absolute
+  //   left: 0
+  //   top: 0
+  //   right: 0
+  //   bottom: 0
+  //   width: 100%
+  //   height: 100%
+  //   background: white
+  //   background: rgba(0,0,0,0.01)
     // backdrop-filter: blur(100px)
   &.initial
     .circle
