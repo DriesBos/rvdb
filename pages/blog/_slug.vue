@@ -68,12 +68,21 @@ export default {
 </script>
 
 <style lang="sass">
+@import '~/assets/styles/variables.sass'
+
 .article
   &-Close
     position: fixed
     top: 0
-    right: 0
-    margin: 3rem 2rem
+    left: 0
+    padding: var(--spacing-top) var(--spacing-sides)
+    opacity: $opacity-links
+    transition: opacity $hover-nav
+    @media all and (max-width: $breakpoint-mobile)
+      position: relative
+      padding-left: 0
+    &:hover
+      opacity: 1
   &-Content
     max-width: 42rem
     img
@@ -86,5 +95,5 @@ export default {
       a
         text-decoration: underline
   &-Title
-    margin-bottom: 3rem
+    margin-bottom: var(--spacing-top)
 </style>

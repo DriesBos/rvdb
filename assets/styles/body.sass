@@ -193,6 +193,17 @@ main
       align-items: flex-start
       padding-left: var(--spacing-sides)
       padding-right: var(--spacing-sides)
+      @media all and (max-width: $breakpoint-mobile)
+        position: fixed
+        flex-direction: column
+        justify-content: flex-start
+        left: 0
+        top: 0
+        right: 0
+        bottom: 0
+        .article-Content
+          overflow-y: auto
+          width: 100%
       p, h1, h2, h3, h4, h5
         margin-bottom: 1.5em
         margin-top: 1.5em
