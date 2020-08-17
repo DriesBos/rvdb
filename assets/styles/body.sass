@@ -167,6 +167,9 @@ main
     flex-shrink: 0
     @media all and (max-width: $breakpoint-mobile)
       flex-direction: column
+      position: sticky
+      left: 0
+      top: 0
   .view
     position: relative
     flex-grow: 1
@@ -224,6 +227,10 @@ main
       padding-bottom: 0
   &-Nav
     padding-right: calc(#{var(--spacing-sides)} + 1vw)
+    @media all and (max-width: $breakpoint-mobile)
+      position: sticky
+      left: 0
+      top: 0
     .menu
       @media all and (max-width: $breakpoint-mobile)
         padding-top: 0
