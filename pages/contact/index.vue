@@ -1,18 +1,14 @@
 <template>
-  <section class="view view-Contact">
-    <div class="view-NavPlaceholder">
-      <div>
-        <p></p>
-      </div>
-    </div>
+  <div class="view view-Contact">
+    <section class="section section-Anchor"></section>
     <component
       :is="story.content.component | dashify"
       v-if="story.content.component"
       :key="story.content._uid"
       :blok="story.content"
-      class="view-Content"
+      class="section section-Content view-Content"
     />
-  </section>
+  </div>
 </template>
 
 <script>

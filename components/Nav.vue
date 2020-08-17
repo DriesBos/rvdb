@@ -1,6 +1,6 @@
 <template>
-  <header>
-    <section class="menu-Landing">
+  <header class="header">
+    <section class="section section-Logo">
       <ul class="menu">
         <!-- prettier-ignore -->
         <li class="menu-Item">
@@ -8,7 +8,7 @@
         </li>
       </ul>
     </section>
-    <section>
+    <section class="section section-Nav">
       <!-- prettier-ignore -->
       <ul class="menu">
         <li class="menu-Item">
@@ -28,20 +28,3 @@
     </section>
   </header>
 </template>
-
-<style lang="sass">
-@import '~/assets/styles/variables.sass'
-
-header
-  display: flex
-  &.nav-Fixed
-    position: fixed
-    top: 0
-    left: 0
-  &.nav-Normal
-    a
-      visibility: hidden
-  .menu
-    padding: 2rem
-    padding-top: 3rem
-</style>

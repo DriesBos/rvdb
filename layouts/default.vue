@@ -6,10 +6,7 @@
       <div class="blur"></div>
     </div>
     <transition name="menu">
-      <Nav v-if="navActive" class="nav-Fixed" />
-    </transition>
-    <transition name="menu">
-      <Nav v-if="navActive" class="nav-Normal" />
+      <Nav v-if="navActive" />
     </transition>
     <transition name="normal" mode="in-out">
       <nuxt></nuxt>

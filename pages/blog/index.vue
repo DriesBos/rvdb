@@ -1,11 +1,8 @@
 <template>
-  <section class="view view-Blog">
+  <div class="view view-Blog">
     <blok-anchor-nav :input="anchorList" />
-    <div class="view-NavPlaceholder">
-      <div></div>
-    </div>
-    <div class="view-Content view-Blog_ContentContainer">
-      <!-- prettier-ignore -->
+    <!-- prettier-ignore -->
+    <section class="section section-Content view-Content view-Blog_ContentContainer">
       <div :id="story.content.title" class="articles-List blok">
         <h1 v-if="story.content.title" class="blok-Title">{{ story.content.title }}</h1>
         <markdown-item v-if="story.content.text" class="blok-Text" :input="story.content.text" />
@@ -26,8 +23,8 @@
         :key="story.content._uid"
         :blok="story.content"
       />
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <script>

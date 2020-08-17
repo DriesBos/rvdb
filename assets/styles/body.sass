@@ -1,5 +1,6 @@
 @import '~/assets/styles/variables.sass'
 
+// ELEMENTS
 .icon
   position: relative
   width: 1rem
@@ -38,7 +39,6 @@
   left: 0
   right: 0
   z-index: -1
-  border: 2px solid blue
   &-Container
     position: relative
     width: 60vw
@@ -73,40 +73,6 @@
 .cursorInteract
   cursor: pointer
 
-.menu
-  position: relative
-  display: inline-flex
-  flex-direction: column
-  z-index: 999
-  h1, p, a
-    position: relative
-    display: inline
-    line-height: 2.5
-    z-index: 999
-  &-Container
-    border: 1px solid purple
-  &-Item
-    position: relative
-    z-index: 999
-    a
-      opacity: $opacity-links
-      transition: opacity $hover-nav
-    &:hover
-      a
-        opacity: 1
-    a.nuxt-link-active
-      position: relative
-      opacity: 1
-      &::after
-        content: ""
-        position: absolute
-        bottom: -.5rem
-        left: 0
-        width: 100%
-        border-bottom: 2px solid black
-  &-Landing
-    min-width: 22vw
-
 .tag
   position: relative
   display: flex
@@ -135,11 +101,8 @@
   border: 1px solid black
   width: 22px
   height: 22px
-  border-top: 1px solid black
-  border-right: 1px solid black
   margin-right: 8px
   img, svg
-    // display: none
     position: absolute
     top: 0
     left: 0
@@ -147,28 +110,67 @@
     height: 100%
     object-fit: contain
 
+// NAV
+
+.menu
+  position: sticky
+  left: 0
+  top: 0
+  display: inline-flex
+  flex-direction: column
+  z-index: 999
+  padding-top: var(--spacing-top)
+  h1, p, a
+    position: relative
+    display: inline
+    line-height: 2.5
+    z-index: 999
+  &-Item
+    position: relative
+    z-index: 999
+    a
+      opacity: $opacity-links
+      transition: opacity $hover-nav
+    &:hover
+      a
+        opacity: 1
+    a.nuxt-link-active
+      position: relative
+      opacity: 1
+      &::after
+        content: ""
+        position: absolute
+        bottom: -.5rem
+        left: 0
+        width: 100%
+        border-bottom: 2px solid black
+  &-Landing
+    min-width: 22vw
+
+// CONTAINERS
+
 main
   color: $color
   display: flex
-  // cursor: none
+  flex-wrap: nowrap
+  .header
+    display: flex
+    flex-wrap: nowrap
+    flex-shrink: 0
   .view
     position: relative
     flex-grow: 1
-    &-Profiel, &-Werk, &-Blog, &-Contact
-      display: flex
-      > div
-        flex-basis: 50%
-        padding-left: 2rem
-        padding-right: 2rem
-      .view-Content
-        > .blok:last-child, .pageBlog
-          padding-bottom: 100vh // TODO: dynamically distract blok height
+    display: flex
+    flex-wrap: nowrap
+    justify-content: space-between
+    @media all and (max-width: $breakpoint-tablet)
+      justify-content: flex-end
     &-Article
       display: flex
       justify-content: center
       align-items: flex-start
-      padding-left: 2rem
-      padding-right: 2rem
+      padding-left: var(--spacing-sides)
+      padding-right: var(--spacing-sides)
       p, h1, h2, h3, h4, h5
         margin-bottom: 1.5em
         margin-top: 1.5em
@@ -187,7 +189,8 @@ main
           p, a, h1, h2, h3, h4, em, strong
             font-family: 'Univers Oblique', Helvetica, Arial, sans-serif
     &-Contact
-      padding-top: 3rem
+      .section-Content
+        padding-top: var(--spacing-top)
     &-Error
       position: fixed
       top: 0
@@ -198,21 +201,38 @@ main
       justify-content: center
       align-items: center
 
-  section
-    height: 100vh
+.section
+  padding-left: var(--spacing-sides)
+  padding-right: var(--spacing-sides)
+  padding-bottom: var(--spacing-top)
+  position: relative
+  &-Logo, &-Nav, &-Anchor
+    flex-shrink: 0
+  &-Logo
+    padding-right: calc(#{var(--spacing-sides)} + 2vw)
+  &-Nav
+    padding-right: calc(#{var(--spacing-sides)} + 1vw)
+  &-Anchor
+    @media all and (max-width: $breakpoint-tablet)
+      display: none
+  &-Content
+    padding-top: 0
+    max-width: 35rem
+    > .blok:last-child
+      padding-bottom: 100vh // TODO: dynamically distract blok height
+
+.blok
+  padding-top: var(--spacing-top)
+  padding-bottom: var(--spacing-top)
+  &-Title
     position: relative
-    .blok
-      padding-top: 3rem
-      padding-bottom: 3rem
-      &-Title
-        position: relative
-        margin-bottom: 1.5rem
-        &::after
-          content: ""
-          position: absolute
-          bottom: -.5em
-          left: 0
-          width: 100%
-          border-bottom: 2px solid black
-      &-Text
-        margin-bottom: 1.5rem
+    margin-bottom: 1.25rem
+    &::after
+      content: ""
+      position: absolute
+      bottom: -.5em
+      left: 0
+      width: 100%
+      border-bottom: 2px solid black
+  &-Text
+    margin-bottom: 1.5rem
