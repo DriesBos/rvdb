@@ -3,7 +3,6 @@
     <div class="background" :class="pageType">
       <div class="circle"></div>
       <div class="circleDeux"></div>
-      <!-- <div class="blur"></div> -->
     </div>
     <transition name="menu">
       <Nav v-if="navActive" />
@@ -167,7 +166,7 @@ export default {
   flex-direction: column
   justify-content: space-around
   align-items: center
-  z-index: 900
+  z-index: 999
   h1, h2, h3
     text-align: center
   h1
@@ -176,11 +175,17 @@ export default {
     border-bottom: 4px solid black
     padding-bottom: .2em
     margin-bottom: .6em
+    @media all and (max-width: $breakpoint-mobile)
+      font-size: 7vw
   h2
     font-size: 28px
     margin-bottom: .2em
+    @media all and (max-width: $breakpoint-mobile)
+      font-size: 3.5vw
   h3
     font-size: 18px
+    @media all and (max-width: $breakpoint-mobile)
+      font-size: 3.5vw
 
 .background
   position: fixed
@@ -210,22 +215,10 @@ export default {
     width: 50vmin
     height: 50vmin
     background: #7F8CBB
-    // background: #7193E8
     opacity: .66
     border-radius: 100000000px
     transition: top .9s ease-out, left .9s ease-out
     will-change: top, left
-  // .blur
-  //   position: absolute
-  //   left: 0
-  //   top: 0
-  //   right: 0
-  //   bottom: 0
-  //   width: 100%
-  //   height: 100%
-  //   background: white
-  //   background: rgba(0,0,0,0.01)
-    // backdrop-filter: blur(100px)
   &.initial
     .circle
       transform: translate(55%, -50%)
