@@ -19,8 +19,6 @@
         <!-- prettier-ignore -->
         <div class="landing-Title">
           <h1 class="cursorInteract">Rutger van den Berg</h1>
-        </div>
-        <div class="landing-Bottom">
           <h2>onderzoeker — spreker — auteur</h2>
           <h3>Gespecialiseerd in jongerencultuur</h3>
         </div>
@@ -169,7 +167,8 @@ export default {
   background: rgba(0,0,0,0.01)
   backdrop-filter: blur(50px)
   display: flex
-  justify-content: center
+  flex-direction: column
+  justify-content: space-around
   align-items: center
   z-index: 900
   h1, h2, h3
@@ -177,19 +176,14 @@ export default {
   h1
     font-size: 5vw
     letter-spacing: .03em
+    border-bottom: 4px solid black
+    padding-bottom: .2em
+    margin-bottom: .6em
   h2
     font-size: 28px
-    margin-bottom: 1em
+    margin-bottom: .2em
   h3
     font-size: 18px
-    margin-bottom: 2em
-  &-Bottom
-    position: absolute
-    left: 0
-    bottom: 0
-    width: 100%
-    display: flex
-    flex-direction: column
 
 .background
   position: fixed
