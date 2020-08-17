@@ -69,6 +69,8 @@
   &.active, .active
     width: calc(1.6rem * 2)
     height: calc(1.6rem * 2)
+  @media ( hover: none )
+    display: none
 
 .cursorInteract
   cursor: pointer
@@ -121,7 +123,7 @@
   z-index: 999
   padding-top: var(--spacing-top)
   @media all and (max-width: $breakpoint-mobile)
-    align-items: flex-end
+    flex-direction: row
   h1, p, a
     position: relative
     display: inline
@@ -130,6 +132,8 @@
   &-Item
     position: relative
     z-index: 999
+    @media all and (max-width: $breakpoint-mobile)
+      margin-right: var(--spacing-sides)
     a
       opacity: $opacity-links
       transition: opacity $hover-nav
@@ -162,7 +166,7 @@ main
     flex-wrap: nowrap
     flex-shrink: 0
     @media all and (max-width: $breakpoint-mobile)
-      justify-content: space-between
+      flex-direction: column
   .view
     position: relative
     flex-grow: 1
@@ -216,8 +220,13 @@ main
     flex-shrink: 0
   &-Logo
     padding-right: calc(#{var(--spacing-sides)} + 2vw)
+    @media all and (max-width: $breakpoint-mobile)
+      padding-bottom: 0
   &-Nav
     padding-right: calc(#{var(--spacing-sides)} + 1vw)
+    .menu
+      @media all and (max-width: $breakpoint-mobile)
+        padding-top: 0
   &-Anchor
     @media all and (max-width: $breakpoint-tablet)
       display: none
@@ -226,7 +235,8 @@ main
     @media all and (min-width: $breakpoint-mobile)
       max-width: 35rem
     > .blok:last-child
-      padding-bottom: 100vh // TODO: dynamically distract blok height
+      @media all and (min-width: $breakpoint-mobile)
+        padding-bottom: 100vh // TODO: dynamically distract blok height
 
 .blok
   padding-top: var(--spacing-top)
