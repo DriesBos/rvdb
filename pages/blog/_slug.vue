@@ -84,9 +84,9 @@ export default {
     &:hover
       opacity: 1
   &-Content
-    max-width: 42rem
+    max-width: $max-width-article
     img
-      max-width: 42rem
+      max-width: $max-width-article
     .markdown
       p, h1, h2, h3, h4, h5
         margin-bottom: 1.5em
