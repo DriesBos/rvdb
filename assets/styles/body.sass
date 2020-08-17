@@ -161,16 +161,21 @@ main
   flex-wrap: nowrap
   @media all and (max-width: $breakpoint-mobile)
     flex-direction: column
+    position: fixed
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
   .header
     display: flex
     flex-wrap: nowrap
     flex-shrink: 0
     @media all and (max-width: $breakpoint-header)
       flex-direction: column
-    @media all and (max-width: $breakpoint-mobile)
-      position: sticky
-      left: 0
-      top: 0
+    // @media all and (max-width: $breakpoint-mobile)
+    //   position: sticky
+    //   left: 0
+    //   top: 0
 
   .view
     position: relative
@@ -180,6 +185,8 @@ main
     justify-content: space-between
     @media all and (max-width: $breakpoint-tablet)
       justify-content: flex-end
+    @media all and (max-width: $breakpoint-mobile)
+      overflow-y: auto
     &-Article
       display: flex
       justify-content: center
