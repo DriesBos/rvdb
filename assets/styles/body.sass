@@ -120,6 +120,8 @@
   flex-direction: column
   z-index: 999
   padding-top: var(--spacing-top)
+  @media all and (max-width: $breakpoint-mobile)
+    align-items: flex-end
   h1, p, a
     position: relative
     display: inline
@@ -153,10 +155,14 @@ main
   color: $color
   display: flex
   flex-wrap: nowrap
+  @media all and (max-width: $breakpoint-mobile)
+    flex-direction: column
   .header
     display: flex
     flex-wrap: nowrap
     flex-shrink: 0
+    @media all and (max-width: $breakpoint-mobile)
+      justify-content: space-between
   .view
     position: relative
     flex-grow: 1
@@ -217,7 +223,8 @@ main
       display: none
   &-Content
     padding-top: 0
-    max-width: 35rem
+    @media all and (min-width: $breakpoint-mobile)
+      max-width: 35rem
     > .blok:last-child
       padding-bottom: 100vh // TODO: dynamically distract blok height
 
