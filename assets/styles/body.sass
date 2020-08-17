@@ -167,9 +167,11 @@ main
     flex-shrink: 0
     @media all and (max-width: $breakpoint-header)
       flex-direction: column
+    @media all and (max-width: $breakpoint-mobile)
       position: sticky
       left: 0
       top: 0
+
   .view
     position: relative
     flex-grow: 1
@@ -222,14 +224,24 @@ main
   &-Logo, &-Nav, &-Anchor
     flex-shrink: 0
   &-Logo
-    padding-right: calc(#{var(--spacing-sides)} + 2vw)
+    @media all and (min-width: $breakpoint-header)
+      padding-right: calc(#{var(--spacing-sides)} + 2vw)
     @media all and (max-width: $breakpoint-header)
       padding-bottom: 0
+    @media all and (max-width: $breakpoint-header) and (min-width: $breakpoint-mobile)
+      position: sticky
+      left: 0
+      top: 0
   &-Nav
-    padding-right: calc(#{var(--spacing-sides)} + 1vw)
-    .menu
-      @media all and (max-width: $breakpoint-header)
+    @media all and (min-width: $breakpoint-header)
+      padding-right: calc(#{var(--spacing-sides)} + 1vw)
+    @media all and (max-width: $breakpoint-header)
+      .menu
         padding-top: 0
+    @media all and (max-width: $breakpoint-header) and (min-width: $breakpoint-mobile)
+      position: sticky
+      left: 0
+      top: calc(#{var(--spacing-top)} + 2.425rem)
   &-Anchor
     @media all and (max-width: $breakpoint-tablet)
       display: none
