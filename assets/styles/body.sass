@@ -39,6 +39,9 @@
   left: 0
   right: 0
   z-index: -1
+  opacity: 0
+  max-height: 100vh
+  // border: 2px solid red
   &-Container
     position: relative
     width: 100%
@@ -61,6 +64,7 @@
       filter: greyscale(1)
       -webkit-filter: grayscale(1)
       z-index: -1
+      // opacity: .5
 
 .cursor
   position: fixed
@@ -195,6 +199,9 @@ main
       justify-content: flex-end
     @media all and (max-width: $breakpoint-mobile)
       overflow-y: auto
+    &-Content
+      // Offsets line-height applied to menu-items
+      padding-top: .5rem
     &-Article
       display: flex
       justify-content: center

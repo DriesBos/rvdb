@@ -40,7 +40,7 @@
       </div>
     </div>
     <!-- IMAGE -->
-    <div v-if="blok.image" class="backgroundImage expandable-Item_Image">
+    <div v-if="blok.image" class="backgroundImage">
       <div class="backgroundImage-Container">
         <img :src="blok.image" :alt="blok.image_caption" />
       </div>
@@ -96,11 +96,8 @@ export default {
       margin-right: .5rem
     &:hover
       opacity: 1
-    &:hover ~ .expandable-Item_Image
+    &:hover ~ .backgroundImage
       opacity: 1
-  &_Image
-    pointer-events: none
-    opacity: 0
   &_News
     display: flex
     justify-content: space-between
@@ -132,9 +129,4 @@ export default {
     display: flex
     flex-wrap: wrap
     justify-content: flex-start
-  &:hover
-    // .expandable-Item_Title
-    //   color: white
-    // .expandable-Item_Image
-    //   opacity: 1
 </style>

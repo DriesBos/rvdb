@@ -8,6 +8,12 @@
       :key="blok._uid"
       :blok="blok"
     ></component>
+    <!-- IMAGE -->
+    <div v-if="blok.image" class="backgroundImage">
+      <div class="backgroundImage-Container">
+        <img :src="blok.image" :alt="blok.title" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -23,3 +29,10 @@ export default {
   }
 }
 </script>
+
+<style lang="sass" scoped>
+.expandable-List:hover
+  > .backgroundImage
+    opacity: 1
+    z-index: -2
+</style>

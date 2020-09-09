@@ -2,6 +2,12 @@
   <div :id="blok.title" v-editable="blok" class="text blok">
     <h1 v-if="blok.title" class="blok-Title">{{ blok.title }}</h1>
     <markdown-item :input="blok.text" />
+    <!-- IMAGE -->
+    <div v-if="blok.image" class="backgroundImage">
+      <div class="backgroundImage-Container">
+        <img :src="blok.image" :alt="blok.title" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -21,10 +27,13 @@ export default {
 <style lang="sass">
 .text
   overflow: hidden
-  img
-    width: 100%
-    height: auto
-    max-width: 100%
-    margin-top: 1.5rem
-    margin-bottom: 1.5rem
+  // img
+  //   width: 100%
+  //   height: auto
+  //   max-width: 100%
+  //   margin-top: 1.5rem
+  //   margin-bottom: 1.5rem
+  &:hover > .backgroundImage
+    opacity: 1
+    z-index: -2
 </style>
