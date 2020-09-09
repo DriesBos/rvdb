@@ -64,19 +64,21 @@
 
 .cursor
   position: fixed
-  width: 1.6rem
-  height: 1.6rem
+  width: 1rem
+  height: 1rem
   transform: translate(-50%, -50%)
-  border: 2px solid $color
+  // border: 2px solid $color
   border-radius: 50%
   z-index: 999
   pointer-events: none
   transition: width $hover-nav, height $hover-nav
+  background: black
+  opacity: .1
   &.active, .active
-    width: calc(1.6rem * 2)
-    height: calc(1.6rem * 2)
-  @media ( hover: none )
-    display: none
+    width: 2.5rem
+    height: 2.5rem
+    @media ( hover: none )
+      display: none
 
 .cursorInteract
   cursor: pointer
