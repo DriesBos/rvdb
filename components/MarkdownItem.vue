@@ -66,13 +66,18 @@ export default {
 </script>
 
 <style lang="sass">
-// Prefer style handling by cascading css (typography.sass) as much as possible.
+@import '~/assets/styles/variables.sass'
+
 .markdown
-  p
+  p, h1, h2, h3, h4, h5
     white-space: pre-line
+    margin-bottom: 1rem
+  p:last-child
+    margin-bottom: 0
   a
     cursor: none
-    transition: color .16s ease
+    opacity: $opacity-links
+    transition: opacity $hover-nav
   a:hover
-    color: black
+    opacity: 1
 </style>

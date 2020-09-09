@@ -89,9 +89,13 @@ export default {
     display: flex
     align-items: flex-start
     margin-bottom: .5em
+    opacity: $opacity-links
+    transition: opacity $hover-nav
     h1
       // line-height: 1.75
       margin-right: .5rem
+    &:hover
+      opacity: 1
     &:hover ~ .expandable-Item_Image
       opacity: 1
   &_Image

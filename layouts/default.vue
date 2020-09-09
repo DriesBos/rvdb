@@ -25,10 +25,11 @@
 </template>
 
 <script>
-import gsap from "gsap"
 import Nav from "~/components/Nav.vue"
+import cursorInteraction from "@/mixins/cursorInteraction"
 
 export default {
+  mixins: [cursorInteraction],
   components: {
     Nav
   },
@@ -44,43 +45,14 @@ export default {
     $route() {
       this.checkPageType()
       this.checkNav()
-      this.removeChangeCursor()
     }
   },
   mounted() {
     this.checkLanding()
-    this.customCursor()
     this.checkNav()
     this.checkPageType()
-    document
-      .querySelectorAll(".cursorInteract")
-      .forEach(item => item.addEventListener("mouseover", this.changeCursor))
-    document
-      .querySelectorAll(".cursorInteract")
-      .forEach(item =>
-        item.addEventListener("mouseleave", this.removeChangeCursor)
-      )
   },
-  updated() {
-    document
-      .querySelectorAll(".cursorInteract")
-      .forEach(item => item.addEventListener("mouseover", this.changeCursor))
-    document
-      .querySelectorAll(".cursorInteract")
-      .forEach(item =>
-        item.addEventListener("mouseleave", this.removeChangeCursor)
-      )
-  },
-  destroyed() {
-    document
-      .querySelectorAll(".cursorInteract")
-      .forEach(item => item.removeEventListener("mouseover", this.changeCursor))
-    document
-      .querySelectorAll(".cursorInteract")
-      .forEach(item =>
-        item.removeEventListener("mouseleave", this.removeChangeCursor)
-      )
-  },
+
   methods: {
     // Landing function
     checkLanding() {
@@ -112,23 +84,6 @@ export default {
         this.pageType = "error"
       }
       console.log(this.$route, this.pageType)
-    },
-    // Cursor functions
-    customCursor() {
-      let cursor = document.querySelector(".cursor")
-      function moveCursor(e) {
-        gsap.to(cursor, 0.1, {
-          left: e.clientX,
-          top: e.clientY
-        })
-      }
-      document.addEventListener("mousemove", moveCursor)
-    },
-    changeCursor() {
-      document.querySelector(".cursor").classList.add("active")
-    },
-    removeChangeCursor() {
-      document.querySelector(".cursor").classList.remove("active")
     },
     // Used to disable menu
     checkNav() {

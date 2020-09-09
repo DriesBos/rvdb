@@ -1,7 +1,7 @@
 <template>
   <div v-editable="blok" class="hyperlink">
     <!-- prettier-ignore -->
-    <p>{{ blok.hyperlink_text }}</p>
+    <p class="cursorInteract">{{ blok.hyperlink_text }}</p>
     <a
       v-if="blok.hyperlink"
       :href="blok.hyperlink"
@@ -18,7 +18,10 @@
 </template>
 
 <script>
+import cursorInteraction from "@/mixins/cursorInteraction"
+
 export default {
+  mixins: [cursorInteraction],
   props: {
     blok: Object
   },
@@ -29,11 +32,17 @@ export default {
 </script>
 
 <style lang="sass">
+@import '~/assets/styles/variables.sass'
+
 .hyperlink
   display: flex
   align-items: center
   flex-wrap: wrap
   margin-bottom: .5rem
+  opacity: $opacity-links
+  transition: opacity $hover-nav
   .icontag
     margin-left: .5rem
+  &:hover
+    opacity: 1
 </style>

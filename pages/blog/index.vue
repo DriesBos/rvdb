@@ -98,11 +98,18 @@ export default {
 </script>
 
 <style lang="sass">
+@import '~/assets/styles/variables.sass'
+
 .article-Link_Container
   li
     margin-bottom: .5rem
     &:last-child
       margin-bottom: 0
+  .article-Link
+    opacity: $opacity-links
+    transition: opacity $hover-nav
   .article-Link:hover ~ .expandable-Item_Image
+    opacity: 1
+  .article-Link:hover
     opacity: 1
 </style>
