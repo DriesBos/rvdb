@@ -28,10 +28,10 @@ import Nav from "~/components/Nav.vue"
 import cursorInteraction from "@/mixins/cursorInteraction"
 
 export default {
-  mixins: [cursorInteraction],
   components: {
     Nav
   },
+  mixins: [cursorInteraction],
   data() {
     return {
       pageType: "initial",
@@ -149,7 +149,7 @@ export default {
   bottom: 0
   overflow: hidden
   pointer-events: none
-  z-index: -100
+  z-index: 0
   .circle
     position: absolute
     top: 0
@@ -161,6 +161,7 @@ export default {
     border-radius: 100000000px
     transition: transform .9s ease-out
     will-change: transform
+    opacity: .9
   .circleDeux
     position: absolute
     top: 100%
