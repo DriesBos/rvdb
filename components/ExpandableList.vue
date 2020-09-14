@@ -33,6 +33,7 @@ export default {
 <style lang="sass" scoped>
 .expandable-List:hover
   > .backgroundImage
-    opacity: 1
-    z-index: -2
+    @media ( hover: hover )
+      opacity: 1
+      z-index: -2
 </style>

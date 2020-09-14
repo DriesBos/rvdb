@@ -97,7 +97,8 @@ export default {
     &:hover
       opacity: 1
     &:hover ~ .backgroundImage
-      opacity: 1
+      @media ( hover: hover )
+        opacity: 1
   &_News
     display: flex
     justify-content: space-between

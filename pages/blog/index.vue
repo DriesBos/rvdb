@@ -109,7 +109,8 @@ export default {
     opacity: $opacity-links
     transition: opacity $hover-nav
   .article-Link:hover ~ .expandable-Item_Image
-    opacity: 1
+    @media ( hover: hover )
+      opacity: 1
   .article-Link:hover
     opacity: 1
 </style>

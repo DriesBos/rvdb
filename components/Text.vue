@@ -34,6 +34,7 @@ export default {
   //   margin-top: 1.5rem
   //   margin-bottom: 1.5rem
   &:hover > .backgroundImage
-    opacity: 1
-    z-index: -2
+    @media ( hover: hover )
+      opacity: 1
+      z-index: -2
 </style>
