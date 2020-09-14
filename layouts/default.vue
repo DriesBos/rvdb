@@ -15,7 +15,7 @@
         <!-- prettier-ignore -->
         <div class="landing-Title">
           <h1 class="cursorInteract">Rutger van den Berg</h1>
-          <h2>onderzoeker — spreker — auteur</h2>
+          <h2>onderzoeker — spreker — schrijver</h2>
         </div>
       </div>
     </transition>
