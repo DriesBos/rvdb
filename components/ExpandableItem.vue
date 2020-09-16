@@ -133,4 +133,7 @@ export default {
     display: flex
     flex-wrap: wrap
     justify-content: flex-start
+  &.active
+    .expandable-Item_Title
+      opacity: 1
 </style>
