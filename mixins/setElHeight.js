@@ -9,6 +9,14 @@ export default {
     this.calcHeight()
     this.calcWidth()
   },
+  created() {
+    window.addEventListener("resize", this.calcHeight)
+    window.addEventListener("resize", this.calcWidth)
+  },
+  destroyed() {
+    window.removeEventListener("resize", this.calcHeight)
+    window.removeEventListener("resize", this.calcWidth)
+  },
   methods: {
     calcHeight() {
       // Get el height
@@ -22,7 +30,6 @@ export default {
           el.style.height = calculatedHeight
         })
       }, 250)
-      console.log(el.getBoundingClientRect(), elHeight)
     },
     calcWidth() {
       // Get el height
