@@ -13,13 +13,13 @@
 
 <script>
 import MarkdownItem from "@/components/MarkdownItem.vue"
-// import setElHeight from "@/mixins/setElHeight"
+import setElHeight from "@/mixins/setElHeight"
 
 export default {
   components: {
     "markdown-item": MarkdownItem
   },
-  // mixins: [setElHeight],
+  mixins: [setElHeight],
   props: {
     blok: Object
   }

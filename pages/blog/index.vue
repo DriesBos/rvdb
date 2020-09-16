@@ -30,7 +30,7 @@
 <script>
 import storyblokLivePreview from "@/mixins/storyblokLivePreview"
 import MarkdownItem from "@/components/MarkdownItem.vue"
-// import setElHeight from "@/mixins/setElHeight"
+import setElHeight from "@/mixins/setElHeight"
 import { mapState } from "vuex"
 
 export default {
@@ -38,7 +38,7 @@ export default {
   components: {
     "markdown-item": MarkdownItem
   },
-  mixins: [storyblokLivePreview],
+  mixins: [storyblokLivePreview, setElHeight],
   asyncData(context) {
     let version =
       context.query._storyblok || context.isDev ? "draft" : "published"
