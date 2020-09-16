@@ -2,7 +2,7 @@
   <div class="view view-Blog">
     <blok-anchor-nav :input="anchorList" />
     <!-- prettier-ignore -->
-    <section class="section section-Content view-Content view-Blog_ContentContainer">
+    <section class="section section-Content calculateWidth view-Content view-Blog_ContentContainer">
       <div :id="story.content.title" class="articles-List blok">
         <h1 v-if="story.content.title" class="blok-Title">{{ story.content.title }}</h1>
         <markdown-item v-if="story.content.text" class="blok-Text" :input="story.content.text" />
@@ -10,7 +10,7 @@
           <nuxt-link v-for="item in postList" :key="item.id" :to="`/blog/${item.id}`" tag="li">
             <p class="cursorInteract article-Link">{{ item.title }}</p>
             <div v-if="item.image" class="backgroundImage expandable-Item_Image">
-              <div class="backgroundImage-Container">
+              <div class="backgroundImage-Container setHeight setWidth">
                 <img :src="item.image" :alt="item.image_caption" />
               </div>
             </div>
@@ -30,6 +30,7 @@
 <script>
 import storyblokLivePreview from "@/mixins/storyblokLivePreview"
 import MarkdownItem from "@/components/MarkdownItem.vue"
+import setElHeight from "@/mixins/setElHeight"
 import { mapState } from "vuex"
 
 export default {
@@ -37,7 +38,7 @@ export default {
   components: {
     "markdown-item": MarkdownItem
   },
-  mixins: [storyblokLivePreview],
+  mixins: [storyblokLivePreview, setElHeight],
   asyncData(context) {
     let version =
       context.query._storyblok || context.isDev ? "draft" : "published"
@@ -79,7 +80,7 @@ export default {
   mounted() {
     this.filterPosts()
     this.sortAnchorList()
-    console.log(this.story.content.component, "BLOG PAGE")
+    // console.log(this.story.content.component, "BLOG PAGE")
   },
   methods: {
     filterPosts() {

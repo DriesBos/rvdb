@@ -10,7 +10,7 @@
     </section>
     <section class="section section-Nav">
       <!-- prettier-ignore -->
-      <ul class="menu">
+      <ul class="menu calculateHeight" >
         <li class="menu-Item">
           <nuxt-link class="cursorInteract" to="/profiel">Profiel</nuxt-link>
         </li>

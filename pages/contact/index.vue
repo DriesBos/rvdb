@@ -4,9 +4,10 @@
     <component
       :is="story.content.component | dashify"
       v-if="story.content.component"
+      id="calculateWidth"
       :key="story.content._uid"
       :blok="story.content"
-      class="section section-Content view-Content"
+      class="section section-Content calculateWidth view-Content"
     />
   </div>
 </template>

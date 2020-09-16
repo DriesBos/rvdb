@@ -41,7 +41,7 @@
     </div>
     <!-- IMAGE -->
     <div v-if="blok.image" class="backgroundImage">
-      <div class="backgroundImage-Container">
+      <div class="backgroundImage-Container setHeight setWidth">
         <img :src="blok.image" :alt="blok.image_caption" />
       </div>
     </div>
@@ -50,11 +50,13 @@
 
 <script>
 import MarkdownItem from "@/components/MarkdownItem.vue"
+import setElHeight from "@/mixins/setElHeight"
 
 export default {
   components: {
     "markdown-item": MarkdownItem
   },
+  mixins: [setElHeight],
   props: {
     blok: Object
   },

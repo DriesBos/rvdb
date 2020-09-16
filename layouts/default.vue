@@ -82,7 +82,7 @@ export default {
       } else {
         this.pageType = "error"
       }
-      console.log(this.$route, this.pageType)
+      // console.log(this.$route, this.pageType)
     },
     // Used to disable menu
     checkNav() {

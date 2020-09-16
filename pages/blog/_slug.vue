@@ -62,7 +62,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this.story.content.body, "ARTICLE")
+    // console.log(this.story.content.body, "ARTICLE")
   }
 }
 </script>
