@@ -1,17 +1,17 @@
 /*!
-  * vue-router v3.3.4
+  * vue-router v3.4.3
   * (c) 2020 Evan You
   * @license MIT
   */
 
 /*!
-  * vue-scrollto v2.18.1
+  * vue-scrollto v2.18.2
   * (c) 2019 Randjelovic Igor
   * @license MIT
   */
 
 /*!
- * CSSPlugin 3.4.1
+ * CSSPlugin 3.4.2
  * https://greensock.com
  *
  * Copyright 2008-2020, GreenSock. All rights reserved.
@@ -21,7 +21,7 @@
 */
 
 /*!
- * GSAP 3.4.1
+ * GSAP 3.4.2
  * https://greensock.com
  *
  * @license Copyright 2008-2020, GreenSock. All rights reserved.
