@@ -8,8 +8,6 @@ export default {
   mounted() {
     this.calcHeight()
     this.calcWidth()
-  },
-  created() {
     window.addEventListener("resize", this.calcHeight)
     window.addEventListener("resize", this.calcWidth)
   },
