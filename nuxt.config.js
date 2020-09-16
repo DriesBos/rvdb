@@ -13,46 +13,38 @@ module.exports = {
       { charset: "utf-8" },
       {
         name: "viewport",
-        content: "width=device-width, initial-scale=1",
+        content: "width=device-width, initial-scale=1"
       },
       {
         hid: "description",
         name: "description",
         content:
-          "Onderzoeker — spreker — schrijver, gespecialiseerd in de interactie tussen jongeren en hun volwassen omgeving.",
+          "Onderzoeker — spreker — schrijver, gespecialiseerd in de interactie tussen jongeren en hun volwassen omgeving."
       },
       {
         name: "mobile-web-app-capable",
-        content: "yes",
+        content: "yes"
       },
       {
         name: "apple-mobile-web-app-capable",
-        content: "yes",
+        content: "yes"
       },
       {
         name: "apple-mobile-web-app-status-bar-style",
-        content: "black-translucent",
+        content: "black-translucent"
       },
       {
         name: "theme-color",
-        content: "#ffffff",
-      },
+        content: "#ffffff"
+      }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
   /*
    ** Customize the progress-bar color
    */
   loading: false,
-  /*
-   ** Scroll behaviour (depreciated but new method seems buggy (app folder))
-   */
-  router: {
-    scrollBehavior: function (to, from, savedPosition) {
-      return { x: 0, y: 0 }
-    },
-  },
 
   /*
    ** Global CSS
@@ -62,7 +54,7 @@ module.exports = {
     "@/assets/styles/transitions.sass",
     "@/assets/styles/variables.sass",
     "@/assets/styles/typography.sass",
-    "@/assets/styles/body.sass",
+    "@/assets/styles/body.sass"
   ],
 
   /*
@@ -83,12 +75,12 @@ module.exports = {
           process.env.NODE_ENV == "production"
             ? process.env.PUBLICKEY
             : process.env.PREVIEWKEY,
-        cacheProvider: "memory",
-      },
-    ],
+        cacheProvider: "memory"
+      }
+    ]
   ],
   generate: {
-    routes: function (callback) {
+    routes: function(callback) {
       const token = process.env.PUBLICKEY
       const version = "published"
       let cache_version = 0
@@ -101,7 +93,7 @@ module.exports = {
       // Load space and receive latest cache version key to improve performance
       axios
         .get(`https://api.storyblok.com/v1/cdn/spaces/me?token=${token}`)
-        .then((space_res) => {
+        .then(space_res => {
           // timestamp of latest publish
           cache_version = space_res.data.space.version
 
@@ -110,8 +102,8 @@ module.exports = {
             .get(
               `https://api.storyblok.com/v1/cdn/links?token=${token}&version=${version}&cv=${cache_version}&per_page=100`
             )
-            .then((res) => {
-              Object.keys(res.data.links).forEach((key) => {
+            .then(res => {
+              Object.keys(res.data.links).forEach(key => {
                 if (!toIgnore.includes(res.data.links[key].slug)) {
                   routes.push("/" + res.data.links[key].slug)
                 }
@@ -120,7 +112,7 @@ module.exports = {
               callback(null, routes)
             })
         })
-    },
+    }
   },
   /*
    ** Build configuration
@@ -136,28 +128,22 @@ module.exports = {
           enforce: "pre",
           test: /\.(js|vue)$/,
           loader: "eslint-loader",
-          exclude: /(node_modules)/,
+          exclude: /(node_modules)/
         })
       }
     },
     // Transpile GSAP for server side rendering
-    transpile: ["gsap"],
+    transpile: ["gsap"]
   },
   buildModules: [
     ["@nuxtjs/pwa"],
-    // [
-    //   "@nuxtjs/google-analytics",
-    //   {
-    //     id: process.env.GA_ID
-    //   }
-    // ],
     [
       "@aceforth/nuxt-optimized-images",
       {
         optimizedImages: {
-          optimizeImages: true,
-        },
-      },
-    ],
-  ],
+          optimizeImages: true
+        }
+      }
+    ]
+  ]
 }
