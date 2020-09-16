@@ -112,5 +112,6 @@ export default {
     @media ( hover: hover )
       opacity: 1
   .article-Link:hover
-    opacity: 1
+    @media (hover: hover)
+      opacity: 1
 </style>

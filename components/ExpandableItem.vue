@@ -95,7 +95,8 @@ export default {
       // line-height: 1.75
       margin-right: .5rem
     &:hover
-      opacity: 1
+      @media (hover: hover)
+        opacity: 1
     &:hover ~ .backgroundImage
       @media ( hover: hover )
         opacity: 1

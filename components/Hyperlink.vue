@@ -41,5 +41,6 @@ export default {
   .icontag
     margin-left: .5rem
   &:hover
-    opacity: 1
+    @media (hover: hover)
+      opacity: 1
 </style>

@@ -150,7 +150,8 @@
       transition: opacity $hover-nav
     &:hover
       a
-        opacity: 1
+        @media (hover: hover)
+          opacity: 1
     a.nuxt-link-active
       position: relative
       opacity: 1

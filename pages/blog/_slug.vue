@@ -82,7 +82,8 @@ export default {
       position: relative
       padding-left: 0
     &:hover
-      opacity: 1
+      @media (hover: hover)
+        opacity: 1
   &-Content
     max-width: $max-width-article
     img
