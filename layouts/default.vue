@@ -46,12 +46,13 @@ export default {
       this.checkNav()
     }
   },
-  mounted() {
+  created() {
     this.checkLanding()
-    this.checkNav()
     this.checkPageType()
   },
-
+  mounted() {
+    this.checkNav()
+  },
   methods: {
     // Landing function
     checkLanding() {
