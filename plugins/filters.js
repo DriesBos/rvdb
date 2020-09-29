@@ -14,7 +14,7 @@ Vue.use(VueLazyload, {
   preLoad: 2
 })
 
-Vue.filter("dashify", function (value) {
+Vue.filter("dashify", function(value) {
   if (typeof value === "undefined") {
     return "undefined"
   }
