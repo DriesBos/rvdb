@@ -56,7 +56,6 @@ export default {
   methods: {
     // Landing function
     checkLanding() {
-      // console.log("LANDING")
       if (this.$route.name === "index") {
         this.landing = true
       } else {
@@ -83,7 +82,6 @@ export default {
       } else {
         this.pageType = "error"
       }
-      // console.log(this.$route, this.pageType)
     },
     // Used to disable menu
     checkNav() {

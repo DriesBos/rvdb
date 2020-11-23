@@ -80,7 +80,6 @@ export default {
   mounted() {
     this.filterPosts()
     this.sortAnchorList()
-    // console.log(this.story.content.component, "BLOG PAGE")
   },
   methods: {
     filterPosts() {

@@ -57,7 +57,6 @@ export default {
     sortAnchorList() {
       let array = this.story.content.body.map(el => el.title)
       this.anchorList = array
-      // console.log("WERK ANCHORLIST", this.anchorList, typeof this.anchorList)
     }
   }
 }
