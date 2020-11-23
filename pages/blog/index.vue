@@ -8,7 +8,7 @@
         <markdown-item v-if="story.content.text" class="blok-Text" :input="story.content.text" />
         <ul class="article-Link_Container">
           <nuxt-link v-for="item in postList" :key="item.id" :to="`/blog/${item.id}`" tag="li">
-            <p class="cursorInteract article-Link">{{ item.title }}</p>
+            <h2 class="cursorInteract article-Link">{{ item.title }}</h2>
             <div v-if="item.image" class="backgroundImage expandable-Item_Image">
               <div class="backgroundImage-Container setHeight setWidth">
                 <img :src="item.image" :alt="item.image_caption" />

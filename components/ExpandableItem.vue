@@ -3,7 +3,7 @@
     <!-- TITLE -->
     <div class="expandable-Item_Title cursorInteract" @click="isOpen = !isOpen">
       <!-- prettier-ignore -->
-      <h1 v-if="blok.title" class="expandable-Item_Title_Title">{{ blok.title }}</h1>
+      <h2 v-if="blok.title" class="expandable-Item_Title_Title">{{ blok.title }}</h2>
       <div v-if="blok.medium && isOpen === false" class="tag">
         <h4>{{ blok.medium }}</h4>
       </div>
@@ -28,14 +28,14 @@
         <h4>Ism {{ blok.mention }}</h4>
       </div>
       <!-- prettier-ignore -->
-      <div class="icontag cursorInteract">
+      <!-- <div class="icontag cursorInteract">
         <a :href="blok.hyperlink" target="_blank">
           <div
             v-if="blok.hyperlink"
             v-html="require('~/assets/images/icon-hyperlink.svg?include')"
           />
         </a>
-      </div>
+      </div> -->
 
       </div>
     </div>
@@ -93,7 +93,7 @@ export default {
     margin-bottom: .5em
     opacity: $opacity-links
     transition: opacity $hover-nav
-    h1
+    h2
       // line-height: 1.75
       margin-right: .5rem
     &:hover

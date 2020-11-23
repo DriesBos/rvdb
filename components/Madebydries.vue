@@ -1,18 +1,12 @@
 <template>
   <div v-editable="blok" class="colofon">
     <!-- prettier-ignore -->
-    <p class="cursorInteract">{{ blok.text }}</p>
     <a
       v-if="blok.hyperlink"
       :href="blok.hyperlink"
       target="_blank"
-      class="icontag cursorInteract"
-      tag="div"
-    >
-      <div
-        v-if="blok.hyperlink"
-        v-html="require('~/assets/images/icon-hyperlink.svg?include')"
-      />
+      class="cursorInteract"
+      >{{ blok.text }}
     </a>
   </div>
 </template>
