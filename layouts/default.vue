@@ -158,7 +158,7 @@ export default {
     height: 200vmin
     background: $gradient-secondary
     border-radius: 100000000px
-    transition: transform .9s ease-out
+    transition: transform .75s ease-out
     will-change: transform
     opacity: .9
   .circleDeux
@@ -172,7 +172,7 @@ export default {
     background: #7F8CBB
     opacity: .66
     border-radius: 100000000px
-    transition: top .9s ease-out, left .9s ease-out
+    transition: top .85s ease-out, left .85s ease-out
     will-change: top, left
   &.initial
     .circle
