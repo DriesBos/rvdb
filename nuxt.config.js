@@ -17,7 +17,7 @@ module.exports = {
         hid: "description",
         name: "description",
         content:
-          "Onderzoeker — spreker — schrijver, gespecialiseerd in de interactie tussen jongeren en hun volwassen omgeving."
+          "Onderzoeker en spreker, gespecialiseerd in de interactie tussen jongeren en hun volwassen omgeving."
       },
       {
         name: "mobile-web-app-capable",
