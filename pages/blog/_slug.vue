@@ -75,6 +75,7 @@ export default {
     padding: var(--spacing-top) var(--spacing-sides)
     opacity: $opacity-links
     transition: opacity $hover-nav
+    will-change: opacity
     @media all and (max-width: $breakpoint-mobile)
       position: relative
       padding-left: 0

@@ -78,6 +78,7 @@ export default {
     cursor: none
     opacity: $opacity-links
     transition: opacity $hover-nav
+    will-change: opacity
   a:hover
     @media (hover: hover)
       opacity: 1

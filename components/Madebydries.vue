@@ -29,6 +29,7 @@ export default {
   margin-bottom: .5rem
   opacity: $opacity-links
   transition: opacity $hover-nav
+  will-change: opacity
   .icontag
     margin-left: .5rem
   &:hover

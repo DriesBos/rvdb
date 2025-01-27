@@ -30,6 +30,7 @@ export default {
   margin-bottom: .5rem
   opacity: $opacity-links
   transition: opacity $hover-nav
+  will-change: opacity
   &:hover
     @media (hover: hover)
       opacity: 1

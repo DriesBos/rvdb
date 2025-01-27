@@ -93,6 +93,7 @@ export default {
     margin-bottom: .5em
     opacity: $opacity-links
     transition: opacity $hover-nav
+    will-change: opacity
     h2
       // line-height: 1.75
       margin-right: .5rem

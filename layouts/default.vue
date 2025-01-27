@@ -166,6 +166,7 @@ export default {
     top: 100%
     left: 50%
     transform: translate(-50%, -50%)
+    will-change: top, left
     width: 50vmin
     height: 50vmin
     background: #7F8CBB
